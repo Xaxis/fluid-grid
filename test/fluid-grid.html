@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Fluid Grid Demo</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="../node_modules/jquery.devgrid/dist/jquery.devgrid.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/fluid-grid.min.css">
+    <script>
+        $(document).ready(function() {
+
+            // jquery.devgrid initialization
+            $('body').devgrid({
+                columns: 24,
+                columnWidth: '40px',
+                gutterWidth: '20px',
+                visible: false,
+                track: true
+            });
+        });
+    </script>
+</head>
+<body>
+
+    <section>
+        <div class="fg-col-group col-1">
+            <div class="fg-col">
+                1.1
+            </div>
+        </div>
+
+        <div class="fg-col-group col-2">
+            <div class="fg-col">
+                2.5
+            </div>
+            <div class="fg-col">
+                2.5
+            </div>
+        </div>
+
+        <div class="fg-col-group col-3">
+            <div class="fg-col">
+                3.33
+            </div>
+            <div class="fg-col">
+                3.33
+            </div>
+            <div class="fg-col">
+                3.33
+            </div>
+        </div>
+
+        <div class="fg-col-group col-4">
+            <div class="fg-col">
+                4.25
+            </div>
+            <div class="fg-col">
+                4.25
+            </div>
+            <div class="fg-col">
+                4.25
+            </div>
+            <div class="fg-col">
+                4.25
+            </div>
+        </div>
+
+        <div class="fg-col-group col-5">
+            <div class="fg-col">
+                5.20
+            </div>
+            <div class="fg-col">
+                5.20
+            </div>
+            <div class="fg-col">
+                5.20
+            </div>
+            <div class="fg-col">
+                5.20
+            </div>
+            <div class="fg-col">
+                5.20
+            </div>
+        </div>
+
+        <div class="fg-col-group col-6">
+            <div class="fg-col">
+                6.16.6
+            </div>
+            <div class="fg-col">
+                6.16.6
+            </div>
+            <div class="fg-col">
+                6.16.6
+            </div>
+            <div class="fg-col">
+                6.16.6
+            </div>
+            <div class="fg-col">
+                6.16.6
+            </div>
+            <div class="fg-col">
+                6.16.6
+            </div>
+        </div>
+
+        <div class="fg-col-group col-7">
+            <div class="fg-col">
+                7.14.2
+            </div>
+            <div class="fg-col">
+                7.14.2
+            </div>
+            <div class="fg-col">
+                7.14.2
+            </div>
+            <div class="fg-col">
+                7.14.2
+            </div>
+            <div class="fg-col">
+                7.14.2
+            </div>
+            <div class="fg-col">
+                7.14.2
+            </div>
+            <div class="fg-col">
+                7.14.2
+            </div>
+        </div>
+
+        <div class="fg-col-group col-8">
+            <div class="fg-col">
+                8.12.5
+            </div>
+            <div class="fg-col">
+                8.12.5
+            </div>
+            <div class="fg-col">
+                8.12.5
+            </div>
+            <div class="fg-col">
+                8.12.5
+            </div>
+            <div class="fg-col">
+                8.12.5
+            </div>
+            <div class="fg-col">
+                8.12.5
+            </div>
+            <div class="fg-col">
+                8.12.5
+            </div>
+            <div class="fg-col">
+                8.12.5
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="fg-col-group col-2 one-fourth">
+            <div class="fg-col">
+                2.25
+            </div>
+            <div class="fg-col">
+                2.75
+            </div>
+        </div>
+        <div class="fg-col-group col-2 one-fourth-flip">
+            <div class="fg-col">
+                2.75
+            </div>
+            <div class="fg-col">
+                2.25
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="fg-col-group col-2 two-thirds">
+            <div class="fg-col">
+                2.33
+            </div>
+            <div class="fg-col">
+                2.66
+            </div>
+        </div>
+        <div class="fg-col-group col-2 two-thirds-flip">
+            <div class="fg-col">
+                2.66
+            </div>
+            <div class="fg-col">
+                2.33
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="fg-col-group col-2 two-fifths">
+            <div class="fg-col">
+                2.40
+            </div>
+            <div class="fg-col">
+                2.60
+            </div>
+        </div>
+        <div class="fg-col-group col-2 two-fifths-flip">
+            <div class="fg-col">
+                2.40
+            </div>
+            <div class="fg-col">
+                2.60
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="fg-col-group col-1 one-fourth">
+            <div class="fg-col">
+                1.25
+            </div>
+        </div>
+        <div class="fg-col-group col-1 one-fourth-flip">
+            <div class="fg-col">
+                1.75
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="fg-col-group col-1 one-third">
+            <div class="fg-col">
+                1.33
+            </div>
+        </div>
+        <div class="fg-col-group col-1 one-third-flip">
+            <div class="fg-col">
+                1.66
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="fg-col-group col-1 two-fifths">
+            <div class="fg-col">
+                1.40
+            </div>
+        </div>
+        <div class="fg-col-group col-1 two-fifths-flip">
+            <div class="fg-col">
+                1.60
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="color-bg one-fourth-demo">
+            3.25
+        </div>
+        <div class="color-bg one-fourth-demo">
+            3.25
+        </div>
+        <div class="color-bg one-half-demo">
+            4.50
+        </div>
+    </section>
+
+    <section>
+        <div class="color-bg one-fourth-demo">
+            6.25
+        </div>
+        <div class="color-bg one-fourth-demo">
+            6.25
+        </div>
+        <div class="color-bg one-eighth-demo">
+            6.12.5
+        </div>
+        <div class="color-bg one-eighth-demo">
+            6.12.5
+        </div>
+        <div class="color-bg one-eighth-demo">
+            6.12.5
+        </div>
+        <div class="color-bg one-eighth-demo">
+            6.12.5
+        </div>
+    </section>
+
+</body>
+</html>

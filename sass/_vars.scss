@@ -44,12 +44,13 @@ $site-mobile-breakpoint: $site-tablet;
 // Calculate Grid Column Widths
 // @$columns          The number of columns
 // @$modifier         An override of the column dimension result
+// @left-margin       Margin flag/string used to eliminate sibling left margins
 // @$breakpoint       An overriding mobile breakpoint (screen width) for media query trigger
 // @$gutter           The gutter width
 @mixin fg-grid-width(
   $columns,
   $modifier: 0,
-  $margin: false,
+  $left-margin: false,
   $breakpoint: $site-mobile-breakpoint,
   $gutter: $fg-gutter
 ) {
@@ -69,9 +70,13 @@ $site-mobile-breakpoint: $site-tablet;
     clear: both;
   }
 
+
+  // @TODO - Develop means for supporting browsers that do not support 'calc()' method
+
+
   // Margin overrides (used by custom column convention)
-  @if $margin {
-    @if $margin == 'first' {
+  @if $left-margin {
+    @if $left-margin == 'first' {
      margin-left: 0;
     } @else {
       margin-left: $gutter;
@@ -103,26 +108,26 @@ $site-mobile-breakpoint: $site-tablet;
 
     // 1/3 width
     @if $modifier == '1/3' {
-      width: 33.3333%;
+      width: calc(33.3333% - (#{$gutter} / 2));
     }
 
     // 2/3 width
     @if $modifier == '2/3' {
-      width: calc(66.6666% - #{$gutter});
+      width: calc(66.6666% - (#{$gutter} / 2));
     }
 
     // 2/5 width
     @if $modifier == '2/5' {
-      width: 40%;
+      width: calc(40% - (#{$gutter} / 2));
     }
 
     // 5/2 width
     @if $modifier == '3/5' {
-      width: calc(60% - #{$gutter});
+      width: calc(60% - (#{$gutter} / 2));
     }
   }
 
-  // Default media query
+  // Default mobile media query
   @media only screen and (max-width: $breakpoint) {
     width: 100%;
     margin-left: 0;

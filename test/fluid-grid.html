@@ -15,7 +15,7 @@
                 columns: 24,
                 columnWidth: '40px',
                 gutterWidth: '20px',
-                visible: true,
+                visible: false,
                 track: true
             });
         });
@@ -24,6 +24,8 @@
 <body>
 
     <section>
+        <h5>Basic Columns (Class Based)</h5>
+
         <div class="fg-col-group col-1">
             <div class="fg-col">
                 1.1
@@ -158,6 +160,8 @@
     </section>
 
     <section>
+        <h5>Ratio Columns (1/4 - Class Based)</h5>
+
         <div class="fg-col-group col-2 one-fourth">
             <div class="fg-col">
                 2.25
@@ -177,6 +181,8 @@
     </section>
 
     <section>
+        <h5>Ratio Columns (2/3 - Class Based)</h5>
+
         <div class="fg-col-group col-2 two-thirds">
             <div class="fg-col">
                 2.33
@@ -196,6 +202,8 @@
     </section>
 
     <section>
+        <h5>Ratio Columns (2/5 - Class Based)</h5>
+
         <div class="fg-col-group col-2 two-fifths">
             <div class="fg-col">
                 2.40
@@ -215,6 +223,8 @@
     </section>
 
     <section>
+        <h5>Ratio Columns (1/4 - Class Based)</h5>
+
         <div class="fg-col-group col-1 one-fourth">
             <div class="fg-col">
                 1.25
@@ -228,6 +238,8 @@
     </section>
 
     <section>
+        <h5>Ratio Columns (1/3 - Class Based)</h5>
+
         <div class="fg-col-group col-1 one-third">
             <div class="fg-col">
                 1.33
@@ -241,6 +253,8 @@
     </section>
 
     <section>
+        <h5>Ratio Columns (2/5 - Class Based)</h5>
+
         <div class="fg-col-group col-1 two-fifths">
             <div class="fg-col">
                 1.40
@@ -253,38 +267,92 @@
         </div>
     </section>
 
+    <!-- Non class based fluid-grid -->
     <section>
-        <div class="color-bg one-fourth-demo">
-            3.25
-        </div>
-        <div class="color-bg one-fourth-demo">
-            3.25
-        </div>
-        <div class="color-bg one-half-demo">
-            4.50
+        <h5>Variable Columns (Mixin Based)</h5>
+
+        <div>
+            <div class="color-bg one-fourth-demo">
+                3.25
+            </div>
+            <div class="color-bg one-fourth-demo">
+                3.25
+            </div>
+            <div class="color-bg one-half-demo">
+                4.50
+            </div>
         </div>
     </section>
 
     <section>
-        <div class="color-bg one-fourth-demo">
-            6.25
-        </div>
-        <div class="color-bg one-fourth-demo">
-            6.25
-        </div>
-        <div class="color-bg one-eighth-demo">
-            6.12.5
-        </div>
-        <div class="color-bg one-eighth-demo">
-            6.12.5
-        </div>
-        <div class="color-bg one-eighth-demo">
-            6.12.5
-        </div>
-        <div class="color-bg one-eighth-demo">
-            6.12.5
+        <h5>Variable Columns (Mixin Based)</h5>
+
+        <div>
+            <div class="color-bg one-fourth-demo">
+                6.25
+            </div>
+            <div class="color-bg one-fourth-demo">
+                6.25
+            </div>
+            <div class="color-bg one-eighth-demo">
+                6.12.5
+            </div>
+            <div class="color-bg one-eighth-demo">
+                6.12.5
+            </div>
+            <div class="color-bg one-fourth-demo">
+                6.25
+            </div>
         </div>
     </section>
+    <!-- End Non class based fluid-grid -->
+
+    <!-- Nested fluid-grid -->
+    <section>
+        <h5>Nested Variable Columns (Class Based)</h5>
+
+        <div class="fg-col-group col-2">
+            <div class="fg-col">
+                <div class="fg-col-group col-2">
+                    <div class="fg-col">
+                        2.5
+                    </div>
+                    <div class="fg-col">
+                        2.5
+                    </div>
+                </div>
+            </div>
+            <div class="fg-col">
+                <div class="fg-col-group col-3">
+                    <div class="fg-col">
+                        3.33
+                    </div>
+                    <div class="fg-col">
+                        3.33
+                    </div>
+                    <div class="fg-col">
+                        3.33
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h5>Nested Variable Columns (Mixin Based)</h5>
+
+        <div>
+            <div class="color-bg one-half-demo">
+                <div class="color-bg alt-break-demo">
+                    1.50
+                </div>
+                <div class="color-bg alt-break-demo">
+                    1.50
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Nested fluid-grid -->
 
 </body>
 </html>

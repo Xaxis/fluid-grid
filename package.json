@@ -24,6 +24,7 @@
     "grunt-contrib-watch": "^0.6.1",
     "grunt-sass": "^1.0.0",
     "jquery.devgrid": "git+https://github.com/Xaxis/jquery.devgrid.git",
-    "matchdep": "^0.3.0"
+    "matchdep": "^0.3.0",
+    "modernizr": "^3.0.0-alpha.4"
   }
 }

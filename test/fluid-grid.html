@@ -7,7 +7,28 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="../node_modules/jquery.devgrid/dist/jquery.devgrid.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/fluid-grid.min.css">
+    <script src="http://modernizr.com/downloads/modernizr-latest.js"></script>
     <script>
+
+        // Css calc() Modernizr test
+        Modernizr.addTest('csscalc', function() {
+            var calc_prefix = (function(){
+                var dummy = document.createElement('div');
+                var props = ['calc', '-webkit-calc', '-moz-calc', '-o-calc'];
+                for (var i=0; i<props.length; ++i) {
+                    var prop = props[i];
+                    dummy.style.cssText = 'width:' + prop + '(1px);';
+                    if (dummy.style.length)
+                        return prop;
+                }
+            })();
+            var el = $('<div>')[0];
+            el.style.cssText = 'width:' + calc_prefix + '(10px + 10px);';
+            var result = $(el).width();
+            return (result == 20);
+        });
+
+        // DOM Ready
         $(document).ready(function() {
 
             // jquery.devgrid initialization
@@ -15,8 +36,14 @@
                 columns: 24,
                 columnWidth: '40px',
                 gutterWidth: '20px',
-                visible: false,
-                track: true
+                visible: true,
+                track: true,
+                vertical: false,
+                horizontal: false,
+                infoBoxStyle: {
+                    opacity: 0.95,
+                    top: '100px'
+                }
             });
         });
     </script>

@@ -3,7 +3,12 @@
 .fg-col-group {
   overflow: auto;
   .fg-col + .fg-col {
-    margin-left: $fg-gutter;
+    html:not(.csscalc) & {
+      margin-left: #{$fg-false-gutter + '%'};
+    }
+    html.csscalc & {
+      margin-left: $fg-gutter;
+    }
   }
 
   // 1 column treatment

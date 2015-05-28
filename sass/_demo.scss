@@ -51,74 +51,145 @@ h5 {
 }
 
 //--------
-// Grid styles
-.fg-col-group + .fg-col-group {
-  margin-top: $fg-gutter;
-}
-.fg-col, .color-bg {
-  padding: $fg-gutter;
-  .fg-col, .color-bg {
-    border: 2px solid deeppink;
-  }
-}
+// Demo section colors
 section:nth-child(1) {
-  .fg-col, .demo {
+  .fg-col, .fg-demo {
     background: #556270;
   }
 }
 section:nth-child(2) {
-  .fg-col, .color-bg {
+  .fg-col, .fg-demo {
     background: #4ECDC4;
   }
 }
 section:nth-child(3) {
-  .fg-col, .color-bg {
+  .fg-col, .fg-demo {
     background: #C7F464;
   }
 }
 section:nth-child(4) {
-  .fg-col, .color-bg {
+  .fg-col, .fg-demo {
     background: #FF6B6B;
   }
 }
 section:nth-child(5) {
-  .fg-col, .color-bg {
+  .fg-col, .fg-demo {
     background: #C44D58;
   }
 }
 section:nth-child(6) {
-  .fg-col, .color-bg {
+  .fg-col, .fg-demo {
     background: #556270;
   }
 }
 section:nth-child(7) {
-  .fg-col, .color-bg {
+  .fg-col, .fg-demo {
     background: #4ECDC4;
   }
 }
 section:nth-child(8) {
-  .fg-col, .color-bg {
+  .fg-col, .fg-demo {
     background: #C7F464;
   }
 }
 section:nth-child(9) {
-  .fg-col, .color-bg {
+  .fg-col, .fg-demo {
     background: #FF6B6B;
   }
 }
 section:nth-child(10) {
-  .fg-col, .color-bg {
+  .fg-col, .fg-demo {
     background: #C44D58;
   }
 }
 section:nth-child(11) {
-  .fg-col, .color-bg {
+  .fg-col, .fg-demo {
     background: #556270;
+  }
+}
+section:nth-child(12) {
+  .fg-col, .fg-demo {
+    background: #4ECDC4;
   }
 }
 
 //--------
-// Column examples
+// Demo wrapper styles
+.demo-wrapper {
+//  overflow: auto;
+  margin-top: $fg-gutter;
+}
+
+//--------
+// Demo column styles
+.fg-demo {
+  padding: $fg-gutter * 2;
+  .fg-demo {
+    border: 2px solid deeppink;
+  }
+}
+
+
+//--------
+// Basic column examples
+.fg-demo-1 {
+  @include fg-col(1);
+}
+.fg-demo-2 {
+  @include fg-col(2);
+}
+.fg-demo-3 {
+  @include fg-col(3);
+}
+.fg-demo-4 {
+  @include fg-col(4);
+}
+.fg-demo-5 {
+  @include fg-col(5);
+}
+.fg-demo-6 {
+  @include fg-col(6);
+}
+.fg-demo-7 {
+  @include fg-col(7);
+}
+.fg-demo-8 {
+  @include fg-col(8);
+}
+
+//--------
+// Ratio column examples
+.fg-demo-1-5 {
+  @include fg-col($mod: '1/5');
+}
+.fg-demo-1-4 {
+  @include fg-col($mod: '1/4');
+}
+.fg-demo-3-4 {
+  @include fg-col($mod: '3/4');
+}
+.fg-demo-1-3 {
+  @include fg-col($mod: '1/3');
+}
+.fg-demo-2-3 {
+  @include fg-col($mod: '2/3');
+}
+.fg-demo-2-5 {
+  @include fg-col($mod: '2/5');
+}
+.fg-demo-3-5 {
+  @include fg-col($mod: '3/5');
+}
+.fg-demo-1-2 {
+  @include fg-col($mod: '1/2');
+}
+.fg-demo-4-5 {
+  @include fg-col($mod: '4/5');
+}
+
+
+
+
 .one-fourth-demo {
   padding: $fg-gutter;
   @include fg-grid-width(4, 0, true);

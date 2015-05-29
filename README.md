@@ -11,7 +11,7 @@ The purpose of fluid-grid was to create an extremely lightweight SASS mixin syst
 Columns in fluid-grid are based on a grid system though their dimensions are not constrained by grid fractions while 
 still respecting grid gutters.
 
-![Demo](http://boilerjs.com/misc/fluid-grid/)
+[fluid-grid demo](http://boilerjs.com/misc/fluid-grid/)
 
 ![Responsive Columns](https://raw.githubusercontent.com/Xaxis/fluid-grid/master/test/fluid-grid-example-2.gif)
 
@@ -189,7 +189,7 @@ test to your project. See `fluid-grid.html` in the `test/` directory for an exam
 
 ## Working Example
 
-![Demo](http://boilerjs.com/misc/fluid-grid/)
+[fluid-grid demo](http://boilerjs.com/misc/fluid-grid/)
 
 See `fluid-grid.html` in tests directory.
 

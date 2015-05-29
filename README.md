@@ -11,7 +11,7 @@ The purpose of fluid-grid was to create an extremely lightweight SASS mixin syst
 Columns in fluid-grid are based on a grid system though their dimensions are not constrained by grid fractions while 
 still respecting grid gutters.
 
-![Responsive Columns](https://raw.githubusercontent.com/Xaxis/jquery.fluid-grid/master/test/fluid-grid-example-2.gif)
+![Responsive Columns](https://raw.githubusercontent.com/Xaxis/fluid-grid/master/test/fluid-grid-example-2.gif)
 
 ## Author
 

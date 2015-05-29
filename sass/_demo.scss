@@ -4,7 +4,7 @@ $site-font-size: 16px;
 $site-font-family: sans-serif;
 $site-min-width: 320px;
 $site-max-width: $fg-break-md;
-$site-mobile-breakpoint: 0;
+$site-mobile-breakpoint: 768px;
 
 //--------
 // All element resets
@@ -149,7 +149,7 @@ section:nth-child(14) {
 //--------
 // Basic column examples
 .fg-demo-1 {
-  @include fg-col(1);
+  @include fg-col(1, $site-mobile-breakpoint);
 }
 .fg-demo-2 {
   @include fg-col(2, $site-mobile-breakpoint);

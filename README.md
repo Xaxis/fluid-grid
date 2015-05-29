@@ -155,6 +155,36 @@ Though a more typical usage would look something like this:
 </div>
 ```
 
+##### Four column w/ percentage gutter
+
+```sass
+.fg-demo {
+  @include fg-col(4, $gutter: 1.6);
+}
+```
+
+```html
+<div class="fg-demo"></div>
+<div class="fg-demo"></div>
+<div class="fg-demo"></div>
+<div class="fg-demo"></div>
+```
+
+##### Modify breakpoint styles
+
+```sass
+.fg-demo {
+  @include fg-col(2, $break: 768px) {
+    background: red;
+  }
+}
+```
+
+```html
+<div class="fg-demo"></div>
+<div class="fg-demo"></div>
+```
+
 ## Requirements/Browsers
 
 Works in all browsers that support CSS `calc()` and is backwards compatible with browsers that don't by adding a Modernizr

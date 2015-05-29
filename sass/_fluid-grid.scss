@@ -45,7 +45,6 @@ $fg-break-md: $fg-col-16;                           // 960px
 $fg-break-sm: $fg-col-13;                           // 780px
 $fg-break-xs: $fg-col-8;                            // 480px
 
-
 //--------
 // Fluid-grid mixin for creating fluid and responsive columns.
 // See: https://github.com/Xaxis/fluid-grid
@@ -191,6 +190,9 @@ $fg-break-xs: $fg-col-8;                            // 480px
         & + * {
           margin-top: $gutter;
         }
+
+        // Include breakpoint style overrides
+        @content;
       }
     }
   }

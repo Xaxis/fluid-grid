@@ -1,8 +1,11 @@
 //--------
-// Grid dimensions
+// Grid dimensions (REQUIRED)
 $fg-col: 40px;                                    // Column width
 $fg-gutter: 20px;                                 // Gutter width
-$fg-false-gutter: 1.6;                            // Fallback gutter percentage
+$fg-fluid-gutter: 1.6;                            // Fluid gutter percentage
+
+//--------
+// Grid dimensions (AUXILIARY)
 $fg-col-total: 25;                                // Column total
 $fg-grid-width: $fg-col + $fg-gutter;             // Grid width
 $fg-grid-total: $fg-grid-width * $fg-col-total;   // Grid total width
@@ -44,133 +47,122 @@ $fg-break-xs: $fg-col-8;                            // 480px
 
 
 //--------
-// This mixin acts as the main column calculation function used by subsequent fluid-grid mixins.
+// Fluid-grid mixin for creating fluid and responsive columns.
+// See: https://github.com/Xaxis/fluid-grid
 //
-// @$columns          The number of columns
-// @$modifier         An override of the column dimension result
-// @left-margin       Margin flag/string used to eliminate sibling left margins
-// @$breakpoint       An overriding mobile breakpoint (screen width) for media query trigger
-// @$gutter           The gutter width
-// @false-gutter      The gutter width used when no css calc() support available
-@mixin fg-grid-width(
-  $columns,
-  $modifier: 0,
-  $left-margin: false,
-  $breakpoint: 0,
+// @cols              Number of columns
+// @break             Breakpoint width
+// @mod               Modifier ratio
+// @gutter            Gutter width
+// @fluid-gutter      Fluid gutter percentage width
+@mixin fg-col(
+  $cols: 1,
+  $break: 0,
+  $mod: 0,
   $gutter: $fg-gutter,
-  $false-gutter: $fg-false-gutter
+  $fluid-gutter: $fg-fluid-gutter
 ) {
 
   // Default column styling
-  &, & * {
+  & {
     box-sizing: border-box;
   }
   position: relative;
   float: left;
   &:before,
   &:after {
-    content: "";
+    content: " ";
     display: table;
   }
   &:after {
     clear: both;
   }
 
-  // Margin overrides (used by non-class based mixin convention)
-  @if $left-margin {
-    @if $left-margin == 'first' {
+  // Fixed gutter
+  html.csscalc & {
+    margin-left: $gutter;
+  }
 
-      // When css calc() and NOT css calc()
-      html.csscalc &, html:not(.csscalc) & {
-        margin-left: 0;
-      }
-    } @else {
+  // Fluid gutter
+  html:not(.csscalc) & {
+    margin-left: #{$fluid-gutter + '%'};
+  }
 
-      // When css calc()
-      html.csscalc & {
-        margin-left: $gutter;
-      }
-
-      // When NOT css calc()
-      html:not(.csscalc) & {
-        margin-left: #{$false-gutter + '%'};
-      }
+  // Eliminate first column margin
+  html.csscalc &, html:not(.csscalc) & {
+    &:first-child {
+      margin-left: 0;
     }
   }
 
-  // Full grid width
-  @if $columns == 1 and not $modifier {
-    width: 100%;
-  }
-
-  // Calculate column width using css 'calc()' when available
-  @else if $modifier == 0 {
+  // Equal column width
+  @if $mod == 0 and $mod != 1 {
 
     // When css calc()
     html.csscalc & {
-      width: -webkit-calc(((100% / #{$columns}) - #{$gutter}) + (#{$gutter / $columns}));
-      width: calc(((100% / #{$columns}) - #{$gutter}) + (#{$gutter / $columns}));
+      width: -webkit-calc(((100% / #{$cols}) - #{$gutter}) + (#{$gutter / $cols}));
+      width: calc(((100% / #{$cols}) - #{$gutter}) + (#{$gutter / $cols}));
     }
 
     // When NOT css calc()
     html:not(.csscalc) & {
-      $ucw: (100 / $columns);
+      $ucw: (100 / $cols);
       $cw: 0;
-      @if $columns == 1 {
+      @if $cols == 1 {
         $cw: $ucw;
       } @else {
-        $cw: $ucw - $false-gutter + ($false-gutter / $columns);
+        $cw: $ucw - $fluid-gutter + ($fluid-gutter / $cols);
       }
       width: #{$cw + '%'};
     }
   }
 
-  // Re-calculate column width based on modifier
-  @else if $modifier {
+  // Modifier column width
+  @else if $mod {
     $mw: 0;
 
     // 1/5 width
-    @if $modifier == '1/5' {
+    @if $mod == '1/5' {
       $mw: 20;
     }
 
     // 1/4 width
-    @if $modifier == '1/4' {
+    @if $mod == '1/4' {
       $mw: 25;
     }
 
     // 1/3 width
-    @if $modifier == '1/3' {
+    @if $mod == '1/3' {
       $mw: 33.3333;
     }
 
     // 2/5 width
-    @if $modifier == '2/5' {
+    @if $mod == '2/5' {
       $mw: 40;
     }
 
     // 1/2 width
-    @if $modifier == '1/2' {
+    @if $mod == '1/2' {
       $mw: 50;
     }
 
     // 3/5 width
-    @if $modifier == '3/5' {
+    @if $mod == '3/5' {
       $mw: 60;
     }
 
     // 3/4 width
-    @if $modifier == '3/4' {
+    @if $mod == '3/4' {
       $mw: 75;
     }
 
     // 2/3 width
-    @if $modifier == '2/3' {
+    @if $mod == '2/3' {
       $mw: 66.6666;
     }
 
     // 4/5 width
-    @if $modifier == '4/5' {
+    @if $mod == '4/5' {
       $mw: 80;
     }
 
@@ -183,105 +175,23 @@ $fg-break-xs: $fg-col-8;                            // 480px
     // When NOT css calc()
     html:not(.csscalc) & {
       $p: $mw / 100;
-      $cw: ($p * 100) - $false-gutter + ($false-gutter / 2);
+      $cw: ($p * 100) - $fluid-gutter + ($fluid-gutter / 2);
       width: #{$cw + '%'};
     }
   }
 
-  // Default mobile media query
-  @media only screen and (max-width: $breakpoint) {
+  // Responsive media query
+  @if $break > 0 {
+    @media only screen and (max-width: $break) {
 
-    // When css calc() and NOT css calc()
-    html.csscalc &, html:not(.csscalc) & {
-      width: 100%;
-      margin-left: 0;
-      & + * {
-        margin-top: $gutter;
+      // When css calc() and NOT css calc()
+      html.csscalc &, html:not(.csscalc) & {
+        width: 100%;
+        margin-left: 0;
+        & + * {
+          margin-top: $gutter;
+        }
       }
     }
   }
-}
-
-
-//--------
-// General Col Wrapper
-// @cols              Number of columns
-// @breakpoint        Set breakpoint width
-// @mod               Modifier ratio
-@mixin fg-col( $cols: 1, $breakpoint: 0, $mod: 0 ) {
-  @include fg-grid-width($cols, $mod, true, $breakpoint);
-  &:first-child {
-    @include fg-grid-width($cols, $mod, 'first', $breakpoint);
-  }
-}
-
-
-//--------
-// One Col Wrapper
-// @breakpoint        Set breakpoint width
-// @mod               Modifier ratio
-@mixin fg-1-col( $breakpoint: 0, $mod: 0 ) {
-  @include fg-col(1, $breakpoint, $mod);
-}
-
-
-//--------
-// Two Col Wrapper
-// @breakpoint        Set breakpoint width
-// @mod               Modifier ratio
-@mixin fg-2-col( $breakpoint: 0, $mod: 0 ) {
-  @include fg-col(2, $breakpoint, $mod);
-}
-
-
-//--------
-// Three Col Wrapper
-// @breakpoint        Set breakpoint width
-// @mod               Modifier ratio
-@mixin fg-3-col( $breakpoint: 0, $mod: 0 ) {
-  @include fg-col(3, $breakpoint, $mod);
-}
-
-
-//--------
-// Four Col Wrapper
-// @breakpoint        Set breakpoint width
-// @mod               Modifier ratio
-@mixin fg-4-col( $breakpoint: 0, $mod: 0 ) {
-  @include fg-col(4, $breakpoint, $mod);
-}
-
-//--------
-// Five Col Wrapper
-// @breakpoint        Set breakpoint width
-// @mod               Modifier ratio
-@mixin fg-5-col( $breakpoint: 0, $mod: 0 ) {
-  @include fg-col(5, $breakpoint, $mod);
-}
-
-
-//--------
-// Six Col Wrapper
-// @breakpoint        Set breakpoint width
-// @mod               Modifier ratio
-@mixin fg-6-col( $breakpoint: 0, $mod: 0 ) {
-  @include fg-col(6, $breakpoint, $mod);
-}
-
-
-//--------
-// Seven Col Wrapper
-// @breakpoint        Set breakpoint width
-// @mod               Modifier ratio
-@mixin fg-7-col( $breakpoint: 0, $mod: 0 ) {
-  @include fg-col(7, $breakpoint, $mod);
-}
-
-
-//--------
-// Eight Col Wrapper
-// @breakpoint        Set breakpoint width
-// @mod               Modifier ratio
-@mixin fg-8-col( $breakpoint: 0, $mod: 0 ) {
-  @include fg-col(8, $breakpoint, $mod);
 }

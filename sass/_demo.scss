@@ -4,7 +4,7 @@ $site-font-size: 16px;
 $site-font-family: sans-serif;
 $site-min-width: 320px;
 $site-max-width: $fg-break-md;
-$site-mobile-breakpoint: $fg-break-sm;
+$site-mobile-breakpoint: 0;
 
 //--------
 // All element resets
@@ -152,60 +152,60 @@ section:nth-child(14) {
   @include fg-col(1);
 }
 .fg-demo-2 {
-  @include fg-col(2, $breakpoint: $site-mobile-breakpoint);
+  @include fg-col(2, $site-mobile-breakpoint);
 }
 .fg-demo-3 {
-  @include fg-col(3, $breakpoint: $site-mobile-breakpoint);
+  @include fg-col(3, $site-mobile-breakpoint);
 }
 .fg-demo-4 {
-  @include fg-col(4, $breakpoint: $site-mobile-breakpoint);
+  @include fg-col(4, $site-mobile-breakpoint);
 }
 .fg-demo-5 {
-  @include fg-col(5, $breakpoint: $site-mobile-breakpoint);
+  @include fg-col(5, $site-mobile-breakpoint);
 }
 .fg-demo-6 {
-  @include fg-col(6, $breakpoint: $site-mobile-breakpoint);
+  @include fg-col(6, $site-mobile-breakpoint);
 }
 .fg-demo-7 {
-  @include fg-col(7, $breakpoint: $site-mobile-breakpoint);
+  @include fg-col(7, $site-mobile-breakpoint);
 }
 .fg-demo-8 {
-  @include fg-col(8, $breakpoint: $site-mobile-breakpoint);
+  @include fg-col(8, $site-mobile-breakpoint);
 }
 
 //--------
 // Responsive column examples
 .fg-demo-r-1 {
-  @include fg-col(2, $breakpoint: $site-mobile-breakpoint);
+  @include fg-col(2, $site-mobile-breakpoint);
 }
 
 
 //--------
 // Ratio column examples
 .fg-demo-1-5 {
-  @include fg-col($mod: '1/5', $breakpoint: $site-mobile-breakpoint);
+  @include fg-col($mod: '1/5', $break: $site-mobile-breakpoint);
 }
 .fg-demo-1-4 {
-  @include fg-col($mod: '1/4', $breakpoint: $site-mobile-breakpoint);
+  @include fg-col($mod: '1/4', $break: $site-mobile-breakpoint);
 }
 .fg-demo-3-4 {
-  @include fg-col($mod: '3/4', $breakpoint: $site-mobile-breakpoint);
+  @include fg-col($mod: '3/4', $break: $site-mobile-breakpoint);
 }
 .fg-demo-1-3 {
-  @include fg-col($mod: '1/3', $breakpoint: $site-mobile-breakpoint);
+  @include fg-col($mod: '1/3', $break: $site-mobile-breakpoint);
 }
 .fg-demo-2-3 {
-  @include fg-col($mod: '2/3', $breakpoint: $site-mobile-breakpoint);
+  @include fg-col($mod: '2/3', $break: $site-mobile-breakpoint);
 }
 .fg-demo-2-5 {
-  @include fg-col($mod: '2/5', $breakpoint: $site-mobile-breakpoint);
+  @include fg-col($mod: '2/5', $break: $site-mobile-breakpoint);
 }
 .fg-demo-3-5 {
-  @include fg-col($mod: '3/5', $breakpoint: $site-mobile-breakpoint);
+  @include fg-col($mod: '3/5', $break: $site-mobile-breakpoint);
 }
 .fg-demo-1-2 {
-  @include fg-col($mod: '1/2', $breakpoint: $site-mobile-breakpoint);
+  @include fg-col($mod: '1/2', $break: $site-mobile-breakpoint);
 }
 .fg-demo-4-5 {
-  @include fg-col($mod: '4/5', $breakpoint: $site-mobile-breakpoint);
+  @include fg-col($mod: '4/5', $break: $site-mobile-breakpoint);
 }

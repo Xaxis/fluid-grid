@@ -13,15 +13,13 @@ still respecting your grid system's gutter dimensions.
 
 [Demo](http://boilerjs.com/misc/fluid-grid/)
 
-![Responsive Columns](https://raw.githubusercontent.com/Xaxis/fluid-grid/master/test/fluid-grid-example-1.gif)
+![Responsive Columns](https://raw.githubusercontent.com/Xaxis/fluid-grid/master/test/fluid-grid-example-2.gif)
 
 ## Author
 
 Wil Neeley ( [@wilneeley](http://twitter.com/wilneeley) / [puppetlabs.com](http://www.puppetlabs.com) / [github.com](https://github.com/Xaxis) )
 
 ## Usage
-
-Apply the parts of `_fluid-grid.scss` you find useful to your project.
 
 Most of the configurable variables in `_fluid-grid.scss` are not required. The ones that are specify the grid dimensions
 used to align fluid-grid created columns with your grid. `$fg-fluid-gutter` is used as the default fallback dimension for
@@ -40,9 +38,10 @@ purposes an a-typical usage of fluid-grid might look as follows:
 
 ```sass
 .fg-demo {
-  @include fg-col($cols: 1, $break: 768px, $mod: '3/4', $gutter: 20px, $fluid-gutter: 1.6);
+  @include fg-col($cols: 1, $break: 768px, $mod: '3/4');
 }
 ```
+
 Though a more typical usage would look something like this:
 
 ```sass

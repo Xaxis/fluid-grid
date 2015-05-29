@@ -194,7 +194,7 @@ test to your project. See `fluid-grid.html` in the `test/` directory for an exam
 
 See [Demo](http://boilerjs.com/misc/fluid-grid/)
 
-See `fluid-grid.html` in tests directory.
+See `fluid-grid.html` in `test/` directory.
 
 ### Changelog
 

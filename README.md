@@ -11,7 +11,7 @@ The purpose of fluid-grid was to create an extremely lightweight SASS mixin syst
 Columns in fluid-grid are based on your grid system though their dimensions are not constrained by grid fractions while 
 still respecting your grid system's gutter dimensions.
 
-[Demo](http://boilerjs.com/misc/fluid-grid/)
+See [Demo](http://boilerjs.com/misc/fluid-grid/)
 
 ## Author
 

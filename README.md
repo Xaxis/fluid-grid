@@ -21,7 +21,7 @@ Apply the parts of the partial `_fluid-grid.scss` you find useful to your projec
 
 ### Examples
 
-#### Two column layout
+##### Two column layout
 
 ```sass
 .fg-demo {

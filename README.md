@@ -21,7 +21,7 @@ Apply the parts of the partial `_fluid-grid.scss` you find useful to your projec
 
 ### Examples
 
-##### Two column layout
+##### Two column
 
 ```sass
 .fg-demo {
@@ -32,4 +32,64 @@ Apply the parts of the partial `_fluid-grid.scss` you find useful to your projec
 ```html
 <div class="fg-demo"></div>
 <div class="fg-demo"></div>
+```
+
+##### Four column 
+
+```sass
+.fg-demo {
+  @include fg-col(4);
+}
+```
+
+```html
+<div class="fg-demo"></div>
+<div class="fg-demo"></div>
+<div class="fg-demo"></div>
+<div class="fg-demo"></div>
+```
+
+##### Responsive two column
+
+```sass
+.fg-demo {
+  @include fg-col(2, 768px);
+}
+```
+
+```html
+<div class="fg-demo"></div>
+<div class="fg-demo"></div>
+```
+
+##### Fractional two column
+
+```sass
+.fg-demo-1-4 {
+  @include fg-col($mod: '1/4');
+}
+.fg-demo-3-4 {
+  @include fg-col($mod: '3/4');
+}
+```
+
+```html
+<div class="fg-demo-1-4"></div>
+<div class="fg-demo-3-4"></div>
+```
+
+##### Fractional two column responsive
+
+```sass
+.fg-demo-1-4 {
+  @include fg-col($mod: '1/4', $breakpoint: 768px);
+}
+.fg-demo-3-4 {
+  @include fg-col($mod: '3/4', $breakpoint: 768px);
+}
+```
+
+```html
+<div class="fg-demo-1-4"></div>
+<div class="fg-demo-3-4"></div>
 ```

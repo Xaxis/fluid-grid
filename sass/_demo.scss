@@ -2,6 +2,9 @@
 // Demo specific variables
 $site-font-size: 16px;
 $site-font-family: sans-serif;
+$site-min-width: 320px;
+$site-max-width: $fg-break-md;
+$site-mobile-breakpoint: $fg-break-sm;
 
 //--------
 // All element resets
@@ -34,19 +37,23 @@ section {
 }
 
 //--------
-// Main content sections/section titles
-section, h5 {
+// Sectional element stylings
+section {
   max-width: $site-max-width;
-  @media only screen and (min-width: $site-xl) {
-    max-width: $site-xl;
+  @media only screen and (min-width: $fg-break-lg) {
+    max-width: $fg-break-lg;
   }
 }
-h5 {
+
+h5, h4 {
   min-width: $site-min-width;
   margin: 0 auto;
   margin-bottom: $fg-gutter;
-  * + & {
-    margin-top: $fg-gutter * 2;
+}
+p {
+  code {
+    background: #fafafa;
+    padding: 1px 2px;
   }
 }
 
@@ -112,23 +119,32 @@ section:nth-child(12) {
     background: #4ECDC4;
   }
 }
+section:nth-child(13) {
+  .fg-col, .fg-demo {
+    background: #C7F464;
+  }
+}
+section:nth-child(14) {
+  .fg-col, .fg-demo {
+    background: #FF6B6B;
+  }
+}
 
 //--------
 // Demo wrapper styles
 .demo-wrapper {
-//  overflow: auto;
+  overflow: auto;
   margin-top: $fg-gutter;
 }
 
 //--------
-// Demo column styles
+// Demo column  styles
 .fg-demo {
-  padding: $fg-gutter * 2;
+  padding: $fg-gutter;
   .fg-demo {
     border: 2px solid deeppink;
   }
 }
-
 
 //--------
 // Basic column examples
@@ -136,84 +152,60 @@ section:nth-child(12) {
   @include fg-col(1);
 }
 .fg-demo-2 {
-  @include fg-col(2);
+  @include fg-col(2, $breakpoint: $site-mobile-breakpoint);
 }
 .fg-demo-3 {
-  @include fg-col(3);
+  @include fg-col(3, $breakpoint: $site-mobile-breakpoint);
 }
 .fg-demo-4 {
-  @include fg-col(4);
+  @include fg-col(4, $breakpoint: $site-mobile-breakpoint);
 }
 .fg-demo-5 {
-  @include fg-col(5);
+  @include fg-col(5, $breakpoint: $site-mobile-breakpoint);
 }
 .fg-demo-6 {
-  @include fg-col(6);
+  @include fg-col(6, $breakpoint: $site-mobile-breakpoint);
 }
 .fg-demo-7 {
-  @include fg-col(7);
+  @include fg-col(7, $breakpoint: $site-mobile-breakpoint);
 }
 .fg-demo-8 {
-  @include fg-col(8);
+  @include fg-col(8, $breakpoint: $site-mobile-breakpoint);
 }
+
+//--------
+// Responsive column examples
+.fg-demo-r-1 {
+  @include fg-col(2, $breakpoint: $site-mobile-breakpoint);
+}
+
 
 //--------
 // Ratio column examples
 .fg-demo-1-5 {
-  @include fg-col($mod: '1/5');
+  @include fg-col($mod: '1/5', $breakpoint: $site-mobile-breakpoint);
 }
 .fg-demo-1-4 {
-  @include fg-col($mod: '1/4');
+  @include fg-col($mod: '1/4', $breakpoint: $site-mobile-breakpoint);
 }
 .fg-demo-3-4 {
-  @include fg-col($mod: '3/4');
+  @include fg-col($mod: '3/4', $breakpoint: $site-mobile-breakpoint);
 }
 .fg-demo-1-3 {
-  @include fg-col($mod: '1/3');
+  @include fg-col($mod: '1/3', $breakpoint: $site-mobile-breakpoint);
 }
 .fg-demo-2-3 {
-  @include fg-col($mod: '2/3');
+  @include fg-col($mod: '2/3', $breakpoint: $site-mobile-breakpoint);
 }
 .fg-demo-2-5 {
-  @include fg-col($mod: '2/5');
+  @include fg-col($mod: '2/5', $breakpoint: $site-mobile-breakpoint);
 }
 .fg-demo-3-5 {
-  @include fg-col($mod: '3/5');
+  @include fg-col($mod: '3/5', $breakpoint: $site-mobile-breakpoint);
 }
 .fg-demo-1-2 {
-  @include fg-col($mod: '1/2');
+  @include fg-col($mod: '1/2', $breakpoint: $site-mobile-breakpoint);
 }
 .fg-demo-4-5 {
-  @include fg-col($mod: '4/5');
-}
-
-
-
-
-.one-fourth-demo {
-  padding: $fg-gutter;
-  @include fg-grid-width(4, 0, true);
-  &:first-child {
-    @include fg-grid-width(4, 0, 'first');
-  }
-}
-.one-half-demo {
-  padding: $fg-gutter;
-  @include fg-grid-width(2, 0, true);
-  &:first-child {
-    @include fg-grid-width(2, 0, 'first');
-  }
-  .alt-break-demo {
-    @include fg-grid-width(2, 0, true, $fg-col-8);
-    &:first-child {
-      @include fg-grid-width(2, 0, 'first', $fg-col-8);
-    }
-  }
-}
-.one-eighth-demo {
-  padding: $fg-gutter;
-  @include fg-grid-width(8, 0, true);
-  &:first-child {
-    @include fg-grid-width(8, 0, 'first');
-  }
+  @include fg-col($mod: '4/5', $breakpoint: $site-mobile-breakpoint);
 }

@@ -34,25 +34,6 @@ module.exports = function(grunt) {
     },
 
     /**
-     * Minify JavaScript
-     */
-    uglify: {
-      eye: {
-        options: {
-          banner: '<%= tag.banner %>',
-          mangle: true,
-          beautify: {
-            width: 80,
-            beautify: false
-          }
-        },
-        files: {
-          'dist/jquery.devgrid.min.js': ['src/jquery.devgrid.js']
-        }
-      }
-    },
-
-    /**
      * Watch for file changes
      */
     watch: {

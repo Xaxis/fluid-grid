@@ -33,7 +33,7 @@
 
             // jquery.devgrid initialization
             $('body').devgrid({
-                columns: 24,
+                columns: 25,
                 columnWidth: '40px',
                 gutterWidth: '20px',
                 visible: false,
@@ -51,7 +51,18 @@
 <body>
 
     <section>
+        <h3>fluid-grid</h3>
+        <a href="https://github.com/Xaxis/fluid-grid">https://github.com/Xaxis/fluid-grid</a>
+    </section>
+
+    <section>
         <h5>Basic Columns</h5>
+        <p>
+            Basic columns can be constructed using the <code>fg-col()</code> mixin by passing a single parameter defining
+            the number of columns to be created. All basic columns are the same width per row and fluid however they are
+            not responsive unless the <code>$breakpoint</code> parameter is passed. Note that the top 4 examples below
+            are not responsive while the last 4 rows of examples are.
+        </p>
 
         <div class="demo-wrapper">
             <div class="fg-demo fg-demo-1"></div>
@@ -99,7 +110,7 @@
             <div class="fg-demo fg-demo-7"></div>
             <div class="fg-demo fg-demo-7"></div>
             <div class="fg-demo fg-demo-7"></div>
-            <div class="fg-demo fg-demo-7-7"></div>
+            <div class="fg-demo fg-demo-7"></div>
         </div>
 
         <div class="demo-wrapper">
@@ -115,124 +126,22 @@
     </section>
 
     <section>
-        <h5>Ratio Columns (1/5)</h5>
+        <h5>Responsive Columns</h5>
+        <p>
+            All column types can be enabled to respond at any dimension by specifying the width at which they should break.
+            For instance to have a two column layout break at a "mobile" 720px you would use
+            <code>fg-col(2, 720px)</code>.
+        </p>
 
         <div class="demo-wrapper">
-            <div class="fg-demo fg-demo-1-5"></div>
-        </div>
-
-        <div class="demo-wrapper">
-            <div class="fg-demo fg-demo-1-5"></div>
-            <div class="fg-demo fg-demo-4-5"></div>
-        </div>
-    </section>
-
-    <section>
-        <h5>Ratio Columns (1/4)</h5>
-
-        <div class="demo-wrapper">
-            <div class="fg-demo fg-demo-1-4"></div>
-        </div>
-
-        <div class="demo-wrapper">
-            <div class="fg-demo fg-demo-1-4"></div>
-            <div class="fg-demo fg-demo-3-4"></div>
-        </div>
-    </section>
-
-    <section>
-        <h5>Ratio Columns (1/3)</h5>
-
-        <div class="demo-wrapper">
-            <div class="fg-demo fg-demo-1-3"></div>
-        </div>
-
-        <div class="demo-wrapper">
-            <div class="fg-demo fg-demo-1-3"></div>
-            <div class="fg-demo fg-demo-2-3"></div>
-        </div>
-    </section>
-
-    <section>
-        <h5>Ratio Columns (2/5)</h5>
-
-        <div class="demo-wrapper">
-            <div class="fg-demo fg-demo-2-5"></div>
-        </div>
-
-        <div class="demo-wrapper">
-            <div class="fg-demo fg-demo-2-5"></div>
-            <div class="fg-demo fg-demo-3-5"></div>
-        </div>
-    </section>
-
-    <section>
-        <h5>Ratio Columns (1/2)</h5>
-
-        <div class="demo-wrapper">
-            <div class="fg-demo fg-demo-1-2"></div>
-        </div>
-
-        <div class="demo-wrapper">
-            <div class="fg-demo fg-demo-1-2"></div>
-            <div class="fg-demo fg-demo-1-2"></div>
-        </div>
-    </section>
-
-    <section>
-        <h5>Ratio Columns (3/5)</h5>
-
-        <div class="demo-wrapper">
-            <div class="fg-demo fg-demo-3-5"></div>
-        </div>
-
-        <div class="demo-wrapper">
-            <div class="fg-demo fg-demo-3-5"></div>
-            <div class="fg-demo fg-demo-2-5"></div>
-        </div>
-    </section>
-
-    <section>
-        <h5>Ratio Columns (2/3)</h5>
-
-        <div class="demo-wrapper">
-            <div class="fg-demo fg-demo-2-3"></div>
-        </div>
-
-        <div class="demo-wrapper">
-            <div class="fg-demo fg-demo-2-3"></div>
-            <div class="fg-demo fg-demo-1-3"></div>
-        </div>
-    </section>
-
-    <section>
-        <h5>Ratio Columns (3/4)</h5>
-
-        <div class="demo-wrapper">
-            <div class="fg-demo fg-demo-3-4"></div>
-        </div>
-
-        <div class="demo-wrapper">
-            <div class="fg-demo fg-demo-3-4"></div>
-            <div class="fg-demo fg-demo-1-4"></div>
-        </div>
-    </section>
-
-    <section>
-        <h5>Ratio Columns (4/5)</h5>
-
-        <div class="demo-wrapper">
-            <div class="fg-demo fg-demo-4-5"></div>
-        </div>
-
-        <div class="demo-wrapper">
-            <div class="fg-demo fg-demo-4-5"></div>
-            <div class="fg-demo fg-demo-1-5"></div>
+            <div class="fg-demo fg-demo-r-1"></div>
+            <div class="fg-demo fg-demo-r-1"></div>
         </div>
     </section>
 
     <section>
         <h5>Variable Columns</h5>
+        <p>Columns can also be created that span variable ratio dimensions.</p>
 
         <div class="demo-wrapper">
             <div class="fg-demo fg-demo-4"></div>
@@ -251,6 +160,10 @@
 
     <section>
         <h5>Nested Columns</h5>
+        <p>
+            Nested columns are as easy as embedding fluid-grid styled elements within fluid-grid styled elements. There's
+            no trick to them at all.
+        </p>
 
         <div class="demo-wrapper">
             <div class="fg-demo fg-demo-2">
@@ -282,5 +195,145 @@
         </div>
     </section>
 
+    <section>
+        <h5>Ratio Columns</h5>
+        <p>
+            Ratio columns are no different than other fluid-grid columns other than you specify the fraction you would
+            like a given column to span. They too can easily be made responsive by passing the <code>$breakpoint</code>
+            parameter to <code>fg-col()</code>
+        </p>
+        <p>
+            <code>fg-col($mod: '1/5')</code>
+        </p>
+
+        <div class="demo-wrapper">
+            <div class="fg-demo fg-demo-1-5"></div>
+        </div>
+
+        <div class="demo-wrapper">
+            <div class="fg-demo fg-demo-1-5"></div>
+            <div class="fg-demo fg-demo-4-5"></div>
+        </div>
+    </section>
+
+    <section>
+        <p>
+            <code>fg-col($mod: '1/4')</code>
+        </p>
+
+        <div class="demo-wrapper">
+            <div class="fg-demo fg-demo-1-4"></div>
+        </div>
+
+        <div class="demo-wrapper">
+            <div class="fg-demo fg-demo-1-4"></div>
+            <div class="fg-demo fg-demo-3-4"></div>
+        </div>
+    </section>
+
+    <section>
+        <p>
+            <code>fg-col($mod: '1/3')</code>
+        </p>
+
+        <div class="demo-wrapper">
+            <div class="fg-demo fg-demo-1-3"></div>
+        </div>
+
+        <div class="demo-wrapper">
+            <div class="fg-demo fg-demo-1-3"></div>
+            <div class="fg-demo fg-demo-2-3"></div>
+        </div>
+    </section>
+
+    <section>
+        <p>
+            <code>fg-col($mod: '2/5')</code>
+        </p>
+
+        <div class="demo-wrapper">
+            <div class="fg-demo fg-demo-2-5"></div>
+        </div>
+
+        <div class="demo-wrapper">
+            <div class="fg-demo fg-demo-2-5"></div>
+            <div class="fg-demo fg-demo-3-5"></div>
+        </div>
+    </section>
+
+    <section>
+        <p>
+            <code>fg-col($mod: '1/2')</code>
+        </p>
+
+        <div class="demo-wrapper">
+            <div class="fg-demo fg-demo-1-2"></div>
+        </div>
+
+        <div class="demo-wrapper">
+            <div class="fg-demo fg-demo-1-2"></div>
+            <div class="fg-demo fg-demo-1-2"></div>
+        </div>
+    </section>
+
+    <section>
+        <p>
+            <code>fg-col($mod: '3/5')</code>
+        </p>
+
+        <div class="demo-wrapper">
+            <div class="fg-demo fg-demo-3-5"></div>
+        </div>
+
+        <div class="demo-wrapper">
+            <div class="fg-demo fg-demo-3-5"></div>
+            <div class="fg-demo fg-demo-2-5"></div>
+        </div>
+    </section>
+
+    <section>
+        <p>
+            <code>fg-col($mod: '2/3')</code>
+        </p>
+
+        <div class="demo-wrapper">
+            <div class="fg-demo fg-demo-2-3"></div>
+        </div>
+
+        <div class="demo-wrapper">
+            <div class="fg-demo fg-demo-2-3"></div>
+            <div class="fg-demo fg-demo-1-3"></div>
+        </div>
+    </section>
+
+    <section>
+        <p>
+            <code>fg-col($mod: '3/4')</code>
+        </p>
+
+        <div class="demo-wrapper">
+            <div class="fg-demo fg-demo-3-4"></div>
+        </div>
+
+        <div class="demo-wrapper">
+            <div class="fg-demo fg-demo-3-4"></div>
+            <div class="fg-demo fg-demo-1-4"></div>
+        </div>
+    </section>
+
+    <section>
+        <p>
+            <code>fg-col($mod: '4/5')</code>
+        </p>
+
+        <div class="demo-wrapper">
+            <div class="fg-demo fg-demo-4-5"></div>
+        </div>
+
+        <div class="demo-wrapper">
+            <div class="fg-demo fg-demo-4-5"></div>
+            <div class="fg-demo fg-demo-1-5"></div>
+        </div>
+    </section>
 </body>
 </html>

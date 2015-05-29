@@ -11,6 +11,8 @@ The purpose of fluid-grid was to create an extremely lightweight SASS mixin syst
 Columns in fluid-grid are based on a grid system though their dimensions are not constrained by grid fractions while 
 still respecting grid gutters.
 
+![Responsive Columns](https://raw.githubusercontent.com/Xaxis/jquery.fluid-grid/master/test/fluid-grid-example-2.gif)
+
 ## Author
 
 Wil Neeley ( [@wilneeley](http://twitter.com/wilneeley) / [puppetlabs.com](http://www.puppetlabs.com) / [github.com](https://github.com/Xaxis) )
@@ -181,7 +183,7 @@ Read more on how to support such browsers below.
 ## Requirements/Browsers
 
 Works in all browsers that support CSS `calc()` and is backwards compatible with browsers that don't by adding a Modernizr
-test to your project. See `fluid-grid.html` in the tests directory for an example of how this can be done.
+test to your project. See `fluid-grid.html` in the `test/` directory for an example of how this can be done.
 
 ## Working Example
 

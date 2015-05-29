@@ -17,7 +17,7 @@ Wil Neeley ( [@wilneeley](http://twitter.com/wilneeley) / [puppetlabs.com](http:
 
 ## Usage
 
-Apply the parts of the partial `_fluid-grid.scss` you find useful to your project.
+Apply the parts of `_fluid-grid.scss` you find useful to your project.
 
 ### Examples
 
@@ -49,15 +49,16 @@ Apply the parts of the partial `_fluid-grid.scss` you find useful to your projec
 <div class="fg-demo"></div>
 ```
 
-##### Responsive two column
+##### Responsive three column
 
 ```sass
 .fg-demo {
-  @include fg-col(2, 768px);
+  @include fg-col(3, 768px);
 }
 ```
 
 ```html
+<div class="fg-demo"></div>
 <div class="fg-demo"></div>
 <div class="fg-demo"></div>
 ```
@@ -93,3 +94,49 @@ Apply the parts of the partial `_fluid-grid.scss` you find useful to your projec
 <div class="fg-demo-1-4"></div>
 <div class="fg-demo-3-4"></div>
 ```
+
+##### Nested responsive columns
+
+```sass
+.fg-demo-2-5 {
+  @include fg-col($mod: '2/5');
+}
+.fg-demo-3-5 {
+  @include fg-col($mod: '3/5');
+}
+.fg-demo-4 {
+  @include fg-col(4);
+}
+.fg-demo-6 {
+  @include fg-col(6);
+}
+```
+
+```html
+<div class="fg-demo-2-5">
+    <div class="fg-demo-2-5"></div>
+    <div class="fg-demo-3-5"></div>
+</div>
+<div class="fg-demo-3-5">
+    <div class="fg-demo-4"></div>
+    <div class="fg-demo-4"></div>
+    <div class="fg-demo-6"></div>
+    <div class="fg-demo-6"></div>
+    <div class="fg-demo-6"></div>
+</div>
+```
+
+## Requirements/Browsers
+
+Works in all browsers that support CSS `calc()` and is backwards compatible with browsers that don't by adding a Modernizr
+test to your project. See `fluid-grid.html` in the tests directory for an example of how this can be done.
+
+## Working Example
+
+See `fluid-grid.html` in tests directory.
+
+### Changelog
+
+#### Version 1.0.0
+
+* initial release

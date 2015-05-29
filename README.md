@@ -13,7 +13,7 @@ still respecting your grid system's gutter dimensions.
 
 [Demo](http://boilerjs.com/misc/fluid-grid/)
 
-![Responsive Columns](https://raw.githubusercontent.com/Xaxis/fluid-grid/master/test/fluid-grid-example-2.gif)
+![Responsive Columns](https://raw.githubusercontent.com/Xaxis/fluid-grid/master/test/fluid-grid-example-1.gif)
 
 ## Author
 

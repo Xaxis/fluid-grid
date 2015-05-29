@@ -189,7 +189,7 @@ test to your project. See `fluid-grid.html` in the `test/` directory for an exam
 
 ## Working Example
 
-[Demo](http://boilerjs.com/misc/fluid-grid/)
+See [Demo](http://boilerjs.com/misc/fluid-grid/)
 
 See `fluid-grid.html` in tests directory.
 

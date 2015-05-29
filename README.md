@@ -19,9 +19,9 @@ Wil Neeley ( [@wilneeley](http://twitter.com/wilneeley) / [puppetlabs.com](http:
 
 Apply the parts of the partial `_fluid-grid.scss` you find useful to your project.
 
-### Basic Examples
+### Examples
 
-Create a two column layout.
+#### Two column layout
 
 ```sass
 .fg-demo {

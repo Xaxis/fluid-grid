@@ -11,6 +11,9 @@ The purpose of fluid-grid was to create an extremely lightweight SASS mixin syst
 Columns in fluid-grid are based on your grid system though their dimensions are not constrained by grid fractions while 
 still respecting your grid system's gutter dimensions.
 
+While fluid-grid is designed to operate without specific class declaration overhead, for convenience a number of class
+based options are included.
+
 See [Demo](http://boilerjs.com/misc/fluid-grid/)
 
 ## Author
@@ -184,6 +187,31 @@ Though a more typical usage would look something like this:
 <div class="fg-demo"></div>
 <div class="fg-demo"></div>
 ```
+
+##### Class based columns
+
+It's extremely easy to build column structures solely based on the number of elements you include in a container. Want a
+four column layout? Include four elements with the `fg-col` class. Fluid-grid will automatically size the elements to 25%
+width (inclusive of site gutter).
+
+```html
+<div>
+    <div class="fg-col"></div>
+    <div class="fg-col"></div>
+    <div class="fg-col"></div>
+    <div class="fg-col"></div>
+</div>
+```
+
+Need a fractional width column that is class based? Simply add a class representative of the fraction width you desire.
+
+```html
+<div>
+    <div class="fg-col fg-1-2"></div>
+</div>
+```
+
+All class based columns break to 100% width at the screen width defined by `$fg-break-sm` (780px by default).
 
 ## Requirements/Browsers
 

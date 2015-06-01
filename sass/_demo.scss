@@ -129,6 +129,11 @@ section:nth-child(14) {
     background: #FF6B6B;
   }
 }
+section:nth-child(15) {
+  .fg-col, .fg-demo {
+    background: #C44D58;
+  }
+}
 
 //--------
 // Demo wrapper styles
@@ -178,7 +183,6 @@ section:nth-child(14) {
 .fg-demo-r-1 {
   @include fg-col(2, $site-mobile-breakpoint);
 }
-
 
 //--------
 // Ratio column examples

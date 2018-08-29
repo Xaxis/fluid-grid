@@ -202,7 +202,26 @@ can be overriden in the initial configuration.
 
 ## Caveats
 
-...
+The fluid-grid mixin uses floated elements which by their default nature are taken out of the normal flow of their 
+wrapper element where the wrapper then acts like they were never there. If there is no non-floated content within the
+wrapper it won't have any height. Fixing this issue is now commonly known as a "clearfix". There are a few ways to fix
+this issue but perhaps the simplest is to add the following property to any wrapper that contains fluid-grid columns:
+
+```sass
+.wrapper {
+  overflow: auto;
+}
+```
+
+```html
+<div class="wrapper">
+    <div class="fg-col"></div>
+    <div class="fg-col"></div>
+</div>
+```
+
+Doing so will cause the wrapper element to respect the height of its children. For more information on how to clearfix
+elements please read: [MDN CSS clear](https://developer.mozilla.org/en-US/docs/Web/CSS/clear).
 
 ## Requirements/Browsers
 

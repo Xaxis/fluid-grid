@@ -7,56 +7,70 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="../node_modules/jquery.devgrid/dist/jquery.devgrid.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/style.min.css">
-    <script src="http://modernizr.com/downloads/modernizr-latest.js"></script>
     <script>
-
-        // Css calc() Modernizr test
-        Modernizr.addTest('csscalc', function() {
-            var calc_prefix = (function(){
-                var dummy = document.createElement('div');
-                var props = ['calc', '-webkit-calc', '-moz-calc', '-o-calc'];
-                for (var i=0; i<props.length; ++i) {
-                    var prop = props[i];
-                    dummy.style.cssText = 'width:' + prop + '(1px);';
-                    if (dummy.style.length)
-                        return prop;
-                }
-            })();
-            var el = $('<div>')[0];
-            el.style.cssText = 'width:' + calc_prefix + '(10px + 10px);';
-            var result = $(el).width();
-            return (result == 20);
-        });
 
         // DOM Ready
         $(document).ready(function() {
 
-            // jquery.devgrid initialization
+            // Breakpoint tracking and grid visualization
+            // See: https://github.com/Xaxis/jquery.devgrid
             $('body').devgrid({
-                columns: 25,
+                columns: 29,
                 columnWidth: '40px',
                 gutterWidth: '20px',
                 visible: false,
                 track: true,
-                vertical: false,
-                horizontal: false,
-                infoBoxStyle: {
-                    opacity: 0.95,
-                    top: '100px'
-                }
+                distributeGutter: false,
+                breakpoints: [
+                    {
+                        bp: '480px',
+                        tag: 'Mobile',
+                        css: {
+                            background: 'rgba(85, 98, 112, 0.55)'
+                        }
+                    },
+                    {
+                        bp: '780px',
+                        tag: 'Tablet',
+                        css: {
+                            background: 'rgba(78, 205, 196, 0.25)'
+                        }
+                    },
+                    {
+                        bp: '960px',
+                        tag: 'Desktop',
+                        css: {
+                            background: 'rgba(199, 244, 100, 0.25)'
+                        }
+                    },
+                    {
+                        bp: '1440px',
+                        tag: 'Wide',
+                        css: {
+                            background: 'rgba(255, 107, 107, 0.25)'
+                        }
+                    },
+                    {
+                        bp: '1740px',
+                        tag: 'Extra Wide',
+                        css: {
+                            background: 'rgba(255, 107, 107, 0.10)'
+                        }
+                    }
+                ]
             });
         });
     </script>
 </head>
 <body>
 
-    <section>
-        <h3>fluid-grid</h3>
+    <section class="intro">
+        <h2 class="title">fluid-grid</h2>
         <a href="https://github.com/Xaxis/fluid-grid">https://github.com/Xaxis/fluid-grid</a>
     </section>
 
     <section>
-        <h5>Basic Columns</h5>
+        <h3>Basic Columns</h3>
         <p>
             Basic columns can be constructed using the <code>fg-col()</code> mixin by passing a single parameter defining
             the number of columns to be created. All basic columns are the same width per row and fluid however they are
@@ -125,7 +139,7 @@
     </section>
 
     <section>
-        <h5>Responsive Columns</h5>
+        <h3>Responsive Columns</h3>
         <p>
             All column types can be enabled to respond at any dimension by specifying the width at which they should break.
             For instance to have a two column layout break at a "mobile" 720px you would use
@@ -139,7 +153,7 @@
     </section>
 
     <section>
-        <h5>Variable Columns</h5>
+        <h3>Variable Columns</h3>
         <p>Columns can also be created that span variable ratio dimensions.</p>
 
         <div class="demo-wrapper">
@@ -158,7 +172,7 @@
     </section>
 
     <section>
-        <h5>Nested Columns</h5>
+        <h3>Nested Columns</h3>
         <p>
             Nested columns are as easy as embedding fluid-grid styled elements within fluid-grid styled elements. There's
             no trick to them at all.
@@ -195,7 +209,7 @@
     </section>
 
     <section>
-        <h5>Ratio Columns</h5>
+        <h3>Ratio Columns</h3>
         <p>
             Ratio columns are no different than other fluid-grid columns other than you specify the fraction you would
             like a given column to span. They too can easily be made responsive by passing the <code>$breakpoint</code>
@@ -336,7 +350,7 @@
     </section>
 
     <section>
-        <h5>Class Based Columns</h5>
+        <h3>Class Based Columns</h3>
         <p>
             While fluid-grid is designed to operate without any specific class declarations, as a convenience class based
             structures are included.

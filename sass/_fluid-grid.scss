@@ -1,13 +1,14 @@
 //--------
 // Grid dimensions (REQUIRED)
-$fg-col: 40px;                                    // Column width
+$fg-base: 40px;                                   // Base grid column width
 $fg-gutter: 20px;                                 // Gutter width
-$fg-fluid-gutter: 1.6;                            // Fluid gutter percentage
+$fg-fluid-gutter: 2.0;                            // Fluid gutter percentage (used only when $fg-legacy is set to `true`)
+$fg-legacy: false;                                // Support legacy browsers (those that don't support CSS calc)
 
 //--------
 // Grid dimensions (AUXILIARY)
 $fg-col-total: 25;                                // Column total
-$fg-grid-width: $fg-col + $fg-gutter;             // Grid width
+$fg-grid-width: $fg-base + $fg-gutter;            // Grid width
 $fg-grid-total: $fg-grid-width * $fg-col-total;   // Grid total width
 
 //--------
@@ -37,13 +38,19 @@ $fg-col-22: $fg-grid-width * 22;
 $fg-col-23: $fg-grid-width * 23;
 $fg-col-24: $fg-grid-width * 24;
 $fg-col-25: $fg-grid-width * 25;
+$fg-col-26: $fg-grid-width * 26;
+$fg-col-27: $fg-grid-width * 27;
+$fg-col-28: $fg-grid-width * 28;
+$fg-col-29: $fg-grid-width * 29;
 
 //--------
 // Grid breakpoints
-$fg-break-lg: $fg-col-25;                           // 1200px
-$fg-break-md: $fg-col-16;                           // 960px
+$fg-break-xlg: $fg-col-29;                          // 1740px
+$fg-break-lg: $fg-col-24;                           // 1440px
+$fg-break-md: $fg-col-19;                           // 1140px
 $fg-break-sm: $fg-col-13;                           // 780px
 $fg-break-xs: $fg-col-8;                            // 480px
+
 
 //--------
 // Fluid-grid mixin for creating fluid and responsive columns.
@@ -52,59 +59,67 @@ $fg-break-xs: $fg-col-8;                            // 480px
 // @cols              Number of columns
 // @break             Breakpoint width
 // @mod               Modifier ratio
-// @gutter            Gutter width
-// @fluid-gutter      Fluid gutter percentage width
+// @gutter            Gutter width (space between columns)
+// @fluid-gutter      Fluid gutter percentage width (% space between columns)
+// @legacy            Force support for browsers that don't support css calc()
 @mixin fg-col(
   $cols: 1,
   $break: 0,
   $mod: 0,
   $gutter: $fg-gutter,
-  $fluid-gutter: $fg-fluid-gutter
+  $fluid-gutter: $fg-fluid-gutter,
+  $legacy: true
 ) {
 
-  // Default column styling
-  & {
-    box-sizing: border-box;
-  }
+  // Common column styling
+  box-sizing: border-box;
   position: relative;
   float: left;
-  &:before,
-  &:after {
-    content: " ";
-    display: table;
-  }
-  &:after {
-    clear: both;
+  &:first-child {
+    margin-left: 0;
   }
 
-  // Fixed gutter
-  html.csscalc & {
+  // Calc() IS available
+  // -------------------
+  @if $legacy == false {
+
+    // Base column styling
     margin-left: $gutter;
-  }
-
-  // Fluid gutter
-  html:not(.csscalc) & {
-    margin-left: #{$fluid-gutter + '%'};
-  }
-
-  // Eliminate first column margin
-  html.csscalc &, html:not(.csscalc) & {
     &:first-child {
       margin-left: 0;
     }
   }
 
-  // Equal column width
+  // Legacy support
+  // --------------
+  @else {
+
+    // Base column styling
+    margin-left: #{$fluid-gutter + '%'};
+    &:before,
+    &:after {
+      content: " ";
+      display: table;
+    }
+    &:after {
+      clear: both;
+    }
+  }
+
+  // Set widths for columns THAT ARE the same width
   @if $mod == 0 and $mod != 1 {
 
-    // When css calc()
-    html.csscalc & {
-      width: -webkit-calc(((100% / #{$cols}) - #{$gutter}) + (#{$gutter / $cols}));
-      width: calc(((100% / #{$cols}) - #{$gutter}) + (#{$gutter / $cols}));
+    // NOT LEGACY - When css calc()
+    // ----------------------------
+    @if $legacy == false {
+        width: -webkit-calc(((100% / #{$cols}) - #{$gutter}) + (#{$gutter / $cols}));
+        width: -moz-calc(((100% / #{$cols}) - #{$gutter}) + (#{$gutter / $cols}));
+        width: calc(((100% / #{$cols}) - #{$gutter}) + (#{$gutter / $cols}));
     }
 
-    // When NOT css calc()
-    html:not(.csscalc) & {
+    // LEGACY - When NOT css calc()
+    // ----------------------------
+    @else {
       $ucw: (100 / $cols);
       $cw: 0;
       @if $cols == 1 {
@@ -116,7 +131,7 @@ $fg-break-xs: $fg-col-8;                            // 480px
     }
   }
 
-  // Modifier column width
+  // Set widths for columns THAT ARE NOT the same width
   @else if $mod {
     $mw: 0;
 
@@ -185,14 +200,17 @@ $fg-break-xs: $fg-col-8;                            // 480px
       $mw: 87.5;
     }
 
-    // When css calc()
-    html.csscalc & {
+    // NOT LEGACY - When css calc()
+    // ----------------------------
+    @if $legacy == false {
+      width: -moz-calc(#{$mw + '%'} - (#{$gutter} / 2));
       width: -webkit-calc(#{$mw + '%'} - (#{$gutter} / 2));
       width: calc(#{$mw + '%'} - (#{$gutter} / 2));
     }
 
-    // When NOT css calc()
-    html:not(.csscalc) & {
+    // LEGACY - When NOT css calc()
+    // ----------------------------
+    @else {
       $p: $mw / 100;
       $cw: ($p * 100) - $fluid-gutter + ($fluid-gutter / 2);
       width: #{$cw + '%'};
@@ -202,18 +220,11 @@ $fg-break-xs: $fg-col-8;                            // 480px
   // Responsive media query
   @if $break > 0 {
     @media only screen and (max-width: $break) {
+      width: 100%;
+      margin-left: 0;
 
-      // When css calc() and NOT css calc()
-      html.csscalc &, html:not(.csscalc) & {
-        width: 100%;
-        margin-left: 0;
-        & + * {
-          margin-top: $gutter;
-        }
-
-        // Include breakpoint style overrides
-        @content;
-      }
+      // Include breakpoint style overrides
+      @content;
     }
   }
 }

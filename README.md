@@ -4,29 +4,38 @@
 
 A SASS mixin that allows you to easily create responsive columns of varying widths/dimensions.
 
-See [Demo](http://boilerjs.com/misc/fluid-grid/)
+See [Demo](http://xaxis.github.io/fluid-grid/)
 
 ## Author
 
-Wil Neeley ( [@wilneeley](http://twitter.com/wilneeley) / [puppetlabs.com](http://www.puppetlabs.com) / [github.com](https://github.com/Xaxis) )
+Wil Neeley ( [@wilneeley](http://twitter.com/wilneeley) / [github.com](https://github.com/Xaxis) )
 
 ## Usage
 
-Most of the configurable variables in `_fluid-grid.scss` are not required. The ones that are specify the grid dimensions
-used to align fluid-grid created columns with your grid. `$fg-fluid-gutter` is used as the default fallback dimension for
-browsers that do not support CSS `calc()` in which case a percentage gutter width is required.
+After you have copied `_fluid-grid.scss` into your workflow you need to configure a few variables based on your needs.
+
+* `$fg-gutter` is the static space you would like between your columns. Browsers must support the CSS `calc` function in 
+order for this static space to work properly. If you need to support legacy browsers set the `$fg-legacy` configuration
+to `true`.
+* `$fg-fluid-gutter` is the dynamic percentage space between your columns. This value is only used when `$fg-legacy` is
+set to `true`. This is recommended if you need to support legacy browsers that don't support the CSS `calc` function or
+simply if you would just like to have dynamic percentage based space between your columns.
+* `$fg-legacy` when set to `true` enables dynamic percentage based space/gutters between your columns.
+* `$fg-break` is the default width at which columns will stack. Note that this value only applies when using fluid-grid
+via the generated helper classes. To set a break value for mixin usage either update the `$break` parameters default 
+value or pass a value in each time `fg-col` is called.
 
 ```sass
 //--------
 // Grid dimensions (REQUIRED)
-$fg-base: 40px;                          // Base grid column width (your grid system's base column width)
-$fg-gutter: 20px;                        // Static gutter width (the width of grid system's column gutters)
-$fg-fluid-gutter: 2.0;                   // Fluid gutter width (used only when $fg-legacy is set to `true`)
-$fg-legacy: false;                       // Support legacy browsers (those that don't support CSS calc)
+$fg-gutter: 20px;              // Static gutter width (the width of grid system's column gutters)
+$fg-fluid-gutter: 2.0;         // Fluid gutter width (used only when $fg-legacy is set to `true`)
+$fg-legacy: false;             // Support legacy browsers (those that don't support CSS calc)
+$fg-base: 768px;               // The default breakpoint width
 ```
 
-The `fg-col()` mixin accepts parameters that allow you to specify your columns on the fly from within your SASS. For demonstration
-purposes an a-typical usage of fluid-grid might look as follows:
+The `fg-col()` mixin accepts parameters that allow you to specify your columns on the fly from within your SASS. For 
+demonstration purposes a typical usage of fluid-grid might look as follows:
 
 ```sass
 .fg-demo {
@@ -34,15 +43,16 @@ purposes an a-typical usage of fluid-grid might look as follows:
 }
 ```
 
-Though a more typical usage would look something like this:
+Or this which creates two equal width columns that break to full width of their container if the viewport is less than 
+768px:
 
 ```sass
 .fg-demo {
-  @include fg-col(1, 768px);
+  @include fg-col(2, 768px);
 }
 ```
 
-### Examples
+### More examples
 
 ##### Two column
 
@@ -53,21 +63,6 @@ Though a more typical usage would look something like this:
 ```
 
 ```html
-<div class="fg-demo"></div>
-<div class="fg-demo"></div>
-```
-
-##### Four column 
-
-```sass
-.fg-demo {
-  @include fg-col(4);
-}
-```
-
-```html
-<div class="fg-demo"></div>
-<div class="fg-demo"></div>
 <div class="fg-demo"></div>
 <div class="fg-demo"></div>
 ```
@@ -183,7 +178,7 @@ Though a more typical usage would look something like this:
 
 It's extremely easy to build column structures solely based on the number of elements you include in a container. Want a
 four column layout? Include four elements with the `fg-col` class. Fluid-grid will automatically size the elements to 25%
-width (inclusive of site gutter).
+width (inclusive of gutter).
 
 ```html
 <div>
@@ -202,18 +197,21 @@ Need a fractional width column that is class based? Simply add a class represent
 </div>
 ```
 
-All class based columns break to 100% width at the screen width defined by `$fg-break-sm` (780px by default).
+All class based columns break to 100% width at the screen width defined by `$fg-break` (780px by default). This value
+can be overriden in the initial configuration.
+
+## Caveats
+
+...
 
 ## Requirements/Browsers
 
 Works in all browsers that support CSS `calc()` and is backwards compatible with browsers that don't by adding a Modernizr
-test to your project. See `fluid-grid.html` in the `test/` directory for an example of how this can be done.
+test to your project. See `index.html` for an example of how this can be done.
 
 ## Working Example
 
-See [Demo](http://boilerjs.com/misc/fluid-grid/)
-
-See `fluid-grid.html` in `test/` directory.
+See [Demo](http://xaxis.github.io/fluid-grid/)
 
 ### Changelog
 

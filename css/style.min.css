@@ -13,7 +13,7 @@
   .fg-col:first-child:nth-last-child(1):first-child,
   .fg-col:first-child:nth-last-child(1) ~ .fg-col:first-child {
     margin-left: 0; }
-  @media only screen and (max-width: 780px) {
+  @media only screen and (max-width: 768px) {
     .fg-col:first-child:nth-last-child(1),
     .fg-col:first-child:nth-last-child(1) ~ .fg-col {
       width: 100%;
@@ -33,7 +33,7 @@
     .fg-col:first-child:nth-last-child(1).fg-1-8:first-child,
     .fg-col:first-child:nth-last-child(1) ~ .fg-col.fg-1-8:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(1).fg-1-8,
       .fg-col:first-child:nth-last-child(1) ~ .fg-col.fg-1-8 {
         width: 100%;
@@ -53,7 +53,7 @@
     .fg-col:first-child:nth-last-child(1).fg-1-7:first-child,
     .fg-col:first-child:nth-last-child(1) ~ .fg-col.fg-1-7:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(1).fg-1-7,
       .fg-col:first-child:nth-last-child(1) ~ .fg-col.fg-1-7 {
         width: 100%;
@@ -73,7 +73,7 @@
     .fg-col:first-child:nth-last-child(1).fg-1-6:first-child,
     .fg-col:first-child:nth-last-child(1) ~ .fg-col.fg-1-6:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(1).fg-1-6,
       .fg-col:first-child:nth-last-child(1) ~ .fg-col.fg-1-6 {
         width: 100%;
@@ -93,7 +93,7 @@
     .fg-col:first-child:nth-last-child(1).fg-1-5:first-child,
     .fg-col:first-child:nth-last-child(1) ~ .fg-col.fg-1-5:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(1).fg-1-5,
       .fg-col:first-child:nth-last-child(1) ~ .fg-col.fg-1-5 {
         width: 100%;
@@ -113,7 +113,7 @@
     .fg-col:first-child:nth-last-child(1).fg-1-4:first-child,
     .fg-col:first-child:nth-last-child(1) ~ .fg-col.fg-1-4:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(1).fg-1-4,
       .fg-col:first-child:nth-last-child(1) ~ .fg-col.fg-1-4 {
         width: 100%;
@@ -133,7 +133,7 @@
     .fg-col:first-child:nth-last-child(1).fg-1-3:first-child,
     .fg-col:first-child:nth-last-child(1) ~ .fg-col.fg-1-3:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(1).fg-1-3,
       .fg-col:first-child:nth-last-child(1) ~ .fg-col.fg-1-3 {
         width: 100%;
@@ -153,7 +153,7 @@
     .fg-col:first-child:nth-last-child(1).fg-2-5:first-child,
     .fg-col:first-child:nth-last-child(1) ~ .fg-col.fg-2-5:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(1).fg-2-5,
       .fg-col:first-child:nth-last-child(1) ~ .fg-col.fg-2-5 {
         width: 100%;
@@ -173,7 +173,7 @@
     .fg-col:first-child:nth-last-child(1).fg-1-2:first-child,
     .fg-col:first-child:nth-last-child(1) ~ .fg-col.fg-1-2:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(1).fg-1-2,
       .fg-col:first-child:nth-last-child(1) ~ .fg-col.fg-1-2 {
         width: 100%;
@@ -193,7 +193,7 @@
     .fg-col:first-child:nth-last-child(1).fg-3-5:first-child,
     .fg-col:first-child:nth-last-child(1) ~ .fg-col.fg-3-5:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(1).fg-3-5,
       .fg-col:first-child:nth-last-child(1) ~ .fg-col.fg-3-5 {
         width: 100%;
@@ -213,7 +213,7 @@
     .fg-col:first-child:nth-last-child(1).fg-2-3:first-child,
     .fg-col:first-child:nth-last-child(1) ~ .fg-col.fg-2-3:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(1).fg-2-3,
       .fg-col:first-child:nth-last-child(1) ~ .fg-col.fg-2-3 {
         width: 100%;
@@ -233,7 +233,7 @@
     .fg-col:first-child:nth-last-child(1).fg-3-4:first-child,
     .fg-col:first-child:nth-last-child(1) ~ .fg-col.fg-3-4:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(1).fg-3-4,
       .fg-col:first-child:nth-last-child(1) ~ .fg-col.fg-3-4 {
         width: 100%;
@@ -253,7 +253,7 @@
     .fg-col:first-child:nth-last-child(1).fg-4-5:first-child,
     .fg-col:first-child:nth-last-child(1) ~ .fg-col.fg-4-5:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(1).fg-4-5,
       .fg-col:first-child:nth-last-child(1) ~ .fg-col.fg-4-5 {
         width: 100%;
@@ -273,7 +273,7 @@
     .fg-col:first-child:nth-last-child(1).fg-7-8:first-child,
     .fg-col:first-child:nth-last-child(1) ~ .fg-col.fg-7-8:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(1).fg-7-8,
       .fg-col:first-child:nth-last-child(1) ~ .fg-col.fg-7-8 {
         width: 100%;
@@ -294,7 +294,7 @@
   .fg-col:first-child:nth-last-child(2):first-child,
   .fg-col:first-child:nth-last-child(2) ~ .fg-col:first-child {
     margin-left: 0; }
-  @media only screen and (max-width: 780px) {
+  @media only screen and (max-width: 768px) {
     .fg-col:first-child:nth-last-child(2),
     .fg-col:first-child:nth-last-child(2) ~ .fg-col {
       width: 100%;
@@ -314,7 +314,7 @@
     .fg-col:first-child:nth-last-child(2).fg-1-8:first-child,
     .fg-col:first-child:nth-last-child(2) ~ .fg-col.fg-1-8:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(2).fg-1-8,
       .fg-col:first-child:nth-last-child(2) ~ .fg-col.fg-1-8 {
         width: 100%;
@@ -334,7 +334,7 @@
     .fg-col:first-child:nth-last-child(2).fg-1-7:first-child,
     .fg-col:first-child:nth-last-child(2) ~ .fg-col.fg-1-7:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(2).fg-1-7,
       .fg-col:first-child:nth-last-child(2) ~ .fg-col.fg-1-7 {
         width: 100%;
@@ -354,7 +354,7 @@
     .fg-col:first-child:nth-last-child(2).fg-1-6:first-child,
     .fg-col:first-child:nth-last-child(2) ~ .fg-col.fg-1-6:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(2).fg-1-6,
       .fg-col:first-child:nth-last-child(2) ~ .fg-col.fg-1-6 {
         width: 100%;
@@ -374,7 +374,7 @@
     .fg-col:first-child:nth-last-child(2).fg-1-5:first-child,
     .fg-col:first-child:nth-last-child(2) ~ .fg-col.fg-1-5:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(2).fg-1-5,
       .fg-col:first-child:nth-last-child(2) ~ .fg-col.fg-1-5 {
         width: 100%;
@@ -394,7 +394,7 @@
     .fg-col:first-child:nth-last-child(2).fg-1-4:first-child,
     .fg-col:first-child:nth-last-child(2) ~ .fg-col.fg-1-4:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(2).fg-1-4,
       .fg-col:first-child:nth-last-child(2) ~ .fg-col.fg-1-4 {
         width: 100%;
@@ -414,7 +414,7 @@
     .fg-col:first-child:nth-last-child(2).fg-1-3:first-child,
     .fg-col:first-child:nth-last-child(2) ~ .fg-col.fg-1-3:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(2).fg-1-3,
       .fg-col:first-child:nth-last-child(2) ~ .fg-col.fg-1-3 {
         width: 100%;
@@ -434,7 +434,7 @@
     .fg-col:first-child:nth-last-child(2).fg-2-5:first-child,
     .fg-col:first-child:nth-last-child(2) ~ .fg-col.fg-2-5:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(2).fg-2-5,
       .fg-col:first-child:nth-last-child(2) ~ .fg-col.fg-2-5 {
         width: 100%;
@@ -454,7 +454,7 @@
     .fg-col:first-child:nth-last-child(2).fg-1-2:first-child,
     .fg-col:first-child:nth-last-child(2) ~ .fg-col.fg-1-2:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(2).fg-1-2,
       .fg-col:first-child:nth-last-child(2) ~ .fg-col.fg-1-2 {
         width: 100%;
@@ -474,7 +474,7 @@
     .fg-col:first-child:nth-last-child(2).fg-3-5:first-child,
     .fg-col:first-child:nth-last-child(2) ~ .fg-col.fg-3-5:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(2).fg-3-5,
       .fg-col:first-child:nth-last-child(2) ~ .fg-col.fg-3-5 {
         width: 100%;
@@ -494,7 +494,7 @@
     .fg-col:first-child:nth-last-child(2).fg-2-3:first-child,
     .fg-col:first-child:nth-last-child(2) ~ .fg-col.fg-2-3:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(2).fg-2-3,
       .fg-col:first-child:nth-last-child(2) ~ .fg-col.fg-2-3 {
         width: 100%;
@@ -514,7 +514,7 @@
     .fg-col:first-child:nth-last-child(2).fg-3-4:first-child,
     .fg-col:first-child:nth-last-child(2) ~ .fg-col.fg-3-4:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(2).fg-3-4,
       .fg-col:first-child:nth-last-child(2) ~ .fg-col.fg-3-4 {
         width: 100%;
@@ -534,7 +534,7 @@
     .fg-col:first-child:nth-last-child(2).fg-4-5:first-child,
     .fg-col:first-child:nth-last-child(2) ~ .fg-col.fg-4-5:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(2).fg-4-5,
       .fg-col:first-child:nth-last-child(2) ~ .fg-col.fg-4-5 {
         width: 100%;
@@ -554,7 +554,7 @@
     .fg-col:first-child:nth-last-child(2).fg-7-8:first-child,
     .fg-col:first-child:nth-last-child(2) ~ .fg-col.fg-7-8:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(2).fg-7-8,
       .fg-col:first-child:nth-last-child(2) ~ .fg-col.fg-7-8 {
         width: 100%;
@@ -575,7 +575,7 @@
   .fg-col:first-child:nth-last-child(3):first-child,
   .fg-col:first-child:nth-last-child(3) ~ .fg-col:first-child {
     margin-left: 0; }
-  @media only screen and (max-width: 780px) {
+  @media only screen and (max-width: 768px) {
     .fg-col:first-child:nth-last-child(3),
     .fg-col:first-child:nth-last-child(3) ~ .fg-col {
       width: 100%;
@@ -595,7 +595,7 @@
     .fg-col:first-child:nth-last-child(3).fg-1-8:first-child,
     .fg-col:first-child:nth-last-child(3) ~ .fg-col.fg-1-8:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(3).fg-1-8,
       .fg-col:first-child:nth-last-child(3) ~ .fg-col.fg-1-8 {
         width: 100%;
@@ -615,7 +615,7 @@
     .fg-col:first-child:nth-last-child(3).fg-1-7:first-child,
     .fg-col:first-child:nth-last-child(3) ~ .fg-col.fg-1-7:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(3).fg-1-7,
       .fg-col:first-child:nth-last-child(3) ~ .fg-col.fg-1-7 {
         width: 100%;
@@ -635,7 +635,7 @@
     .fg-col:first-child:nth-last-child(3).fg-1-6:first-child,
     .fg-col:first-child:nth-last-child(3) ~ .fg-col.fg-1-6:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(3).fg-1-6,
       .fg-col:first-child:nth-last-child(3) ~ .fg-col.fg-1-6 {
         width: 100%;
@@ -655,7 +655,7 @@
     .fg-col:first-child:nth-last-child(3).fg-1-5:first-child,
     .fg-col:first-child:nth-last-child(3) ~ .fg-col.fg-1-5:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(3).fg-1-5,
       .fg-col:first-child:nth-last-child(3) ~ .fg-col.fg-1-5 {
         width: 100%;
@@ -675,7 +675,7 @@
     .fg-col:first-child:nth-last-child(3).fg-1-4:first-child,
     .fg-col:first-child:nth-last-child(3) ~ .fg-col.fg-1-4:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(3).fg-1-4,
       .fg-col:first-child:nth-last-child(3) ~ .fg-col.fg-1-4 {
         width: 100%;
@@ -695,7 +695,7 @@
     .fg-col:first-child:nth-last-child(3).fg-1-3:first-child,
     .fg-col:first-child:nth-last-child(3) ~ .fg-col.fg-1-3:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(3).fg-1-3,
       .fg-col:first-child:nth-last-child(3) ~ .fg-col.fg-1-3 {
         width: 100%;
@@ -715,7 +715,7 @@
     .fg-col:first-child:nth-last-child(3).fg-2-5:first-child,
     .fg-col:first-child:nth-last-child(3) ~ .fg-col.fg-2-5:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(3).fg-2-5,
       .fg-col:first-child:nth-last-child(3) ~ .fg-col.fg-2-5 {
         width: 100%;
@@ -735,7 +735,7 @@
     .fg-col:first-child:nth-last-child(3).fg-1-2:first-child,
     .fg-col:first-child:nth-last-child(3) ~ .fg-col.fg-1-2:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(3).fg-1-2,
       .fg-col:first-child:nth-last-child(3) ~ .fg-col.fg-1-2 {
         width: 100%;
@@ -755,7 +755,7 @@
     .fg-col:first-child:nth-last-child(3).fg-3-5:first-child,
     .fg-col:first-child:nth-last-child(3) ~ .fg-col.fg-3-5:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(3).fg-3-5,
       .fg-col:first-child:nth-last-child(3) ~ .fg-col.fg-3-5 {
         width: 100%;
@@ -775,7 +775,7 @@
     .fg-col:first-child:nth-last-child(3).fg-2-3:first-child,
     .fg-col:first-child:nth-last-child(3) ~ .fg-col.fg-2-3:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(3).fg-2-3,
       .fg-col:first-child:nth-last-child(3) ~ .fg-col.fg-2-3 {
         width: 100%;
@@ -795,7 +795,7 @@
     .fg-col:first-child:nth-last-child(3).fg-3-4:first-child,
     .fg-col:first-child:nth-last-child(3) ~ .fg-col.fg-3-4:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(3).fg-3-4,
       .fg-col:first-child:nth-last-child(3) ~ .fg-col.fg-3-4 {
         width: 100%;
@@ -815,7 +815,7 @@
     .fg-col:first-child:nth-last-child(3).fg-4-5:first-child,
     .fg-col:first-child:nth-last-child(3) ~ .fg-col.fg-4-5:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(3).fg-4-5,
       .fg-col:first-child:nth-last-child(3) ~ .fg-col.fg-4-5 {
         width: 100%;
@@ -835,7 +835,7 @@
     .fg-col:first-child:nth-last-child(3).fg-7-8:first-child,
     .fg-col:first-child:nth-last-child(3) ~ .fg-col.fg-7-8:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(3).fg-7-8,
       .fg-col:first-child:nth-last-child(3) ~ .fg-col.fg-7-8 {
         width: 100%;
@@ -856,7 +856,7 @@
   .fg-col:first-child:nth-last-child(4):first-child,
   .fg-col:first-child:nth-last-child(4) ~ .fg-col:first-child {
     margin-left: 0; }
-  @media only screen and (max-width: 780px) {
+  @media only screen and (max-width: 768px) {
     .fg-col:first-child:nth-last-child(4),
     .fg-col:first-child:nth-last-child(4) ~ .fg-col {
       width: 100%;
@@ -876,7 +876,7 @@
     .fg-col:first-child:nth-last-child(4).fg-1-8:first-child,
     .fg-col:first-child:nth-last-child(4) ~ .fg-col.fg-1-8:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(4).fg-1-8,
       .fg-col:first-child:nth-last-child(4) ~ .fg-col.fg-1-8 {
         width: 100%;
@@ -896,7 +896,7 @@
     .fg-col:first-child:nth-last-child(4).fg-1-7:first-child,
     .fg-col:first-child:nth-last-child(4) ~ .fg-col.fg-1-7:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(4).fg-1-7,
       .fg-col:first-child:nth-last-child(4) ~ .fg-col.fg-1-7 {
         width: 100%;
@@ -916,7 +916,7 @@
     .fg-col:first-child:nth-last-child(4).fg-1-6:first-child,
     .fg-col:first-child:nth-last-child(4) ~ .fg-col.fg-1-6:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(4).fg-1-6,
       .fg-col:first-child:nth-last-child(4) ~ .fg-col.fg-1-6 {
         width: 100%;
@@ -936,7 +936,7 @@
     .fg-col:first-child:nth-last-child(4).fg-1-5:first-child,
     .fg-col:first-child:nth-last-child(4) ~ .fg-col.fg-1-5:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(4).fg-1-5,
       .fg-col:first-child:nth-last-child(4) ~ .fg-col.fg-1-5 {
         width: 100%;
@@ -956,7 +956,7 @@
     .fg-col:first-child:nth-last-child(4).fg-1-4:first-child,
     .fg-col:first-child:nth-last-child(4) ~ .fg-col.fg-1-4:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(4).fg-1-4,
       .fg-col:first-child:nth-last-child(4) ~ .fg-col.fg-1-4 {
         width: 100%;
@@ -976,7 +976,7 @@
     .fg-col:first-child:nth-last-child(4).fg-1-3:first-child,
     .fg-col:first-child:nth-last-child(4) ~ .fg-col.fg-1-3:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(4).fg-1-3,
       .fg-col:first-child:nth-last-child(4) ~ .fg-col.fg-1-3 {
         width: 100%;
@@ -996,7 +996,7 @@
     .fg-col:first-child:nth-last-child(4).fg-2-5:first-child,
     .fg-col:first-child:nth-last-child(4) ~ .fg-col.fg-2-5:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(4).fg-2-5,
       .fg-col:first-child:nth-last-child(4) ~ .fg-col.fg-2-5 {
         width: 100%;
@@ -1016,7 +1016,7 @@
     .fg-col:first-child:nth-last-child(4).fg-1-2:first-child,
     .fg-col:first-child:nth-last-child(4) ~ .fg-col.fg-1-2:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(4).fg-1-2,
       .fg-col:first-child:nth-last-child(4) ~ .fg-col.fg-1-2 {
         width: 100%;
@@ -1036,7 +1036,7 @@
     .fg-col:first-child:nth-last-child(4).fg-3-5:first-child,
     .fg-col:first-child:nth-last-child(4) ~ .fg-col.fg-3-5:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(4).fg-3-5,
       .fg-col:first-child:nth-last-child(4) ~ .fg-col.fg-3-5 {
         width: 100%;
@@ -1056,7 +1056,7 @@
     .fg-col:first-child:nth-last-child(4).fg-2-3:first-child,
     .fg-col:first-child:nth-last-child(4) ~ .fg-col.fg-2-3:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(4).fg-2-3,
       .fg-col:first-child:nth-last-child(4) ~ .fg-col.fg-2-3 {
         width: 100%;
@@ -1076,7 +1076,7 @@
     .fg-col:first-child:nth-last-child(4).fg-3-4:first-child,
     .fg-col:first-child:nth-last-child(4) ~ .fg-col.fg-3-4:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(4).fg-3-4,
       .fg-col:first-child:nth-last-child(4) ~ .fg-col.fg-3-4 {
         width: 100%;
@@ -1096,7 +1096,7 @@
     .fg-col:first-child:nth-last-child(4).fg-4-5:first-child,
     .fg-col:first-child:nth-last-child(4) ~ .fg-col.fg-4-5:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(4).fg-4-5,
       .fg-col:first-child:nth-last-child(4) ~ .fg-col.fg-4-5 {
         width: 100%;
@@ -1116,7 +1116,7 @@
     .fg-col:first-child:nth-last-child(4).fg-7-8:first-child,
     .fg-col:first-child:nth-last-child(4) ~ .fg-col.fg-7-8:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(4).fg-7-8,
       .fg-col:first-child:nth-last-child(4) ~ .fg-col.fg-7-8 {
         width: 100%;
@@ -1137,7 +1137,7 @@
   .fg-col:first-child:nth-last-child(5):first-child,
   .fg-col:first-child:nth-last-child(5) ~ .fg-col:first-child {
     margin-left: 0; }
-  @media only screen and (max-width: 780px) {
+  @media only screen and (max-width: 768px) {
     .fg-col:first-child:nth-last-child(5),
     .fg-col:first-child:nth-last-child(5) ~ .fg-col {
       width: 100%;
@@ -1157,7 +1157,7 @@
     .fg-col:first-child:nth-last-child(5).fg-1-8:first-child,
     .fg-col:first-child:nth-last-child(5) ~ .fg-col.fg-1-8:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(5).fg-1-8,
       .fg-col:first-child:nth-last-child(5) ~ .fg-col.fg-1-8 {
         width: 100%;
@@ -1177,7 +1177,7 @@
     .fg-col:first-child:nth-last-child(5).fg-1-7:first-child,
     .fg-col:first-child:nth-last-child(5) ~ .fg-col.fg-1-7:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(5).fg-1-7,
       .fg-col:first-child:nth-last-child(5) ~ .fg-col.fg-1-7 {
         width: 100%;
@@ -1197,7 +1197,7 @@
     .fg-col:first-child:nth-last-child(5).fg-1-6:first-child,
     .fg-col:first-child:nth-last-child(5) ~ .fg-col.fg-1-6:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(5).fg-1-6,
       .fg-col:first-child:nth-last-child(5) ~ .fg-col.fg-1-6 {
         width: 100%;
@@ -1217,7 +1217,7 @@
     .fg-col:first-child:nth-last-child(5).fg-1-5:first-child,
     .fg-col:first-child:nth-last-child(5) ~ .fg-col.fg-1-5:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(5).fg-1-5,
       .fg-col:first-child:nth-last-child(5) ~ .fg-col.fg-1-5 {
         width: 100%;
@@ -1237,7 +1237,7 @@
     .fg-col:first-child:nth-last-child(5).fg-1-4:first-child,
     .fg-col:first-child:nth-last-child(5) ~ .fg-col.fg-1-4:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(5).fg-1-4,
       .fg-col:first-child:nth-last-child(5) ~ .fg-col.fg-1-4 {
         width: 100%;
@@ -1257,7 +1257,7 @@
     .fg-col:first-child:nth-last-child(5).fg-1-3:first-child,
     .fg-col:first-child:nth-last-child(5) ~ .fg-col.fg-1-3:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(5).fg-1-3,
       .fg-col:first-child:nth-last-child(5) ~ .fg-col.fg-1-3 {
         width: 100%;
@@ -1277,7 +1277,7 @@
     .fg-col:first-child:nth-last-child(5).fg-2-5:first-child,
     .fg-col:first-child:nth-last-child(5) ~ .fg-col.fg-2-5:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(5).fg-2-5,
       .fg-col:first-child:nth-last-child(5) ~ .fg-col.fg-2-5 {
         width: 100%;
@@ -1297,7 +1297,7 @@
     .fg-col:first-child:nth-last-child(5).fg-1-2:first-child,
     .fg-col:first-child:nth-last-child(5) ~ .fg-col.fg-1-2:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(5).fg-1-2,
       .fg-col:first-child:nth-last-child(5) ~ .fg-col.fg-1-2 {
         width: 100%;
@@ -1317,7 +1317,7 @@
     .fg-col:first-child:nth-last-child(5).fg-3-5:first-child,
     .fg-col:first-child:nth-last-child(5) ~ .fg-col.fg-3-5:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(5).fg-3-5,
       .fg-col:first-child:nth-last-child(5) ~ .fg-col.fg-3-5 {
         width: 100%;
@@ -1337,7 +1337,7 @@
     .fg-col:first-child:nth-last-child(5).fg-2-3:first-child,
     .fg-col:first-child:nth-last-child(5) ~ .fg-col.fg-2-3:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(5).fg-2-3,
       .fg-col:first-child:nth-last-child(5) ~ .fg-col.fg-2-3 {
         width: 100%;
@@ -1357,7 +1357,7 @@
     .fg-col:first-child:nth-last-child(5).fg-3-4:first-child,
     .fg-col:first-child:nth-last-child(5) ~ .fg-col.fg-3-4:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(5).fg-3-4,
       .fg-col:first-child:nth-last-child(5) ~ .fg-col.fg-3-4 {
         width: 100%;
@@ -1377,7 +1377,7 @@
     .fg-col:first-child:nth-last-child(5).fg-4-5:first-child,
     .fg-col:first-child:nth-last-child(5) ~ .fg-col.fg-4-5:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(5).fg-4-5,
       .fg-col:first-child:nth-last-child(5) ~ .fg-col.fg-4-5 {
         width: 100%;
@@ -1397,7 +1397,7 @@
     .fg-col:first-child:nth-last-child(5).fg-7-8:first-child,
     .fg-col:first-child:nth-last-child(5) ~ .fg-col.fg-7-8:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(5).fg-7-8,
       .fg-col:first-child:nth-last-child(5) ~ .fg-col.fg-7-8 {
         width: 100%;
@@ -1418,7 +1418,7 @@
   .fg-col:first-child:nth-last-child(6):first-child,
   .fg-col:first-child:nth-last-child(6) ~ .fg-col:first-child {
     margin-left: 0; }
-  @media only screen and (max-width: 780px) {
+  @media only screen and (max-width: 768px) {
     .fg-col:first-child:nth-last-child(6),
     .fg-col:first-child:nth-last-child(6) ~ .fg-col {
       width: 100%;
@@ -1438,7 +1438,7 @@
     .fg-col:first-child:nth-last-child(6).fg-1-8:first-child,
     .fg-col:first-child:nth-last-child(6) ~ .fg-col.fg-1-8:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(6).fg-1-8,
       .fg-col:first-child:nth-last-child(6) ~ .fg-col.fg-1-8 {
         width: 100%;
@@ -1458,7 +1458,7 @@
     .fg-col:first-child:nth-last-child(6).fg-1-7:first-child,
     .fg-col:first-child:nth-last-child(6) ~ .fg-col.fg-1-7:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(6).fg-1-7,
       .fg-col:first-child:nth-last-child(6) ~ .fg-col.fg-1-7 {
         width: 100%;
@@ -1478,7 +1478,7 @@
     .fg-col:first-child:nth-last-child(6).fg-1-6:first-child,
     .fg-col:first-child:nth-last-child(6) ~ .fg-col.fg-1-6:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(6).fg-1-6,
       .fg-col:first-child:nth-last-child(6) ~ .fg-col.fg-1-6 {
         width: 100%;
@@ -1498,7 +1498,7 @@
     .fg-col:first-child:nth-last-child(6).fg-1-5:first-child,
     .fg-col:first-child:nth-last-child(6) ~ .fg-col.fg-1-5:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(6).fg-1-5,
       .fg-col:first-child:nth-last-child(6) ~ .fg-col.fg-1-5 {
         width: 100%;
@@ -1518,7 +1518,7 @@
     .fg-col:first-child:nth-last-child(6).fg-1-4:first-child,
     .fg-col:first-child:nth-last-child(6) ~ .fg-col.fg-1-4:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(6).fg-1-4,
       .fg-col:first-child:nth-last-child(6) ~ .fg-col.fg-1-4 {
         width: 100%;
@@ -1538,7 +1538,7 @@
     .fg-col:first-child:nth-last-child(6).fg-1-3:first-child,
     .fg-col:first-child:nth-last-child(6) ~ .fg-col.fg-1-3:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(6).fg-1-3,
       .fg-col:first-child:nth-last-child(6) ~ .fg-col.fg-1-3 {
         width: 100%;
@@ -1558,7 +1558,7 @@
     .fg-col:first-child:nth-last-child(6).fg-2-5:first-child,
     .fg-col:first-child:nth-last-child(6) ~ .fg-col.fg-2-5:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(6).fg-2-5,
       .fg-col:first-child:nth-last-child(6) ~ .fg-col.fg-2-5 {
         width: 100%;
@@ -1578,7 +1578,7 @@
     .fg-col:first-child:nth-last-child(6).fg-1-2:first-child,
     .fg-col:first-child:nth-last-child(6) ~ .fg-col.fg-1-2:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(6).fg-1-2,
       .fg-col:first-child:nth-last-child(6) ~ .fg-col.fg-1-2 {
         width: 100%;
@@ -1598,7 +1598,7 @@
     .fg-col:first-child:nth-last-child(6).fg-3-5:first-child,
     .fg-col:first-child:nth-last-child(6) ~ .fg-col.fg-3-5:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(6).fg-3-5,
       .fg-col:first-child:nth-last-child(6) ~ .fg-col.fg-3-5 {
         width: 100%;
@@ -1618,7 +1618,7 @@
     .fg-col:first-child:nth-last-child(6).fg-2-3:first-child,
     .fg-col:first-child:nth-last-child(6) ~ .fg-col.fg-2-3:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(6).fg-2-3,
       .fg-col:first-child:nth-last-child(6) ~ .fg-col.fg-2-3 {
         width: 100%;
@@ -1638,7 +1638,7 @@
     .fg-col:first-child:nth-last-child(6).fg-3-4:first-child,
     .fg-col:first-child:nth-last-child(6) ~ .fg-col.fg-3-4:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(6).fg-3-4,
       .fg-col:first-child:nth-last-child(6) ~ .fg-col.fg-3-4 {
         width: 100%;
@@ -1658,7 +1658,7 @@
     .fg-col:first-child:nth-last-child(6).fg-4-5:first-child,
     .fg-col:first-child:nth-last-child(6) ~ .fg-col.fg-4-5:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(6).fg-4-5,
       .fg-col:first-child:nth-last-child(6) ~ .fg-col.fg-4-5 {
         width: 100%;
@@ -1678,7 +1678,7 @@
     .fg-col:first-child:nth-last-child(6).fg-7-8:first-child,
     .fg-col:first-child:nth-last-child(6) ~ .fg-col.fg-7-8:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(6).fg-7-8,
       .fg-col:first-child:nth-last-child(6) ~ .fg-col.fg-7-8 {
         width: 100%;
@@ -1699,7 +1699,7 @@
   .fg-col:first-child:nth-last-child(7):first-child,
   .fg-col:first-child:nth-last-child(7) ~ .fg-col:first-child {
     margin-left: 0; }
-  @media only screen and (max-width: 780px) {
+  @media only screen and (max-width: 768px) {
     .fg-col:first-child:nth-last-child(7),
     .fg-col:first-child:nth-last-child(7) ~ .fg-col {
       width: 100%;
@@ -1719,7 +1719,7 @@
     .fg-col:first-child:nth-last-child(7).fg-1-8:first-child,
     .fg-col:first-child:nth-last-child(7) ~ .fg-col.fg-1-8:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(7).fg-1-8,
       .fg-col:first-child:nth-last-child(7) ~ .fg-col.fg-1-8 {
         width: 100%;
@@ -1739,7 +1739,7 @@
     .fg-col:first-child:nth-last-child(7).fg-1-7:first-child,
     .fg-col:first-child:nth-last-child(7) ~ .fg-col.fg-1-7:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(7).fg-1-7,
       .fg-col:first-child:nth-last-child(7) ~ .fg-col.fg-1-7 {
         width: 100%;
@@ -1759,7 +1759,7 @@
     .fg-col:first-child:nth-last-child(7).fg-1-6:first-child,
     .fg-col:first-child:nth-last-child(7) ~ .fg-col.fg-1-6:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(7).fg-1-6,
       .fg-col:first-child:nth-last-child(7) ~ .fg-col.fg-1-6 {
         width: 100%;
@@ -1779,7 +1779,7 @@
     .fg-col:first-child:nth-last-child(7).fg-1-5:first-child,
     .fg-col:first-child:nth-last-child(7) ~ .fg-col.fg-1-5:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(7).fg-1-5,
       .fg-col:first-child:nth-last-child(7) ~ .fg-col.fg-1-5 {
         width: 100%;
@@ -1799,7 +1799,7 @@
     .fg-col:first-child:nth-last-child(7).fg-1-4:first-child,
     .fg-col:first-child:nth-last-child(7) ~ .fg-col.fg-1-4:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(7).fg-1-4,
       .fg-col:first-child:nth-last-child(7) ~ .fg-col.fg-1-4 {
         width: 100%;
@@ -1819,7 +1819,7 @@
     .fg-col:first-child:nth-last-child(7).fg-1-3:first-child,
     .fg-col:first-child:nth-last-child(7) ~ .fg-col.fg-1-3:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(7).fg-1-3,
       .fg-col:first-child:nth-last-child(7) ~ .fg-col.fg-1-3 {
         width: 100%;
@@ -1839,7 +1839,7 @@
     .fg-col:first-child:nth-last-child(7).fg-2-5:first-child,
     .fg-col:first-child:nth-last-child(7) ~ .fg-col.fg-2-5:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(7).fg-2-5,
       .fg-col:first-child:nth-last-child(7) ~ .fg-col.fg-2-5 {
         width: 100%;
@@ -1859,7 +1859,7 @@
     .fg-col:first-child:nth-last-child(7).fg-1-2:first-child,
     .fg-col:first-child:nth-last-child(7) ~ .fg-col.fg-1-2:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(7).fg-1-2,
       .fg-col:first-child:nth-last-child(7) ~ .fg-col.fg-1-2 {
         width: 100%;
@@ -1879,7 +1879,7 @@
     .fg-col:first-child:nth-last-child(7).fg-3-5:first-child,
     .fg-col:first-child:nth-last-child(7) ~ .fg-col.fg-3-5:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(7).fg-3-5,
       .fg-col:first-child:nth-last-child(7) ~ .fg-col.fg-3-5 {
         width: 100%;
@@ -1899,7 +1899,7 @@
     .fg-col:first-child:nth-last-child(7).fg-2-3:first-child,
     .fg-col:first-child:nth-last-child(7) ~ .fg-col.fg-2-3:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(7).fg-2-3,
       .fg-col:first-child:nth-last-child(7) ~ .fg-col.fg-2-3 {
         width: 100%;
@@ -1919,7 +1919,7 @@
     .fg-col:first-child:nth-last-child(7).fg-3-4:first-child,
     .fg-col:first-child:nth-last-child(7) ~ .fg-col.fg-3-4:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(7).fg-3-4,
       .fg-col:first-child:nth-last-child(7) ~ .fg-col.fg-3-4 {
         width: 100%;
@@ -1939,7 +1939,7 @@
     .fg-col:first-child:nth-last-child(7).fg-4-5:first-child,
     .fg-col:first-child:nth-last-child(7) ~ .fg-col.fg-4-5:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(7).fg-4-5,
       .fg-col:first-child:nth-last-child(7) ~ .fg-col.fg-4-5 {
         width: 100%;
@@ -1959,7 +1959,7 @@
     .fg-col:first-child:nth-last-child(7).fg-7-8:first-child,
     .fg-col:first-child:nth-last-child(7) ~ .fg-col.fg-7-8:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(7).fg-7-8,
       .fg-col:first-child:nth-last-child(7) ~ .fg-col.fg-7-8 {
         width: 100%;
@@ -1980,7 +1980,7 @@
   .fg-col:first-child:nth-last-child(8):first-child,
   .fg-col:first-child:nth-last-child(8) ~ .fg-col:first-child {
     margin-left: 0; }
-  @media only screen and (max-width: 780px) {
+  @media only screen and (max-width: 768px) {
     .fg-col:first-child:nth-last-child(8),
     .fg-col:first-child:nth-last-child(8) ~ .fg-col {
       width: 100%;
@@ -2000,7 +2000,7 @@
     .fg-col:first-child:nth-last-child(8).fg-1-8:first-child,
     .fg-col:first-child:nth-last-child(8) ~ .fg-col.fg-1-8:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(8).fg-1-8,
       .fg-col:first-child:nth-last-child(8) ~ .fg-col.fg-1-8 {
         width: 100%;
@@ -2020,7 +2020,7 @@
     .fg-col:first-child:nth-last-child(8).fg-1-7:first-child,
     .fg-col:first-child:nth-last-child(8) ~ .fg-col.fg-1-7:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(8).fg-1-7,
       .fg-col:first-child:nth-last-child(8) ~ .fg-col.fg-1-7 {
         width: 100%;
@@ -2040,7 +2040,7 @@
     .fg-col:first-child:nth-last-child(8).fg-1-6:first-child,
     .fg-col:first-child:nth-last-child(8) ~ .fg-col.fg-1-6:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(8).fg-1-6,
       .fg-col:first-child:nth-last-child(8) ~ .fg-col.fg-1-6 {
         width: 100%;
@@ -2060,7 +2060,7 @@
     .fg-col:first-child:nth-last-child(8).fg-1-5:first-child,
     .fg-col:first-child:nth-last-child(8) ~ .fg-col.fg-1-5:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(8).fg-1-5,
       .fg-col:first-child:nth-last-child(8) ~ .fg-col.fg-1-5 {
         width: 100%;
@@ -2080,7 +2080,7 @@
     .fg-col:first-child:nth-last-child(8).fg-1-4:first-child,
     .fg-col:first-child:nth-last-child(8) ~ .fg-col.fg-1-4:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(8).fg-1-4,
       .fg-col:first-child:nth-last-child(8) ~ .fg-col.fg-1-4 {
         width: 100%;
@@ -2100,7 +2100,7 @@
     .fg-col:first-child:nth-last-child(8).fg-1-3:first-child,
     .fg-col:first-child:nth-last-child(8) ~ .fg-col.fg-1-3:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(8).fg-1-3,
       .fg-col:first-child:nth-last-child(8) ~ .fg-col.fg-1-3 {
         width: 100%;
@@ -2120,7 +2120,7 @@
     .fg-col:first-child:nth-last-child(8).fg-2-5:first-child,
     .fg-col:first-child:nth-last-child(8) ~ .fg-col.fg-2-5:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(8).fg-2-5,
       .fg-col:first-child:nth-last-child(8) ~ .fg-col.fg-2-5 {
         width: 100%;
@@ -2140,7 +2140,7 @@
     .fg-col:first-child:nth-last-child(8).fg-1-2:first-child,
     .fg-col:first-child:nth-last-child(8) ~ .fg-col.fg-1-2:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(8).fg-1-2,
       .fg-col:first-child:nth-last-child(8) ~ .fg-col.fg-1-2 {
         width: 100%;
@@ -2160,7 +2160,7 @@
     .fg-col:first-child:nth-last-child(8).fg-3-5:first-child,
     .fg-col:first-child:nth-last-child(8) ~ .fg-col.fg-3-5:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(8).fg-3-5,
       .fg-col:first-child:nth-last-child(8) ~ .fg-col.fg-3-5 {
         width: 100%;
@@ -2180,7 +2180,7 @@
     .fg-col:first-child:nth-last-child(8).fg-2-3:first-child,
     .fg-col:first-child:nth-last-child(8) ~ .fg-col.fg-2-3:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(8).fg-2-3,
       .fg-col:first-child:nth-last-child(8) ~ .fg-col.fg-2-3 {
         width: 100%;
@@ -2200,7 +2200,7 @@
     .fg-col:first-child:nth-last-child(8).fg-3-4:first-child,
     .fg-col:first-child:nth-last-child(8) ~ .fg-col.fg-3-4:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(8).fg-3-4,
       .fg-col:first-child:nth-last-child(8) ~ .fg-col.fg-3-4 {
         width: 100%;
@@ -2220,7 +2220,7 @@
     .fg-col:first-child:nth-last-child(8).fg-4-5:first-child,
     .fg-col:first-child:nth-last-child(8) ~ .fg-col.fg-4-5:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(8).fg-4-5,
       .fg-col:first-child:nth-last-child(8) ~ .fg-col.fg-4-5 {
         width: 100%;
@@ -2240,7 +2240,7 @@
     .fg-col:first-child:nth-last-child(8).fg-7-8:first-child,
     .fg-col:first-child:nth-last-child(8) ~ .fg-col.fg-7-8:first-child {
       margin-left: 0; }
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 768px) {
       .fg-col:first-child:nth-last-child(8).fg-7-8,
       .fg-col:first-child:nth-last-child(8) ~ .fg-col.fg-7-8 {
         width: 100%;
@@ -2269,7 +2269,7 @@ section {
       margin-top: 0; }
   section + section {
     margin-top: 20px; }
-  section:last-child {
+  section:last-of-type {
     margin-bottom: 20px; }
 
 section {

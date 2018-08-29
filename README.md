@@ -31,7 +31,7 @@ value or pass a value in each time `fg-col` is called.
 $fg-gutter: 20px;              // Static gutter width (the width of grid system's column gutters)
 $fg-fluid-gutter: 2.0;         // Fluid gutter width (used only when $fg-legacy is set to `true`)
 $fg-legacy: false;             // Support legacy browsers (those that don't support CSS calc)
-$fg-base: 768px;               // The default breakpoint width
+$fg-break: 768px;               // The default breakpoint width
 ```
 
 The `fg-col()` mixin accepts parameters that allow you to specify your columns on the fly from within your SASS. For 

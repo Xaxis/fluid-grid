@@ -10,9 +10,9 @@ See [Demo](http://xaxis.github.io/fluid-grid/)
 
 Wil Neeley ( [@wilneeley](http://twitter.com/wilneeley) / [github.com](https://github.com/Xaxis) )
 
-## Usage
+## Configuration and usage
 
-After you have copied `_fluid-grid.scss` into your workflow you need to configure a few variables based on your needs.
+After you have copied `_fluid-grid.scss` into your SASS workflow you need to configure a few global variables.
 
 * `$fg-gutter` is the static space you would like between your columns. Browsers must support the CSS `calc` function in 
 order for this static space to work properly. If you need to support legacy browsers set the `$fg-legacy` configuration

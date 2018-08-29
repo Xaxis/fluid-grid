@@ -1,13 +1,13 @@
 //--------
 // Grid dimensions (REQUIRED)
-$fg-base: 40px;                                   // Base grid column width
-$fg-gutter: 20px;                                 // Gutter width
-$fg-fluid-gutter: 2.0;                            // Fluid gutter percentage (used only when $fg-legacy is set to `true`)
+$fg-base: 40px;                                   // Base grid column width (your grid system's base column width)
+$fg-gutter: 20px;                                 // Static gutter width (the width of grid system's column gutters)
+$fg-fluid-gutter: 2.0;                            // Fluid gutter width (used only when $fg-legacy is set to `true`)
 $fg-legacy: false;                                // Support legacy browsers (those that don't support CSS calc)
 
 //--------
 // Grid dimensions (AUXILIARY)
-$fg-col-total: 25;                                // Column total
+$fg-col-total: 29;                                // Column total
 $fg-grid-width: $fg-base + $fg-gutter;            // Grid width
 $fg-grid-total: $fg-grid-width * $fg-col-total;   // Grid total width
 
@@ -59,7 +59,7 @@ $fg-break-xs: $fg-col-8;                            // 480px
 // @cols              Number of columns
 // @break             Breakpoint width
 // @mod               Modifier ratio
-// @gutter            Gutter width (space between columns)
+// @gutter            Gutter width (static space between columns)
 // @fluid-gutter      Fluid gutter percentage width (% space between columns)
 // @legacy            Force support for browsers that don't support css calc()
 @mixin fg-col(
@@ -68,7 +68,7 @@ $fg-break-xs: $fg-col-8;                            // 480px
   $mod: 0,
   $gutter: $fg-gutter,
   $fluid-gutter: $fg-fluid-gutter,
-  $legacy: true
+  $legacy: $fg-legacy
 ) {
 
   // Common column styling

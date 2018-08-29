@@ -1,18 +1,8 @@
 # fluid-grid
 
-Version 1.0.0
-
 ## Summary
 
-A fluid and optionally responsive columnar SASS system which gives you the ability to easily construct columns that are 
-of common widths/dimensions.
-
-The purpose of fluid-grid was to create an extremely lightweight SASS mixin system to aid in rapid responsive development. 
-Columns in fluid-grid are based on your grid system though their dimensions are not constrained by grid fractions while 
-still respecting your grid system's gutter dimensions.
-
-While fluid-grid is designed to operate without specific class declaration overhead, for convenience a number of class
-based options are included.
+A SASS mixin that allows you to easily create responsive columns of varying widths/dimensions.
 
 See [Demo](http://boilerjs.com/misc/fluid-grid/)
 
@@ -29,9 +19,10 @@ browsers that do not support CSS `calc()` in which case a percentage gutter widt
 ```sass
 //--------
 // Grid dimensions (REQUIRED)
-$fg-col: 40px;                                    // Column width
-$fg-gutter: 20px;                                 // Gutter width
-$fg-fluid-gutter: 1.6;                            // Fluid gutter percentage
+$fg-base: 40px;                          // Base grid column width (your grid system's base column width)
+$fg-gutter: 20px;                        // Static gutter width (the width of grid system's column gutters)
+$fg-fluid-gutter: 2.0;                   // Fluid gutter width (used only when $fg-legacy is set to `true`)
+$fg-legacy: false;                       // Support legacy browsers (those that don't support CSS calc)
 ```
 
 The `fg-col()` mixin accepts parameters that allow you to specify your columns on the fly from within your SASS. For demonstration

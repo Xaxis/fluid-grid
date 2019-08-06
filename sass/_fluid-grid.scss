@@ -1,82 +1,82 @@
 //--------
-// Configuration
-$fg-gutter: 20px;                                 // Static gutter width (the width of grid system's column gutters)
-$fg-fluid-gutter: 2.0;                            // Fluid gutter width (used only when $fg-legacy is set to `true`)
-$fg-legacy: false;                                // Support legacy browsers (those that don't support CSS calc)
-$fg-break: 768px;                                 // The default breakpoint width
-
-//--------
-// Fluid-grid mixin for creating fluid and responsive columns.
+// Mixin for managing columns within a grid system.
 // See: https://github.com/Xaxis/fluid-grid
 //
 // @cols              Number of columns
-// @break             Breakpoint width
-// @mod               Modifier ratio
-// @gutter            Gutter width (static space between columns)
-// @fluid-gutter      Fluid gutter percentage width (% space between columns)
-// @legacy            Force support for browsers that don't support css calc()
+// @mod               12 column grid ratio
+// $break             ...
+// @fixed-gutter      Fixed gutter pixel width
+// @fluid-gutter      Fluid gutter percentage width
+// @gutter-type       The type of gutter to use (fixed or fluid)
+// @no-gutter         Boolean value that specifies whether to use the gutter
 @mixin fg-col(
   $cols: 1,
-  $break: 0,
   $mod: 0,
-  $gutter: $fg-gutter,
-  $fluid-gutter: $fg-fluid-gutter,
-  $legacy: $fg-legacy
+  $break: 0,
+  $fixed-gutter: 20px,
+  $fluid-gutter: 2.0,
+  $gutter-type: 'fluid',
+  $no-gutter: false
 ) {
 
-  // Common column styling
-  box-sizing: border-box;
-  position: relative;
-  float: left;
+
+  // Default column styling
+  & {
+    box-sizing: border-box;
+    position: relative;
+    float: left;
+  }
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
   &:first-child {
     margin-left: 0;
   }
 
-  // Calc() IS available
-  // -------------------
-  @if $legacy == false {
 
-    // Base column styling
-    margin-left: $gutter;
-    &:first-child {
-      margin-left: 0;
-    }
+  // Fixed width gutter ENABLED default gutter width
+  @if $gutter-type == 'fixed' {
+    margin-left: $fixed-gutter;
   }
 
-  // Legacy support
-  // --------------
-  @else {
-
-    // Base column styling
+  // Fixed width gutter DISABLED default gutter width
+  @else if $gutter-type == 'fluid' {
     margin-left: #{$fluid-gutter + '%'};
-    &:before,
-    &:after {
-      content: " ";
-      display: table;
-    }
-    &:after {
-      clear: both;
-    }
   }
 
-  // Set widths for columns THAT ARE the same width
-  @if $mod == 0 and $mod != 1 {
 
-    // NOT LEGACY - When css calc()
-    // ----------------------------
-    @if $legacy == false {
-        width: -webkit-calc(((100% / #{$cols}) - #{$gutter}) + (#{$gutter / $cols}));
-        width: -moz-calc(((100% / #{$cols}) - #{$gutter}) + (#{$gutter / $cols}));
-        width: calc(((100% / #{$cols}) - #{$gutter}) + (#{$gutter / $cols}));
+  // Equal width columns
+  @if $mod == 0 {
+
+    // Fixed width gutter ENABLED
+    @if $gutter-type == 'fixed' {
+
+      // Gutters are OFF
+      @if $no-gutter == true {
+        width: -webkit-calc((100% / #{$cols}));
+        width: calc((100% / #{$cols}));
+        margin-left: 0;
+      }
+
+      // Gutters are ON
+      @else {
+        width: -webkit-calc(((100% / #{$cols}) - #{$fixed-gutter}) + (#{$fixed-gutter / $cols}));
+        width: calc(((100% / #{$cols}) - #{$fixed-gutter}) + (#{$fixed-gutter / $cols}));
+      }
     }
 
-    // LEGACY - When NOT css calc()
-    // ----------------------------
-    @else {
+    // Fluid width gutter DISABLED
+    @else if $gutter-type == 'fluid' {
       $ucw: (100 / $cols);
       $cw: 0;
-      @if $cols == 1 {
+      @if $cols == 1 or $no-gutter == true {
         $cw: $ucw;
+        margin-left: 0;
       } @else {
         $cw: $ucw - $fluid-gutter + ($fluid-gutter / $cols);
       }
@@ -84,149 +84,336 @@ $fg-break: 768px;                                 // The default breakpoint widt
     }
   }
 
-  // Set widths for columns THAT ARE NOT the same width
+
+  // 12 column width columns
   @else if $mod {
     $mw: 0;
 
-    // 1/7 width
-    @if $mod == '1/8' {
-      $mw: 12.5;
+    // 1/12 width
+    @if $mod == 1 {
+      $mw: 8.3;
     }
-
-    // 1/8 width
-    @if $mod == '1/7' {
-      $mw: 14.2857142857;
-    }
-
-    // 1/6 width
-    @if $mod == '1/6' {
+    // 2/12 width
+    @if $mod == 2 {
       $mw: 16.6666666667;
     }
-
-    // 1/5 width
-    @if $mod == '1/5' {
-      $mw: 20;
-    }
-
-    // 1/4 width
-    @if $mod == '1/4' {
+    // 3/12 width
+    @if $mod == 3 {
       $mw: 25;
     }
-
-    // 1/3 width
-    @if $mod == '1/3' {
+    // 4/12
+    @if $mod == 4 {
       $mw: 33.3333;
     }
-
-    // 2/5 width
-    @if $mod == '2/5' {
-      $mw: 40;
+    // 5/12
+    @if $mod == 5 {
+      $mw: 41.66;
     }
-
-    // 1/2 width
-    @if $mod == '1/2' {
+    // 6/12
+    @if $mod == 6 {
       $mw: 50;
     }
-
-    // 3/5 width
-    @if $mod == '3/5' {
-      $mw: 60;
+    // 7/12
+    @if $mod == 7 {
+      $mw: 58.33;
     }
-
-    // 2/3 width
-    @if $mod == '2/3' {
+    // 8/12
+    @if $mod == 8 {
       $mw: 66.6666;
     }
-
-    // 3/4 width
-    @if $mod == '3/4' {
+    // 9/12
+    @if $mod == 9 {
       $mw: 75;
     }
-
-    // 4/5 width
-    @if $mod == '4/5' {
-      $mw: 80;
+    // 10/12
+    @if $mod == 10 {
+      $mw: 83.3333333333;
+    }
+    // 11/12
+    @if $mod == 11 {
+      $mw: 91.7;
+    }
+    // 12/12
+    @if $mod == 12 {
+      $mw: 100;
     }
 
-    // 7/8 width
-    @if $mod == '7/8' {
-      $mw: 87.5;
+    // Fixed width gutter ENABLED
+    @if $gutter-type == 'fixed' {
+
+      // Gutters are OFF
+      @if $no-gutter == true or $mod == 12 {
+        width: -webkit-calc(#{$mw + '%'});
+        width: calc(#{$mw + '%'});
+        margin-left: 0;
+      }
+
+      // Gutters are ON
+      @else {
+        width: -webkit-calc((#{$mw + '%'} - #{$fixed-gutter}) + (#{$fixed-gutter / $cols}));
+        width: calc((#{$mw + '%'} - #{$fixed-gutter}) + (#{$fixed-gutter / $cols}));
+      }
     }
 
-    // NOT LEGACY - When css calc()
-    // ----------------------------
-    @if $legacy == false {
-      width: -moz-calc(#{$mw + '%'} - (#{$gutter} / 2));
-      width: -webkit-calc(#{$mw + '%'} - (#{$gutter} / 2));
-      width: calc(#{$mw + '%'} - (#{$gutter} / 2));
-    }
-
-    // LEGACY - When NOT css calc()
-    // ----------------------------
-    @else {
-      $p: $mw / 100;
-      $cw: ($p * 100) - $fluid-gutter + ($fluid-gutter / 2);
+    @else if $gutter-type == 'fluid' {
+      $ucw: $mw / 100;
+      $cw: 0;
+      @if $mod == 12 or $no-gutter == true {
+        $cw: $ucw * 100;
+        margin-left: 0;
+      } @else {
+        $cw: ($ucw * 100) - $fluid-gutter + ($fluid-gutter / 2);
+      }
       width: #{$cw + '%'};
     }
   }
-
-  // Responsive media query
-  @if $break > 0 {
-    @media only screen and (max-width: $break) {
-      width: 100%;
-      margin-left: 0;
-
-      // Include breakpoint style overrides
-      @content;
-    }
-  }
 }
 
-//--------
-// Fluid-grid base classes
-// See: https://github.com/Xaxis/fluid-grid
-@for $i from 1 through 8 {
-  .fg-col:first-child:nth-last-child(#{$i}),
-  .fg-col:first-child:nth-last-child(#{$i}) ~ .fg-col {
-    @include fg-col(#{$i}, $fg-break, 0);
-    &.fg-1-8 {
-      @include fg-col(#{$i}, $fg-break, '1/8');
-    }
-    &.fg-1-7 {
-      @include fg-col(#{$i}, $fg-break, '1/7');
-    }
-    &.fg-1-6 {
-      @include fg-col(#{$i}, $fg-break, '1/6');
-    }
-    &.fg-1-5 {
-      @include fg-col(#{$i}, $fg-break, '1/5');
-    }
-    &.fg-1-4 {
-      @include fg-col(#{$i}, $fg-break, '1/4');
-    }
-    &.fg-1-3 {
-      @include fg-col(#{$i}, $fg-break, '1/3');
-    }
-    &.fg-2-5 {
-      @include fg-col(#{$i}, $fg-break, '2/5');
-    }
-    &.fg-1-2 {
-      @include fg-col(#{$i}, $fg-break, '1/2');
-    }
-    &.fg-3-5 {
-      @include fg-col(#{$i}, $fg-break, '3/5');
-    }
-    &.fg-2-3 {
-      @include fg-col(#{$i}, $fg-break, '2/3');
-    }
-    &.fg-3-4 {
-      @include fg-col(#{$i}, $fg-break, '3/4');
-    }
-    &.fg-4-5 {
-      @include fg-col(#{$i}, $fg-break, '4/5');
-    }
-    &.fg-7-8 {
-      @include fg-col(#{$i}, $fg-break, '7/8');
-    }
-  }
-}
+////--------
+//// Fluid-grid base classes (standard fractions)
+//@for $i from 1 through 8 {
+//  .col:first-child:nth-last-child(#{$i}),
+//  .col:first-child:nth-last-child(#{$i}) ~ .col {
+//    &:not(.col-with-gutter) {
+//      @include fg-col($gutter: 0, $cols:$i, $mod:0, $class:1);
+//    }
+//    &.col-with-gutter {
+//      @include fg-col($gutter: $grid-gutter, $fluid-gutter: $grid-fluid-gutter, $cols:$i, $mod:0, $class:1);
+//    }
+//    &.grid-1-8 {
+//      &:not(.col-with-gutter) {
+//        @include fg-col($gutter: 0, $cols:$i, $mod:'1/8', $class:1);
+//      }
+//      &.col-with-gutter {
+//        @include fg-col($gutter: $grid-gutter, $fluid-gutter: $grid-fluid-gutter, $cols:$i, $mod:'1/8', $class:1);
+//      }
+//    }
+//    &.grid-1-7 {
+//      &:not(.col-with-gutter) {
+//        @include fg-col($gutter: 0, $cols:$i, $mod:'1/7', $class:1);
+//      }
+//      &.col-with-gutter {
+//        @include fg-col($gutter: $grid-gutter, $fluid-gutter: $grid-fluid-gutter, $cols:$i, $mod:'1/7', $class:1);
+//      }
+//    }
+//    &.grid-1-6 {
+//      &:not(.col-with-gutter) {
+//        @include fg-col($gutter: 0, $cols:$i, $mod:'1/6', $class:1);
+//      }
+//      &.col-with-gutter {
+//        @include fg-col($gutter: $grid-gutter, $fluid-gutter: $grid-fluid-gutter, $cols:$i, $mod:'1/6', $class:1);
+//      }
+//    }
+//    &.grid-1-5 {
+//      &:not(.col-with-gutter) {
+//        @include fg-col($gutter: 0, $cols:$i, $mod:'1/5', $class:1);
+//      }
+//      &.col-with-gutter {
+//        @include fg-col($gutter: $grid-gutter, $fluid-gutter: $grid-fluid-gutter, $cols:$i, $mod:'1/5', $class:1);
+//      }
+//    }
+//    &.grid-1-4 {
+//      &:not(.col-with-gutter) {
+//        @include fg-col($gutter: 0, $cols:$i, $mod:'1/4', $class:1);
+//      }
+//      &.col-with-gutter {
+//        @include fg-col($gutter: $grid-gutter, $fluid-gutter: $grid-fluid-gutter, $cols:$i, $mod:'1/4', $class:1);
+//      }
+//    }
+//    &.grid-1-3 {
+//      &:not(.col-with-gutter) {
+//        @include fg-col($gutter: 0, $cols:$i, $mod:'1/3', $class:1);
+//      }
+//      &.col-with-gutter {
+//        @include fg-col($gutter: $grid-gutter, $fluid-gutter: $grid-fluid-gutter, $cols:$i, $mod:'1/3', $class:1);
+//      }
+//    }
+//    &.grid-2-5 {
+//      &:not(.col-with-gutter) {
+//        @include fg-col($gutter: 0, $cols:$i, $mod:'2/5', $class:1);
+//      }
+//      &.col-with-gutter {
+//        @include fg-col($gutter: $grid-gutter, $fluid-gutter: $grid-fluid-gutter, $cols:$i, $mod:'2/5', $class:1);
+//      }
+//    }
+//    &.grid-1-2 {
+//      &:not(.col-with-gutter) {
+//        @include fg-col($gutter: 0, $cols:$i, $mod:'1/2', $class:1);
+//      }
+//      &.col-with-gutter {
+//        @include fg-col($gutter: $grid-gutter, $fluid-gutter: $grid-fluid-gutter, $cols:$i, $mod:'1/2', $class:1);
+//      }
+//    }
+//    &.grid-3-5 {
+//      &:not(.col-with-gutter) {
+//        @include fg-col($gutter: 0, $cols:$i, $mod:'3/5', $class:1);
+//      }
+//      &.col-with-gutter {
+//        @include fg-col($gutter: $grid-gutter, $fluid-gutter: $grid-fluid-gutter, $cols:$i, $mod:'3/5', $class:1);
+//      }
+//    }
+//    &.grid-2-3 {
+//      &:not(.col-with-gutter) {
+//        @include fg-col($gutter: 0, $cols:$i, $mod:'2/3', $class:1);
+//      }
+//      &.col-with-gutter {
+//        @include fg-col($gutter: $grid-gutter, $fluid-gutter: $grid-fluid-gutter, $cols:$i, $mod:'2/3', $class:1);
+//      }
+//    }
+//    &.grid-3-4 {
+//      &:not(.col-with-gutter) {
+//        @include fg-col($gutter: 0, $cols:$i, $mod:'3/4', $class:1);
+//      }
+//      &.col-with-gutter {
+//        @include fg-col($gutter: $grid-gutter, $fluid-gutter: $grid-fluid-gutter, $cols:$i, $mod:'3/4', $class:1);
+//      }
+//    }
+//    &.grid-4-5 {
+//      &:not(.col-with-gutter) {
+//        @include fg-col($gutter: 0, $cols:$i, $mod:'4/5', $class:1);
+//      }
+//      &.col-with-gutter {
+//        @include fg-col($gutter: $grid-gutter, $fluid-gutter: $grid-fluid-gutter, $cols:$i, $mod:'4/5', $class:1);
+//      }
+//    }
+//    &.grid-7-8 {
+//      &:not(.col-with-gutter) {
+//        @include fg-col($gutter: 0, $cols:$i, $mod:'7/8', $class:1);
+//      }
+//      &.col-with-gutter {
+//        @include fg-col($gutter: $grid-gutter, $fluid-gutter: $grid-fluid-gutter, $cols:$i, $mod:'7/8', $class:1);
+//      }
+//    }
+//  }
+//}
+//
+//
+////--------
+//// Fluid-grid base classes (12 grid fractions)
+//// See: https://github.com/Xaxis/fluid-grid
+//@for $i from 1 through 12 {
+//
+//  // Generate breakpoint classes
+//  &.grid-bp-#{$i} {
+//    $bw: ($i / 12) * $break-lg;
+//    @include site-bp($bp: $bw) {
+//
+//      // When css calc() and NOT css calc()
+//      html.csscalc &, html:not(.csscalc) & {
+//        width: 100% !important;
+//        margin-left: 0 !important;
+//      }
+//    };
+//  }
+//
+//  // Generate column classes
+//  .col:first-child:nth-last-child(#{$i}),
+//  .col:first-child:nth-last-child(#{$i}) ~ .col {
+//
+//    // Default - equal width column sizes
+//    &:not(.col-with-gutter) {
+//      @include fg-col($gutter: 0, $cols:$i, $mod:0, $class:1);
+//    }
+//    &.col-with-gutter {
+//      @include fg-col($gutter: $grid-gutter, $fluid-gutter: $grid-fluid-gutter, $cols:$i, $mod:0, $class:1);
+//    }
+//
+//    // Grid column sizes
+//    &.grid-1-12 {
+//      &:not(.col-with-gutter) {
+//        @include fg-col($gutter: 0, $cols:$i, $mod:'1/12', $class:1);
+//      }
+//      &.col-with-gutter {
+//        @include fg-col($gutter: $grid-gutter, $fluid-gutter: $grid-fluid-gutter, $cols:$i, $mod:'1/12', $class:1);
+//      }
+//    }
+//    &.grid-2-12 {
+//      &:not(.col-with-gutter) {
+//        @include fg-col($gutter: 0, $cols:$i, $mod:'2/12', $class:1);
+//      }
+//      &.col-with-gutter {
+//        @include fg-col($gutter: $grid-gutter, $fluid-gutter: $grid-fluid-gutter, $cols:$i, $mod:'2/12', $class:1);
+//      }
+//    }
+//    &.grid-3-12 {
+//      &:not(.col-with-gutter) {
+//        @include fg-col($gutter: 0, $cols:$i, $mod:'3/12', $class:1);
+//      }
+//      &.col-with-gutter {
+//        @include fg-col($gutter: $grid-gutter, $fluid-gutter: $grid-fluid-gutter, $cols:$i, $mod:'3/12', $class:1);
+//      }
+//    }
+//    &.grid-4-12 {
+//      &:not(.col-with-gutter) {
+//        @include fg-col($gutter: 0, $cols:$i, $mod:'4/12', $class:1);
+//      }
+//      &.col-with-gutter {
+//        @include fg-col($gutter: $grid-gutter, $fluid-gutter: $grid-fluid-gutter, $cols:$i, $mod:'4/12', $class:1);
+//      }
+//    }
+//    &.grid-5-12 {
+//      &:not(.col-with-gutter) {
+//        @include fg-col($gutter: 0, $cols:$i, $mod:'5/12', $class:1);
+//      }
+//      &.col-with-gutter {
+//        @include fg-col($gutter: $grid-gutter, $fluid-gutter: $grid-fluid-gutter, $cols:$i, $mod:'5/12', $class:1);
+//      }
+//    }
+//    &.grid-6-12 {
+//      &:not(.col-with-gutter) {
+//        @include fg-col($gutter: 0, $cols:$i, $mod:'6/12', $class:1);
+//      }
+//      &.col-with-gutter {
+//        @include fg-col($gutter: $grid-gutter, $fluid-gutter: $grid-fluid-gutter, $cols:$i, $mod:'6/12', $class:1);
+//      }
+//    }
+//    &.grid-7-12 {
+//      &:not(.col-with-gutter) {
+//        @include fg-col($gutter: 0, $cols:$i, $mod:'7/12', $class:1);
+//      }
+//      &.col-with-gutter {
+//        @include fg-col($gutter: $grid-gutter, $fluid-gutter: $grid-fluid-gutter, $cols:$i, $mod:'7/12', $class:1);
+//      }
+//    }
+//    &.grid-8-12 {
+//      &:not(.col-with-gutter) {
+//        @include fg-col($gutter: 0, $cols:$i, $mod:'8/12', $class:1);
+//      }
+//      &.col-with-gutter {
+//        @include fg-col($gutter: $grid-gutter, $fluid-gutter: $grid-fluid-gutter, $cols:$i, $mod:'8/12', $class:1);
+//      }
+//    }
+//    &.grid-9-12 {
+//      &:not(.col-with-gutter) {
+//        @include fg-col($gutter: 0, $cols:$i, $mod:'9/12', $class:1);
+//      }
+//      &.col-with-gutter {
+//        @include fg-col($gutter: $grid-gutter, $fluid-gutter: $grid-fluid-gutter, $cols:$i, $mod:'9/12', $class:1);
+//      }
+//    }
+//    &.grid-10-12 {
+//      &:not(.col-with-gutter) {
+//        @include fg-col($gutter: 0, $cols:$i, $mod:'10/12', $class:1);
+//      }
+//      &.col-with-gutter {
+//        @include fg-col($gutter: $grid-gutter, $fluid-gutter: $grid-fluid-gutter, $cols:$i, $mod:'10/12', $class:1);
+//      }
+//    }
+//    &.grid-11-12 {
+//      &:not(.col-with-gutter) {
+//        @include fg-col($gutter: 0, $cols:$i, $mod:'11/12', $class:1);
+//      }
+//      &.col-with-gutter {
+//        @include fg-col($gutter: $grid-gutter, $fluid-gutter: $grid-fluid-gutter, $cols:$i, $mod:'11/12', $class:1);
+//      }
+//    }
+//    &.grid-12-12 {
+//      &:not(.col-with-gutter) {
+//        @include fg-col($gutter: 0, $cols:$i, $mod:'12/12', $class:1);
+//      }
+//      &.col-with-gutter {
+//        @include fg-col($gutter: $grid-gutter, $fluid-gutter: $grid-fluid-gutter, $cols:$i, $mod:'12/12', $class:1);
+//      }
+//    }
+//  }
+//}

@@ -2,13 +2,13 @@
 // Mixin for managing columns within a grid system.
 // See: https://github.com/Xaxis/fluid-grid
 //
-// @cols              Number of columns
-// @mod               12 column grid ratio
-// $break             ...
-// @fixed-gutter      Fixed gutter pixel width
-// @fluid-gutter      Fluid gutter percentage width
-// @gutter-type       The type of gutter to use (fixed or fluid)
-// @no-gutter         Boolean value that specifies whether to use the gutter
+// @cols              Number of columns in a row
+// @mod               Width in terms of a 12 column grid ratio
+// $break             Screen width at which column structures respond
+// @fixed-gutter      Fixed gutter pixel width default
+// @fluid-gutter      Fluid gutter percentage width default
+// @gutter-type       Type of gutter to use (`fixed` or `fluid`) default
+// @no-gutter         Boolean value that specifies whether a gutter is used
 @mixin fg-col(
   $cols: 1,
   $mod: 0,
@@ -155,6 +155,7 @@
       }
     }
 
+    // Fluid width gutter enabled
     @else if $gutter-type == 'fluid' {
       $ucw: $mw / 100;
       $cw: 0;
@@ -162,12 +163,16 @@
         $cw: $ucw * 100;
         margin-left: 0;
       } @else {
-        $cw: ($ucw * 100) - $fluid-gutter + ($fluid-gutter / 2);
+        $cw: ($ucw * 100) - $fluid-gutter + ($fluid-gutter / $cols);
       }
       width: #{$cw + '%'};
     }
   }
 }
+
+
+
+
 
 ////--------
 //// Fluid-grid base classes (standard fractions)

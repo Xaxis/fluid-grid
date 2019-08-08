@@ -4,63 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Fluid Grid Demo</title>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="node_modules/jquery.devgrid/dist/jquery.devgrid.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/style.min.css">
-    <script>
-
-        // DOM Ready
-        $(document).ready(function() {
-
-            // Breakpoint tracking and grid visualization
-            // See: https://github.com/Xaxis/jquery.devgrid
-            $('body').devgrid({
-                columns: 29,
-                columnWidth: '40px',
-                gutterWidth: '20px',
-                visible: false,
-                track: true,
-                distributeGutter: false,
-                breakpoints: [
-                    {
-                        bp: '480px',
-                        tag: 'Mobile',
-                        css: {
-                            background: 'rgba(85, 98, 112, 0.55)'
-                        }
-                    },
-                    {
-                        bp: '780px',
-                        tag: 'Tablet',
-                        css: {
-                            background: 'rgba(78, 205, 196, 0.25)'
-                        }
-                    },
-                    {
-                        bp: '960px',
-                        tag: 'Desktop',
-                        css: {
-                            background: 'rgba(199, 244, 100, 0.25)'
-                        }
-                    },
-                    {
-                        bp: '1440px',
-                        tag: 'Wide',
-                        css: {
-                            background: 'rgba(255, 107, 107, 0.25)'
-                        }
-                    },
-                    {
-                        bp: '1740px',
-                        tag: 'Extra Wide',
-                        css: {
-                            background: 'rgba(255, 107, 107, 0.10)'
-                        }
-                    }
-                ]
-            });
-        });
-    </script>
 </head>
 <body>
 
@@ -70,26 +14,29 @@
     </section>
 
     <section>
-        <h3>Basic Columns</h3>
+        <h3>Equal Width Columns</h3>
         <p>
-            Basic columns can be constructed using the <code>fg-col()</code> mixin by passing a single parameter defining
-            the number of columns to be created. All basic columns are the same width per row and fluid however they are
-            not responsive unless the <code>$break</code> parameter is passed.
+            Basic equal width columns can be constructed using the <code>fg-col()</code> mixin by passing a single
+            parameter defining the number of columns. Turning off the gutter between the columns is accomplished by
+            passing <code>$no-gutter: true</code>.
         </p>
 
         <div class="demo-wrapper">
             <div class="fg-demo fg-demo-1"></div>
+<pre>@include fg-col(1);</pre>
         </div>
 
         <div class="demo-wrapper">
             <div class="fg-demo fg-demo-2"></div>
             <div class="fg-demo fg-demo-2"></div>
+<pre>@include fg-col(2, $no-gutter: true);</pre>
         </div>
 
         <div class="demo-wrapper">
             <div class="fg-demo fg-demo-3"></div>
             <div class="fg-demo fg-demo-3"></div>
             <div class="fg-demo fg-demo-3"></div>
+<pre>@include fg-col(3);</pre>
         </div>
 
         <div class="demo-wrapper">
@@ -97,6 +44,7 @@
             <div class="fg-demo fg-demo-4"></div>
             <div class="fg-demo fg-demo-4"></div>
             <div class="fg-demo fg-demo-4"></div>
+<pre>@include fg-col(4, $no-gutter: true);</pre>
         </div>
 
         <div class="demo-wrapper">
@@ -105,6 +53,7 @@
             <div class="fg-demo fg-demo-5"></div>
             <div class="fg-demo fg-demo-5"></div>
             <div class="fg-demo fg-demo-5"></div>
+<pre>@include fg-col(5);</pre>
         </div>
 
         <div class="demo-wrapper">
@@ -114,6 +63,7 @@
             <div class="fg-demo fg-demo-6"></div>
             <div class="fg-demo fg-demo-6"></div>
             <div class="fg-demo fg-demo-6"></div>
+<pre>@include fg-col(6, $no-gutter: true);</pre>
         </div>
 
         <div class="demo-wrapper">
@@ -124,6 +74,7 @@
             <div class="fg-demo fg-demo-7"></div>
             <div class="fg-demo fg-demo-7"></div>
             <div class="fg-demo fg-demo-7"></div>
+<pre>@include fg-col(7);</pre>
         </div>
 
         <div class="demo-wrapper">
@@ -135,355 +86,162 @@
             <div class="fg-demo fg-demo-8"></div>
             <div class="fg-demo fg-demo-8"></div>
             <div class="fg-demo fg-demo-8"></div>
+<pre>@include fg-col(8, $no-gutter: true);</pre>
+        </div>
+
+        <div class="demo-wrapper">
+            <div class="fg-demo fg-demo-9"></div>
+            <div class="fg-demo fg-demo-9"></div>
+            <div class="fg-demo fg-demo-9"></div>
+            <div class="fg-demo fg-demo-9"></div>
+            <div class="fg-demo fg-demo-9"></div>
+            <div class="fg-demo fg-demo-9"></div>
+            <div class="fg-demo fg-demo-9"></div>
+            <div class="fg-demo fg-demo-9"></div>
+            <div class="fg-demo fg-demo-9"></div>
+<pre>@include fg-col(9);</pre>
         </div>
     </section>
 
     <section>
-        <h3>Variable Columns</h3>
-        <p>Columns can also be created that span variable ratio dimensions.</p>
+        <h3>Variable Width Columns</h3>
+        <p>Columns can also be created that span variable ratio dimensions based upon a 12 column grid.</p>
 
         <div class="demo-wrapper">
             <div class="fg-demo fg-demo-1-12"></div>
             <div class="fg-demo fg-demo-11-12"></div>
+<pre>@include fg-col(2, $mod: 1);</pre>
         </div>
 
         <div class="demo-wrapper">
             <div class="fg-demo fg-demo-2-12"></div>
             <div class="fg-demo fg-demo-10-12"></div>
+<pre>@include fg-col(2, $mod: 2, $no-gutter: true);</pre>
         </div>
 
         <div class="demo-wrapper">
             <div class="fg-demo fg-demo-3-12"></div>
             <div class="fg-demo fg-demo-9-12"></div>
+<pre>@include fg-col(2, $mod: 3)</pre>
         </div>
 
         <div class="demo-wrapper">
             <div class="fg-demo fg-demo-4-12"></div>
             <div class="fg-demo fg-demo-8-12"></div>
+<pre>@include fg-col(2, $mod: 4, $no-gutter: true);</pre>
         </div>
 
         <div class="demo-wrapper">
             <div class="fg-demo fg-demo-5-12"></div>
             <div class="fg-demo fg-demo-7-12"></div>
+<pre>@include fg-col(2, $mod: 5);</pre>
         </div>
 
         <div class="demo-wrapper">
             <div class="fg-demo fg-demo-6-12"></div>
             <div class="fg-demo fg-demo-6-12"></div>
+<pre>@include fg-col(2, $mod: 6, $no-gutter: true);</pre>
         </div>
 
         <div class="demo-wrapper">
             <div class="fg-demo fg-demo-7-12"></div>
             <div class="fg-demo fg-demo-5-12"></div>
+<pre>@include fg-col(2, $mod: 7);</pre>
         </div>
 
         <div class="demo-wrapper">
             <div class="fg-demo fg-demo-8-12"></div>
             <div class="fg-demo fg-demo-4-12"></div>
+<pre>@include fg-col(2, $mod: 8, $no-gutter: true);</pre>
         </div>
 
         <div class="demo-wrapper">
             <div class="fg-demo fg-demo-9-12"></div>
             <div class="fg-demo fg-demo-3-12"></div>
+<pre>@include fg-col(2, $mod: 9);</pre>
         </div>
 
         <div class="demo-wrapper">
             <div class="fg-demo fg-demo-10-12"></div>
             <div class="fg-demo fg-demo-2-12"></div>
+<pre>@include fg-col(2, $mod: 10, $no-gutter: true);</pre>
         </div>
 
         <div class="demo-wrapper">
             <div class="fg-demo fg-demo-11-12"></div>
             <div class="fg-demo fg-demo-1-12"></div>
+<pre>@include fg-col(2, $mod: 11);</pre>
         </div>
 
         <div class="demo-wrapper">
             <div class="fg-demo fg-demo-12-12"></div>
+<pre>@include fg-col(2, $mod: 12);</pre>
         </div>
-
     </section>
 
+    <section>
+        <h3>Multiple Variable Width Columns</h3>
+        <p>Defining more than two variable width columns is also possible.</p>
 
+        <div class="demo-wrapper">
+            <div class="fg-demo fg-demo-3-2-12"></div>
+            <div class="fg-demo fg-demo-3-8-12"></div>
+            <div class="fg-demo fg-demo-3-2-12"></div>
+            <pre>
+@include fg-col(3, $mod: 2);
+@include fg-col(3, $mod: 8);
+@include fg-col(3, $mod: 2);
+</pre>
+        </div>
 
+        <div class="demo-wrapper">
+            <div class="fg-demo fg-demo-3-2-12-nog"></div>
+            <div class="fg-demo fg-demo-3-8-12-nog"></div>
+            <div class="fg-demo fg-demo-3-2-12-nog"></div>
+            <pre>
+@include fg-col(3, $mod: 2, $no-gutter: true);
+@include fg-col(3, $mod: 8, $no-gutter: true);
+@include fg-col(3, $mod: 2, $no-gutter: true);
+</pre>
+        </div>
 
+        <div class="demo-wrapper">
+            <div class="fg-demo fg-demo-3-3-12"></div>
+            <div class="fg-demo fg-demo-3-6-12"></div>
+            <div class="fg-demo fg-demo-3-3-12"></div>
+            <pre>
+@include fg-col(3, $mod: 3);
+@include fg-col(3, $mod: 6);
+@include fg-col(3, $mod: 3);
+</pre>
+        </div>
 
-    <!--<section>-->
-        <!--<h3>Responsive Columns</h3>-->
-        <!--<p>-->
-            <!--All column types can be enabled to respond at any dimension by specifying the width at which they should break.-->
-            <!--For instance to have a two column layout break at a "mobile" 720px you would use-->
-            <!--<code>fg-col(2, 720px)</code>.-->
-        <!--</p>-->
+        <div class="demo-wrapper">
+            <div class="fg-demo fg-demo-3-6-12-nog"></div>
+            <div class="fg-demo fg-demo-3-4-12-nog"></div>
+            <div class="fg-demo fg-demo-3-2-12-nog"></div>
+            <pre>
+@include fg-col(3, $mod: 6, $no-gutter: true);
+@include fg-col(3, $mod: 4, $no-gutter: true);
+@include fg-col(3, $mod: 2, $no-gutter: true);
+</pre>
+        </div>
+    </section>
 
-        <!--<div class="demo-wrapper">-->
-            <!--<div class="fg-demo fg-demo-r-1"></div>-->
-            <!--<div class="fg-demo fg-demo-r-1"></div>-->
-        <!--</div>-->
-    <!--</section>-->
+    <section>
+        <h3>Class Based Columns</h3>
+        <p>....</p>
+    </section>
 
-    <!--<section>-->
-        <!--<h3>Nested Columns</h3>-->
-        <!--<p>-->
-            <!--Nested columns are as easy as embedding fluid-grid styled elements within fluid-grid styled elements. There's-->
-            <!--no trick to them at all.-->
-        <!--</p>-->
+    <section>
+        <h3>Grid Columns</h3>
+        <p>....</p>
+    </section>
 
-        <!--<div class="demo-wrapper">-->
-            <!--<div class="fg-demo fg-demo-2">-->
-                <!--<div class="fg-demo fg-demo-2">-->
+    <section>
+        <h3>Responsive Columns</h3>
+        <p>....</p>
+    </section>
 
-                <!--</div>-->
-                <!--<div class="fg-demo fg-demo-2">-->
-
-                <!--</div>-->
-            <!--</div>-->
-            <!--<div class="fg-demo fg-demo-2">-->
-                <!--<div class="fg-demo fg-demo-4-5"></div>-->
-                <!--<div class="fg-demo fg-demo-1-5"></div>-->
-            <!--</div>-->
-        <!--</div>-->
-
-        <!--<div class="demo-wrapper">-->
-            <!--<div class="fg-demo fg-demo-2-5">-->
-                <!--<div class="fg-demo fg-demo-2-5"></div>-->
-                <!--<div class="fg-demo fg-demo-3-5"></div>-->
-            <!--</div>-->
-            <!--<div class="fg-demo fg-demo-3-5">-->
-                <!--<div class="fg-demo fg-demo-4"></div>-->
-                <!--<div class="fg-demo fg-demo-4"></div>-->
-                <!--<div class="fg-demo fg-demo-6"></div>-->
-                <!--<div class="fg-demo fg-demo-6"></div>-->
-                <!--<div class="fg-demo fg-demo-6"></div>-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</section>-->
-
-    <!--<section>-->
-        <!--<h3>Ratio Columns</h3>-->
-        <!--<p>-->
-            <!--Ratio columns are no different than other fluid-grid columns other than you specify the fraction you would-->
-            <!--like a given column to span. They too can easily be made responsive by passing the <code>$breakpoint</code>-->
-            <!--parameter to <code>fg-col()</code>.-->
-        <!--</p>-->
-        <!--<p>-->
-            <!--<code>fg-col($mod: '1/5')</code>-->
-        <!--</p>-->
-
-        <!--<div class="demo-wrapper">-->
-            <!--<div class="fg-demo fg-demo-1-5"></div>-->
-        <!--</div>-->
-
-        <!--<div class="demo-wrapper">-->
-            <!--<div class="fg-demo fg-demo-1-5"></div>-->
-            <!--<div class="fg-demo fg-demo-4-5"></div>-->
-        <!--</div>-->
-    <!--</section>-->
-
-    <!--<section>-->
-        <!--<p>-->
-            <!--<code>fg-col($mod: '1/4')</code>-->
-        <!--</p>-->
-
-        <!--<div class="demo-wrapper">-->
-            <!--<div class="fg-demo fg-demo-1-4"></div>-->
-        <!--</div>-->
-
-        <!--<div class="demo-wrapper">-->
-            <!--<div class="fg-demo fg-demo-1-4"></div>-->
-            <!--<div class="fg-demo fg-demo-3-4"></div>-->
-        <!--</div>-->
-    <!--</section>-->
-
-    <!--<section>-->
-        <!--<p>-->
-            <!--<code>fg-col($mod: '1/3')</code>-->
-        <!--</p>-->
-
-        <!--<div class="demo-wrapper">-->
-            <!--<div class="fg-demo fg-demo-1-3"></div>-->
-        <!--</div>-->
-
-        <!--<div class="demo-wrapper">-->
-            <!--<div class="fg-demo fg-demo-1-3"></div>-->
-            <!--<div class="fg-demo fg-demo-2-3"></div>-->
-        <!--</div>-->
-    <!--</section>-->
-
-    <!--<section>-->
-        <!--<p>-->
-            <!--<code>fg-col($mod: '2/5')</code>-->
-        <!--</p>-->
-
-        <!--<div class="demo-wrapper">-->
-            <!--<div class="fg-demo fg-demo-2-5"></div>-->
-        <!--</div>-->
-
-        <!--<div class="demo-wrapper">-->
-            <!--<div class="fg-demo fg-demo-2-5"></div>-->
-            <!--<div class="fg-demo fg-demo-3-5"></div>-->
-        <!--</div>-->
-    <!--</section>-->
-
-    <!--<section>-->
-        <!--<p>-->
-            <!--<code>fg-col($mod: '1/2')</code>-->
-        <!--</p>-->
-
-        <!--<div class="demo-wrapper">-->
-            <!--<div class="fg-demo fg-demo-1-2"></div>-->
-        <!--</div>-->
-
-        <!--<div class="demo-wrapper">-->
-            <!--<div class="fg-demo fg-demo-1-2"></div>-->
-            <!--<div class="fg-demo fg-demo-1-2"></div>-->
-        <!--</div>-->
-    <!--</section>-->
-
-    <!--<section>-->
-        <!--<p>-->
-            <!--<code>fg-col($mod: '3/5')</code>-->
-        <!--</p>-->
-
-        <!--<div class="demo-wrapper">-->
-            <!--<div class="fg-demo fg-demo-3-5"></div>-->
-        <!--</div>-->
-
-        <!--<div class="demo-wrapper">-->
-            <!--<div class="fg-demo fg-demo-3-5"></div>-->
-            <!--<div class="fg-demo fg-demo-2-5"></div>-->
-        <!--</div>-->
-    <!--</section>-->
-
-    <!--<section>-->
-        <!--<p>-->
-            <!--<code>fg-col($mod: '2/3')</code>-->
-        <!--</p>-->
-
-        <!--<div class="demo-wrapper">-->
-            <!--<div class="fg-demo fg-demo-2-3"></div>-->
-        <!--</div>-->
-
-        <!--<div class="demo-wrapper">-->
-            <!--<div class="fg-demo fg-demo-2-3"></div>-->
-            <!--<div class="fg-demo fg-demo-1-3"></div>-->
-        <!--</div>-->
-    <!--</section>-->
-
-    <!--<section>-->
-        <!--<p>-->
-            <!--<code>fg-col($mod: '3/4')</code>-->
-        <!--</p>-->
-
-        <!--<div class="demo-wrapper">-->
-            <!--<div class="fg-demo fg-demo-3-4"></div>-->
-        <!--</div>-->
-
-        <!--<div class="demo-wrapper">-->
-            <!--<div class="fg-demo fg-demo-3-4"></div>-->
-            <!--<div class="fg-demo fg-demo-1-4"></div>-->
-        <!--</div>-->
-    <!--</section>-->
-
-    <!--<section>-->
-        <!--<p>-->
-            <!--<code>fg-col($mod: '4/5')</code>-->
-        <!--</p>-->
-
-        <!--<div class="demo-wrapper">-->
-            <!--<div class="fg-demo fg-demo-4-5"></div>-->
-        <!--</div>-->
-
-        <!--<div class="demo-wrapper">-->
-            <!--<div class="fg-demo fg-demo-4-5"></div>-->
-            <!--<div class="fg-demo fg-demo-1-5"></div>-->
-        <!--</div>-->
-    <!--</section>-->
-
-    <!--<section>-->
-        <!--<h3>Class Based Columns</h3>-->
-        <!--<p>-->
-            <!--While fluid-grid is designed to operate without any specific class declarations, as a convenience class based-->
-            <!--structures are included.-->
-        <!--</p>-->
-
-        <!--<div class="demo-wrapper">-->
-            <!--<div class="fg-col fg-demo"></div>-->
-        <!--</div>-->
-
-        <!--<div class="demo-wrapper">-->
-            <!--<div class="fg-col fg-demo"></div>-->
-            <!--<div class="fg-col fg-demo"></div>-->
-        <!--</div>-->
-
-        <!--<div class="demo-wrapper">-->
-            <!--<div class="fg-col fg-demo"></div>-->
-            <!--<div class="fg-col fg-demo"></div>-->
-            <!--<div class="fg-col fg-demo"></div>-->
-        <!--</div>-->
-
-        <!--<div class="demo-wrapper">-->
-            <!--<div class="fg-col fg-demo"></div>-->
-            <!--<div class="fg-col fg-demo"></div>-->
-            <!--<div class="fg-col fg-demo"></div>-->
-            <!--<div class="fg-col fg-demo"></div>-->
-        <!--</div>-->
-
-        <!--<div class="demo-wrapper">-->
-            <!--<div class="fg-col fg-1-8 fg-demo"></div>-->
-        <!--</div>-->
-
-        <!--<div class="demo-wrapper">-->
-            <!--<div class="fg-col fg-1-7 fg-demo"></div>-->
-        <!--</div>-->
-
-        <!--<div class="demo-wrapper">-->
-            <!--<div class="fg-col fg-1-6 fg-demo"></div>-->
-        <!--</div>-->
-
-        <!--<div class="demo-wrapper">-->
-            <!--<div class="fg-col fg-1-5 fg-demo"></div>-->
-        <!--</div>-->
-
-        <!--<div class="demo-wrapper">-->
-            <!--<div class="fg-col fg-1-4 fg-demo"></div>-->
-        <!--</div>-->
-
-        <!--<div class="demo-wrapper">-->
-            <!--<div class="fg-col fg-1-3 fg-demo"></div>-->
-        <!--</div>-->
-
-        <!--<div class="demo-wrapper">-->
-            <!--<div class="fg-col fg-2-5 fg-demo"></div>-->
-        <!--</div>-->
-
-        <!--<div class="demo-wrapper">-->
-            <!--<div class="fg-col fg-1-2 fg-demo"></div>-->
-        <!--</div>-->
-
-        <!--<div class="demo-wrapper">-->
-            <!--<div class="fg-col fg-3-5 fg-demo"></div>-->
-        <!--</div>-->
-
-        <!--<div class="demo-wrapper">-->
-            <!--<div class="fg-col fg-2-3 fg-demo"></div>-->
-        <!--</div>-->
-
-        <!--<div class="demo-wrapper">-->
-            <!--<div class="fg-col fg-3-4 fg-demo"></div>-->
-        <!--</div>-->
-
-        <!--<div class="demo-wrapper">-->
-            <!--<div class="fg-col fg-4-5 fg-demo"></div>-->
-        <!--</div>-->
-
-        <!--<div class="demo-wrapper">-->
-            <!--<div class="fg-col fg-7-8 fg-demo">-->
-                <!--<div class="fg-col fg-demo"></div>-->
-                <!--<div class="fg-col fg-demo"></div>-->
-                <!--<div class="fg-col fg-demo"></div>-->
-                <!--<div class="fg-col fg-demo"></div>-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</section>-->
 </body>
 </html>

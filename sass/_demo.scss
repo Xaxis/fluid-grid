@@ -1,56 +1,8 @@
 //--------
-// Grid dimensions (AUXILIARY)
-$fg-base: 40px;                                   // Base grid column width (your grid system's base column width)
-$fg-col-total: 29;                                // Column total
-$fg-grid-width: $fg-base + 20px;                  // Grid width
-$fg-grid-total: $fg-grid-width * $fg-col-total;   // Grid total width
-
-//--------
-// Grid columns
-$fg-col-1: $fg-grid-width * 1;
-$fg-col-2: $fg-grid-width * 2;
-$fg-col-3: $fg-grid-width * 3;
-$fg-col-4: $fg-grid-width * 4;
-$fg-col-5: $fg-grid-width * 5;
-$fg-col-6: $fg-grid-width * 6;
-$fg-col-7: $fg-grid-width * 7;
-$fg-col-8: $fg-grid-width * 8;
-$fg-col-9: $fg-grid-width * 9;
-$fg-col-10: $fg-grid-width * 10;
-$fg-col-11: $fg-grid-width * 11;
-$fg-col-12: $fg-grid-width * 12;
-$fg-col-13: $fg-grid-width * 13;
-$fg-col-14: $fg-grid-width * 14;
-$fg-col-15: $fg-grid-width * 15;
-$fg-col-16: $fg-grid-width * 16;
-$fg-col-17: $fg-grid-width * 17;
-$fg-col-18: $fg-grid-width * 18;
-$fg-col-19: $fg-grid-width * 19;
-$fg-col-20: $fg-grid-width * 20;
-$fg-col-21: $fg-grid-width * 21;
-$fg-col-22: $fg-grid-width * 22;
-$fg-col-23: $fg-grid-width * 23;
-$fg-col-24: $fg-grid-width * 24;
-$fg-col-25: $fg-grid-width * 25;
-$fg-col-26: $fg-grid-width * 26;
-$fg-col-27: $fg-grid-width * 27;
-$fg-col-28: $fg-grid-width * 28;
-$fg-col-29: $fg-grid-width * 29;
-
-//--------
-// Grid breakpoints
-$fg-break-xlg: $fg-col-29;                          // 1740px
-$fg-break-lg: $fg-col-24;                           // 1440px
-$fg-break-md: $fg-col-19;                           // 1140px
-$fg-break-sm: $fg-col-13;                           // 780px
-$fg-break-xs: $fg-col-8;                            // 480px
-
-//--------
 // Demo specific variables
 $site-font-size: 20px;
 $site-font-family: sans-serif;
 $site-min-width: 320px;
-$site-max-width: $fg-break-md;
 $site-mobile-breakpoint: 768px;
 
 //--------
@@ -95,12 +47,9 @@ section {
 //--------
 // Sectional element stylings
 section {
-  max-width: $site-max-width;
-  @media only screen and (min-width: $fg-break-lg) {
-    max-width: $fg-break-lg;
-  }
-  @media only screen and (min-width: $fg-break-xlg) {
-    max-width: $fg-break-xlg;
+  max-width: 1440px;
+  @media only screen and (min-width: 1028px) {
+    max-width: 1028px;
   }
 }
 
@@ -199,7 +148,14 @@ section:nth-child(15) {
 .demo-wrapper {
   overflow: auto;
   margin-top: 20px;
-  border: 1px dashed darkgreen;
+  pre {
+    display: inline-block;
+    width: 100%;
+    padding: 20px;
+    margin-top: 10px;
+    background-color: lightgray;
+    border: 1px solid darkgray;
+  }
 }
 
 //--------
@@ -216,7 +172,7 @@ section:nth-child(15) {
 }
 
 //--------
-// Basic column examples
+// Equal width column examples
 .fg-demo-1 {
   @include fg-col(1);
 }
@@ -241,44 +197,119 @@ section:nth-child(15) {
 .fg-demo-8 {
   @include fg-col(8, $no-gutter: true);
 }
+.fg-demo-9 {
+  @include fg-col(9);
+}
 
 //--------
-// Ratio column examples
+// Variable width column examples
 .fg-demo-1-12 {
   @include fg-col(2, $mod: 1);
 }
 .fg-demo-2-12 {
-  @include fg-col(2, $mod: 2, $no-gutter: true);
+  @include fg-col(2, $mod: 2);
 }
 .fg-demo-3-12 {
   @include fg-col(2, $mod: 3);
 }
 .fg-demo-4-12 {
-  @include fg-col(2, $mod: 4, $no-gutter: true);
+  @include fg-col(2, $mod: 4);
 }
 .fg-demo-5-12 {
   @include fg-col(2, $mod: 5);
 }
 .fg-demo-6-12 {
-  @include fg-col(2, $mod: 6, $no-gutter: true);
+  @include fg-col(2, $mod: 6);
 }
 .fg-demo-7-12 {
   @include fg-col(2, $mod: 7);
 }
 .fg-demo-8-12 {
-  @include fg-col(2, $mod: 8, $no-gutter: true);
+  @include fg-col(2, $mod: 8);
 }
 .fg-demo-9-12 {
   @include fg-col(2, $mod: 9);
 }
 .fg-demo-10-12 {
-  @include fg-col(2, $mod: 10, $no-gutter: true);
+  @include fg-col(2, $mod: 10);
 }
 .fg-demo-11-12 {
   @include fg-col(2, $mod: 11);
 }
 .fg-demo-12-12 {
   @include fg-col(2, $mod: 12);
+}
+.fg-demo-3-1-12-nog {
+  @include fg-col(3, $mod: 1, $no-gutter: true);
+}
+.fg-demo-3-2-12-nog {
+  @include fg-col(3, $mod: 2, $no-gutter: true);
+}
+.fg-demo-3-3-12-nog {
+  @include fg-col(3, $mod: 3, $no-gutter: true);
+}
+.fg-demo-3-4-12-nog {
+  @include fg-col(3, $mod: 4, $no-gutter: true);
+}
+.fg-demo-3-5-12-nog {
+  @include fg-col(3, $mod: 5, $no-gutter: true);
+}
+.fg-demo-3-6-12-nog {
+  @include fg-col(3, $mod: 6, $no-gutter: true);
+}
+.fg-demo-3-7-12-nog {
+  @include fg-col(3, $mod: 7, $no-gutter: true);
+}
+.fg-demo-3-8-12-nog {
+  @include fg-col(3, $mod: 8, $no-gutter: true);
+}
+.fg-demo-3-9-12-nog {
+  @include fg-col(3, $mod: 9, $no-gutter: true);
+}
+.fg-demo-3-10-12-nog {
+  @include fg-col(3, $mod: 10, $no-gutter: true);
+}
+.fg-demo-3-11-12-nog {
+  @include fg-col(3, $mod: 11, $no-gutter: true);
+}
+.fg-demo-3-12-12-nog {
+  @include fg-col(3, $mod: 12, $no-gutter: true);
+}
+.fg-demo-3-1-12 {
+  @include fg-col(3, $mod: 1);
+}
+.fg-demo-3-2-12 {
+  @include fg-col(3, $mod: 2);
+}
+.fg-demo-3-3-12 {
+  @include fg-col(3, $mod: 3);
+}
+.fg-demo-3-4-12 {
+  @include fg-col(3, $mod: 4);
+}
+.fg-demo-3-5-12 {
+  @include fg-col(3, $mod: 5);
+}
+.fg-demo-3-6-12 {
+  @include fg-col(3, $mod: 6);
+}
+.fg-demo-3-7-12 {
+  @include fg-col(3, $mod: 7);
+}
+.fg-demo-3-8-12 {
+  @include fg-col(3, $mod: 8);
+}
+.fg-demo-3-9-12 {
+  @include fg-col(3, $mod: 9);
+}
+.fg-demo-3-10-12 {
+  @include fg-col(3, $mod: 10);
+}
+.fg-demo-3-11-12 {
+  @include fg-col(3, $mod: 11);
+}
+.fg-demo-3-12-12 {
+  @include fg-col(3, $mod: 12);
 }
 
 ////--------

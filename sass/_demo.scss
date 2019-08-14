@@ -57,12 +57,22 @@ h3 {
   min-width: $site-min-width;
   margin: 20px 0 0 0;
 }
+
 p {
   code {
     background: #dedede;
     padding: 2px 3px;
     border-radius: 4px;
   }
+}
+
+pre {
+  display: inline-block;
+  width: 100%;
+  padding: 20px;
+  margin-top: 10px;
+  background-color: lightgray;
+  border: 1px solid darkgray;
 }
 
 //--------
@@ -148,14 +158,6 @@ section:nth-child(15) {
 .demo-wrapper {
   overflow: auto;
   margin-top: 20px;
-  pre {
-    display: inline-block;
-    width: 100%;
-    padding: 20px;
-    margin-top: 10px;
-    background-color: lightgray;
-    border: 1px solid darkgray;
-  }
 }
 
 //--------
@@ -311,10 +313,3 @@ section:nth-child(15) {
 .fg-demo-3-12-12 {
   @include fg-col(3, $mod: 12);
 }
-
-////--------
-//// Responsive column examples
-//.fg-demo-r-1 {
-//  @include fg-col(2, $site-mobile-breakpoint);
-//}
-//

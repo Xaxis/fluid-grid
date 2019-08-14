@@ -173,252 +173,71 @@
 
 
 
+//--------
+// Fluid-grid base classes (12 grid fractions)
+// See: https://github.com/Xaxis/fluid-grid
+$fg-class-prefix: "fg-";
+$fg-fixed-gutter: 20px;
+$fg-fluid-gutter: 2.0;
+@mixin fg-col-class($col-count, $col-grid) {
+  &:not(#{"."}#{$fg-class-prefix}no-gutter) {
+    @include fg-col($cols:$col-count, $mod:$col-grid, $no-gutter: false);
+  }
+  &#{"."}#{$fg-class-prefix}no-gutter {
+    @include fg-col($cols:$col-count, $mod:$col-grid, $no-gutter: true);
+  }
+}
+@for $i from 1 through 12 {
 
-////--------
-//// Fluid-grid base classes (standard fractions)
-//@for $i from 1 through 8 {
-//  .col:first-child:nth-last-child(#{$i}),
-//  .col:first-child:nth-last-child(#{$i}) ~ .col {
-//    &:not(.col-with-gutter) {
-//      @include fg-col($gutter: 0, $cols:$i, $mod:0, $class:1);
-//    }
-//    &.col-with-gutter {
-//      @include fg-col($gutter: $grid-gutter, $fluid-gutter: $grid-fluid-gutter, $cols:$i, $mod:0, $class:1);
-//    }
-//    &.grid-1-8 {
-//      &:not(.col-with-gutter) {
-//        @include fg-col($gutter: 0, $cols:$i, $mod:'1/8', $class:1);
-//      }
-//      &.col-with-gutter {
-//        @include fg-col($gutter: $grid-gutter, $fluid-gutter: $grid-fluid-gutter, $cols:$i, $mod:'1/8', $class:1);
-//      }
-//    }
-//    &.grid-1-7 {
-//      &:not(.col-with-gutter) {
-//        @include fg-col($gutter: 0, $cols:$i, $mod:'1/7', $class:1);
-//      }
-//      &.col-with-gutter {
-//        @include fg-col($gutter: $grid-gutter, $fluid-gutter: $grid-fluid-gutter, $cols:$i, $mod:'1/7', $class:1);
-//      }
-//    }
-//    &.grid-1-6 {
-//      &:not(.col-with-gutter) {
-//        @include fg-col($gutter: 0, $cols:$i, $mod:'1/6', $class:1);
-//      }
-//      &.col-with-gutter {
-//        @include fg-col($gutter: $grid-gutter, $fluid-gutter: $grid-fluid-gutter, $cols:$i, $mod:'1/6', $class:1);
-//      }
-//    }
-//    &.grid-1-5 {
-//      &:not(.col-with-gutter) {
-//        @include fg-col($gutter: 0, $cols:$i, $mod:'1/5', $class:1);
-//      }
-//      &.col-with-gutter {
-//        @include fg-col($gutter: $grid-gutter, $fluid-gutter: $grid-fluid-gutter, $cols:$i, $mod:'1/5', $class:1);
-//      }
-//    }
-//    &.grid-1-4 {
-//      &:not(.col-with-gutter) {
-//        @include fg-col($gutter: 0, $cols:$i, $mod:'1/4', $class:1);
-//      }
-//      &.col-with-gutter {
-//        @include fg-col($gutter: $grid-gutter, $fluid-gutter: $grid-fluid-gutter, $cols:$i, $mod:'1/4', $class:1);
-//      }
-//    }
-//    &.grid-1-3 {
-//      &:not(.col-with-gutter) {
-//        @include fg-col($gutter: 0, $cols:$i, $mod:'1/3', $class:1);
-//      }
-//      &.col-with-gutter {
-//        @include fg-col($gutter: $grid-gutter, $fluid-gutter: $grid-fluid-gutter, $cols:$i, $mod:'1/3', $class:1);
-//      }
-//    }
-//    &.grid-2-5 {
-//      &:not(.col-with-gutter) {
-//        @include fg-col($gutter: 0, $cols:$i, $mod:'2/5', $class:1);
-//      }
-//      &.col-with-gutter {
-//        @include fg-col($gutter: $grid-gutter, $fluid-gutter: $grid-fluid-gutter, $cols:$i, $mod:'2/5', $class:1);
-//      }
-//    }
-//    &.grid-1-2 {
-//      &:not(.col-with-gutter) {
-//        @include fg-col($gutter: 0, $cols:$i, $mod:'1/2', $class:1);
-//      }
-//      &.col-with-gutter {
-//        @include fg-col($gutter: $grid-gutter, $fluid-gutter: $grid-fluid-gutter, $cols:$i, $mod:'1/2', $class:1);
-//      }
-//    }
-//    &.grid-3-5 {
-//      &:not(.col-with-gutter) {
-//        @include fg-col($gutter: 0, $cols:$i, $mod:'3/5', $class:1);
-//      }
-//      &.col-with-gutter {
-//        @include fg-col($gutter: $grid-gutter, $fluid-gutter: $grid-fluid-gutter, $cols:$i, $mod:'3/5', $class:1);
-//      }
-//    }
-//    &.grid-2-3 {
-//      &:not(.col-with-gutter) {
-//        @include fg-col($gutter: 0, $cols:$i, $mod:'2/3', $class:1);
-//      }
-//      &.col-with-gutter {
-//        @include fg-col($gutter: $grid-gutter, $fluid-gutter: $grid-fluid-gutter, $cols:$i, $mod:'2/3', $class:1);
-//      }
-//    }
-//    &.grid-3-4 {
-//      &:not(.col-with-gutter) {
-//        @include fg-col($gutter: 0, $cols:$i, $mod:'3/4', $class:1);
-//      }
-//      &.col-with-gutter {
-//        @include fg-col($gutter: $grid-gutter, $fluid-gutter: $grid-fluid-gutter, $cols:$i, $mod:'3/4', $class:1);
-//      }
-//    }
-//    &.grid-4-5 {
-//      &:not(.col-with-gutter) {
-//        @include fg-col($gutter: 0, $cols:$i, $mod:'4/5', $class:1);
-//      }
-//      &.col-with-gutter {
-//        @include fg-col($gutter: $grid-gutter, $fluid-gutter: $grid-fluid-gutter, $cols:$i, $mod:'4/5', $class:1);
-//      }
-//    }
-//    &.grid-7-8 {
-//      &:not(.col-with-gutter) {
-//        @include fg-col($gutter: 0, $cols:$i, $mod:'7/8', $class:1);
-//      }
-//      &.col-with-gutter {
-//        @include fg-col($gutter: $grid-gutter, $fluid-gutter: $grid-fluid-gutter, $cols:$i, $mod:'7/8', $class:1);
-//      }
-//    }
-//  }
-//}
-//
-//
-////--------
-//// Fluid-grid base classes (12 grid fractions)
-//// See: https://github.com/Xaxis/fluid-grid
-//@for $i from 1 through 12 {
-//
-//  // Generate breakpoint classes
-//  &.grid-bp-#{$i} {
-//    $bw: ($i / 12) * $break-lg;
-//    @include site-bp($bp: $bw) {
-//
-//      // When css calc() and NOT css calc()
-//      html.csscalc &, html:not(.csscalc) & {
-//        width: 100% !important;
-//        margin-left: 0 !important;
-//      }
-//    };
-//  }
-//
-//  // Generate column classes
-//  .col:first-child:nth-last-child(#{$i}),
-//  .col:first-child:nth-last-child(#{$i}) ~ .col {
-//
-//    // Default - equal width column sizes
-//    &:not(.col-with-gutter) {
-//      @include fg-col($gutter: 0, $cols:$i, $mod:0, $class:1);
-//    }
-//    &.col-with-gutter {
-//      @include fg-col($gutter: $grid-gutter, $fluid-gutter: $grid-fluid-gutter, $cols:$i, $mod:0, $class:1);
-//    }
-//
-//    // Grid column sizes
-//    &.grid-1-12 {
-//      &:not(.col-with-gutter) {
-//        @include fg-col($gutter: 0, $cols:$i, $mod:'1/12', $class:1);
-//      }
-//      &.col-with-gutter {
-//        @include fg-col($gutter: $grid-gutter, $fluid-gutter: $grid-fluid-gutter, $cols:$i, $mod:'1/12', $class:1);
-//      }
-//    }
-//    &.grid-2-12 {
-//      &:not(.col-with-gutter) {
-//        @include fg-col($gutter: 0, $cols:$i, $mod:'2/12', $class:1);
-//      }
-//      &.col-with-gutter {
-//        @include fg-col($gutter: $grid-gutter, $fluid-gutter: $grid-fluid-gutter, $cols:$i, $mod:'2/12', $class:1);
-//      }
-//    }
-//    &.grid-3-12 {
-//      &:not(.col-with-gutter) {
-//        @include fg-col($gutter: 0, $cols:$i, $mod:'3/12', $class:1);
-//      }
-//      &.col-with-gutter {
-//        @include fg-col($gutter: $grid-gutter, $fluid-gutter: $grid-fluid-gutter, $cols:$i, $mod:'3/12', $class:1);
-//      }
-//    }
-//    &.grid-4-12 {
-//      &:not(.col-with-gutter) {
-//        @include fg-col($gutter: 0, $cols:$i, $mod:'4/12', $class:1);
-//      }
-//      &.col-with-gutter {
-//        @include fg-col($gutter: $grid-gutter, $fluid-gutter: $grid-fluid-gutter, $cols:$i, $mod:'4/12', $class:1);
-//      }
-//    }
-//    &.grid-5-12 {
-//      &:not(.col-with-gutter) {
-//        @include fg-col($gutter: 0, $cols:$i, $mod:'5/12', $class:1);
-//      }
-//      &.col-with-gutter {
-//        @include fg-col($gutter: $grid-gutter, $fluid-gutter: $grid-fluid-gutter, $cols:$i, $mod:'5/12', $class:1);
-//      }
-//    }
-//    &.grid-6-12 {
-//      &:not(.col-with-gutter) {
-//        @include fg-col($gutter: 0, $cols:$i, $mod:'6/12', $class:1);
-//      }
-//      &.col-with-gutter {
-//        @include fg-col($gutter: $grid-gutter, $fluid-gutter: $grid-fluid-gutter, $cols:$i, $mod:'6/12', $class:1);
-//      }
-//    }
-//    &.grid-7-12 {
-//      &:not(.col-with-gutter) {
-//        @include fg-col($gutter: 0, $cols:$i, $mod:'7/12', $class:1);
-//      }
-//      &.col-with-gutter {
-//        @include fg-col($gutter: $grid-gutter, $fluid-gutter: $grid-fluid-gutter, $cols:$i, $mod:'7/12', $class:1);
-//      }
-//    }
-//    &.grid-8-12 {
-//      &:not(.col-with-gutter) {
-//        @include fg-col($gutter: 0, $cols:$i, $mod:'8/12', $class:1);
-//      }
-//      &.col-with-gutter {
-//        @include fg-col($gutter: $grid-gutter, $fluid-gutter: $grid-fluid-gutter, $cols:$i, $mod:'8/12', $class:1);
-//      }
-//    }
-//    &.grid-9-12 {
-//      &:not(.col-with-gutter) {
-//        @include fg-col($gutter: 0, $cols:$i, $mod:'9/12', $class:1);
-//      }
-//      &.col-with-gutter {
-//        @include fg-col($gutter: $grid-gutter, $fluid-gutter: $grid-fluid-gutter, $cols:$i, $mod:'9/12', $class:1);
-//      }
-//    }
-//    &.grid-10-12 {
-//      &:not(.col-with-gutter) {
-//        @include fg-col($gutter: 0, $cols:$i, $mod:'10/12', $class:1);
-//      }
-//      &.col-with-gutter {
-//        @include fg-col($gutter: $grid-gutter, $fluid-gutter: $grid-fluid-gutter, $cols:$i, $mod:'10/12', $class:1);
-//      }
-//    }
-//    &.grid-11-12 {
-//      &:not(.col-with-gutter) {
-//        @include fg-col($gutter: 0, $cols:$i, $mod:'11/12', $class:1);
-//      }
-//      &.col-with-gutter {
-//        @include fg-col($gutter: $grid-gutter, $fluid-gutter: $grid-fluid-gutter, $cols:$i, $mod:'11/12', $class:1);
-//      }
-//    }
-//    &.grid-12-12 {
-//      &:not(.col-with-gutter) {
-//        @include fg-col($gutter: 0, $cols:$i, $mod:'12/12', $class:1);
-//      }
-//      &.col-with-gutter {
-//        @include fg-col($gutter: $grid-gutter, $fluid-gutter: $grid-fluid-gutter, $cols:$i, $mod:'12/12', $class:1);
-//      }
-//    }
-//  }
-//}
+  // Generate column classes
+  #{"."}#{$fg-class-prefix}col:first-child:nth-last-child(#{$i}),
+  #{"."}#{$fg-class-prefix}col:first-child:nth-last-child(#{$i}) ~ #{"."}#{$fg-class-prefix}col {
+
+    // Equal width column sizes
+    &:not(#{"."}#{$fg-class-prefix}no-gutter) {
+      @include fg-col($cols:$i);
+    }
+    &#{"."}#{$fg-class-prefix}no-gutter {
+      @include fg-col($cols:$i, $no-gutter: true);
+    }
+
+    // Grid column sizes
+    $col-selector: "&" + "." + $fg-class-prefix + "col-";
+    #{$col-selector}1 {
+      @include fg-col-class($i, 1);
+    }
+    #{$col-selector}2 {
+      @include fg-col-class($i, 2);
+    }
+    #{$col-selector}3 {
+      @include fg-col-class($i, 3);
+    }
+    #{$col-selector}4 {
+      @include fg-col-class($i, 4);
+    }
+    #{$col-selector}5 {
+      @include fg-col-class($i, 5);
+    }
+    #{$col-selector}6 {
+      @include fg-col-class($i, 6);
+    }
+    #{$col-selector}7 {
+      @include fg-col-class($i, 7);
+    }
+    #{$col-selector}8 {
+      @include fg-col-class($i, 8);
+    }
+    #{$col-selector}9 {
+      @include fg-col-class($i, 9);
+    }
+    #{$col-selector}10 {
+      @include fg-col-class($i, 10);
+    }
+    #{$col-selector}11 {
+      @include fg-col-class($i, 11);
+    }
+    #{$col-selector}12 {
+      @include fg-col-class($i, 12);
+    }
+  }
+}

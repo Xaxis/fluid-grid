@@ -187,7 +187,7 @@
             <div class="fg-demo fg-demo-3-2-12"></div>
             <div class="fg-demo fg-demo-3-8-12"></div>
             <div class="fg-demo fg-demo-3-2-12"></div>
-            <pre>
+<pre>
 @include fg-col(3, $mod: 2);
 @include fg-col(3, $mod: 8);
 @include fg-col(3, $mod: 2);
@@ -198,7 +198,7 @@
             <div class="fg-demo fg-demo-3-2-12-nog"></div>
             <div class="fg-demo fg-demo-3-8-12-nog"></div>
             <div class="fg-demo fg-demo-3-2-12-nog"></div>
-            <pre>
+<pre>
 @include fg-col(3, $mod: 2, $no-gutter: true);
 @include fg-col(3, $mod: 8, $no-gutter: true);
 @include fg-col(3, $mod: 2, $no-gutter: true);
@@ -209,7 +209,7 @@
             <div class="fg-demo fg-demo-3-3-12"></div>
             <div class="fg-demo fg-demo-3-6-12"></div>
             <div class="fg-demo fg-demo-3-3-12"></div>
-            <pre>
+<pre>
 @include fg-col(3, $mod: 3);
 @include fg-col(3, $mod: 6);
 @include fg-col(3, $mod: 3);
@@ -220,7 +220,7 @@
             <div class="fg-demo fg-demo-3-6-12-nog"></div>
             <div class="fg-demo fg-demo-3-4-12-nog"></div>
             <div class="fg-demo fg-demo-3-2-12-nog"></div>
-            <pre>
+<pre>
 @include fg-col(3, $mod: 6, $no-gutter: true);
 @include fg-col(3, $mod: 4, $no-gutter: true);
 @include fg-col(3, $mod: 2, $no-gutter: true);
@@ -230,7 +230,37 @@
 
     <section>
         <h3>Class Based Columns</h3>
-        <p>....</p>
+        <p>
+            If you want to build your columnar HTML without defining your own classes, Fluid Grid's SASS generates some
+            very useful helper classes to make life easier.
+        </p>
+
+        <div class="demo-wrapper">
+            <div class="fg-demo fg-col"></div>
+            <div class="fg-demo fg-col"></div>
+            <div class="fg-demo fg-col"></div>
+        </div>
+
+        <div class="demo-wrapper">
+            <div class="fg-demo fg-col fg-no-gutter"></div>
+            <div class="fg-demo fg-col fg-no-gutter"></div>
+            <div class="fg-demo fg-col fg-no-gutter"></div>
+        </div>
+
+        <div class="demo-wrapper">
+            <div class="fg-demo fg-col fg-col-3"></div>
+            <div class="fg-demo fg-col fg-col-3"></div>
+            <div class="fg-demo fg-col fg-col-3"></div>
+            <div class="fg-demo fg-col fg-col-3"></div>
+        </div>
+
+        <div class="demo-wrapper">
+            <div class="fg-demo fg-col fg-col-3 fg-no-gutter"></div>
+            <div class="fg-demo fg-col fg-col-3 fg-no-gutter"></div>
+            <div class="fg-demo fg-col fg-col-3 fg-no-gutter"></div>
+            <div class="fg-demo fg-col fg-col-3 fg-no-gutter"></div>
+        </div>
+
     </section>
 
     <section>

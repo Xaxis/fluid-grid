@@ -77,6 +77,10 @@ Two columns that break to 100% width and stack when the viewport is less than 76
 
 ...
 
+### Grid columns
+
+...
+
 ## Caveats
 
 The fluid-grid mixin uses floated elements which by their default nature are taken out of the normal flow of their 

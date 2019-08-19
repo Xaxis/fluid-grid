@@ -240,12 +240,22 @@
             <div class="fg-demo fg-col"></div>
             <div class="fg-demo fg-col"></div>
         </div>
+<pre>
+&lt;div class="fg-col"&gt;&lt;/div&gt;
+&lt;div class="fg-col"&gt;&lt;/div&gt;
+&lt;div class="fg-col"&gt;&lt;/div&gt;
+</pre>
 
         <div class="demo-wrapper">
             <div class="fg-demo fg-col fg-no-gutter"></div>
             <div class="fg-demo fg-col fg-no-gutter"></div>
             <div class="fg-demo fg-col fg-no-gutter"></div>
         </div>
+<pre>
+&lt;div class="fg-col fg-no-gutter"&gt;&lt;/div&gt;
+&lt;div class="fg-col fg-no-gutter"&gt;&lt;/div&gt;
+&lt;div class="fg-col fg-no-gutter"&gt;&lt;/div&gt;
+</pre>
 
         <div class="demo-wrapper">
             <div class="fg-demo fg-col fg-col-3"></div>
@@ -253,6 +263,12 @@
             <div class="fg-demo fg-col fg-col-3"></div>
             <div class="fg-demo fg-col fg-col-3"></div>
         </div>
+<pre>
+&lt;div class="fg-col fg-col-3"&gt;&lt;/div&gt;
+&lt;div class="fg-col fg-col-3"&gt;&lt;/div&gt;
+&lt;div class="fg-col fg-col-3"&gt;&lt;/div&gt;
+&lt;div class="fg-col fg-col-3"&gt;&lt;/div&gt;
+</pre>
 
         <div class="demo-wrapper">
             <div class="fg-demo fg-col fg-col-3 fg-no-gutter"></div>
@@ -260,18 +276,34 @@
             <div class="fg-demo fg-col fg-col-3 fg-no-gutter"></div>
             <div class="fg-demo fg-col fg-col-3 fg-no-gutter"></div>
         </div>
+<pre>
+&lt;div class="fg-col fg-col-3 fg-no-gutter"&gt;&lt;/div&gt;
+&lt;div class="fg-col fg-col-3 fg-no-gutter"&gt;&lt;/div&gt;
+&lt;div class="fg-col fg-col-3 fg-no-gutter"&gt;&lt;/div&gt;
+&lt;div class="fg-col fg-col-3 fg-no-gutter"&gt;&lt;/div&gt;
+</pre>
 
         <div class="demo-wrapper">
             <div class="fg-demo fg-col fg-col-3"></div>
             <div class="fg-demo fg-col fg-col-6"></div>
             <div class="fg-demo fg-col fg-col-3"></div>
         </div>
+<pre>
+&lt;div class="fg-col fg-col-3"&gt;&lt;/div&gt;
+&lt;div class="fg-col fg-col-6"&gt;&lt;/div&gt;
+&lt;div class="fg-col fg-col-3"&gt;&lt;/div&gt;
+</pre>
 
         <div class="demo-wrapper">
             <div class="fg-demo fg-col fg-col-2 fg-no-gutter"></div>
             <div class="fg-demo fg-col fg-col-5 fg-no-gutter"></div>
             <div class="fg-demo fg-col fg-col-5 fg-no-gutter"></div>
         </div>
+<pre>
+&lt;div class="fg-col fg-col-2 fg-no-gutter"&gt;&lt;/div&gt;
+&lt;div class="fg-col fg-col-5 fg-no-gutter"&gt;&lt;/div&gt;
+&lt;div class="fg-col fg-col-5 fg-no-gutter"&gt;&lt;/div&gt;
+</pre>
 
         <div class="demo-wrapper">
             <div class="fg-demo fg-col fg-col-2"></div>
@@ -280,6 +312,24 @@
             <div class="fg-demo fg-col fg-col-3"></div>
             <div class="fg-demo fg-col fg-col-4"></div>
         </div>
+<pre>
+&lt;div class="fg-col fg-col-2"&gt;&lt;/div&gt;
+&lt;div class="fg-col fg-col-1"&gt;&lt;/div&gt;
+&lt;div class="fg-col fg-col-2"&gt;&lt;/div&gt;
+&lt;div class="fg-col fg-col-3"&gt;&lt;/div&gt;
+&lt;div class="fg-col fg-col-4"&gt;&lt;/div&gt;
+</pre>
+
+        <div class="demo-wrapper">
+            <div class="fg-demo fg-col fg-break-8"></div>
+            <div class="fg-demo fg-col fg-break-8"></div>
+            <div class="fg-demo fg-col fg-break-8"></div>
+        </div>
+<pre>
+&lt;div class="fg-col fg-break-8"&gt;&lt;/div&gt;
+&lt;div class="fg-col fg-break-8"&gt;&lt;/div&gt;
+&lt;div class="fg-col fg-break-8"&gt;&lt;/div&gt;
+</pre>
 
     </section>
 
@@ -298,30 +348,39 @@
 
     <section>
         <h3>Grid Columns</h3>
-        <p>....</p>
+        <p>CSS Grid is supported by setting <code>$css-grid: true</code>. The use of fluid-grid differs when defining
+        CSS grids in that <code>fg-col()</code> should be called on the parent or wrapper element instead of on the
+        column items themselves.</p>
 
-        <div class="demo-wrapper">
-            <div class="fg-demo fg-demo-grid-1"></div>
-            <div class="fg-demo fg-demo-grid-1"></div>
-            <div class="fg-demo fg-demo-grid-1"></div>
-            <div class="fg-demo fg-demo-grid-1"></div>
-            <div class="fg-demo fg-demo-grid-1"></div>
-            <div class="fg-demo fg-demo-grid-1"></div>
-            <div class="fg-demo fg-demo-grid-1"></div>
-            <div class="fg-demo fg-demo-grid-1"></div>
-            <div class="fg-demo fg-demo-grid-1"></div>
+        <div class="demo-wrapper fg-demo-grid-1">
+            <div class="fg-demo"></div>
+            <div class="fg-demo"></div>
+            <div class="fg-demo"></div>
+            <div class="fg-demo"></div>
+            <div class="fg-demo"></div>
+            <div class="fg-demo"></div>
         </div>
+<pre>
+.demo-wrapper {
+    @include fg-col(3, $css-grid: true);
+}
+</pre>
 
-        <div class="demo-wrapper">
-            <div class="fg-demo fg-demo-grid-2"></div>
-            <div class="fg-demo fg-demo-grid-2"></div>
-            <div class="fg-demo fg-demo-grid-2"></div>
-            <div class="fg-demo fg-demo-grid-2"></div>
-            <div class="fg-demo fg-demo-grid-2"></div>
-            <div class="fg-demo fg-demo-grid-2"></div>
-            <div class="fg-demo fg-demo-grid-2"></div>
-            <div class="fg-demo fg-demo-grid-2"></div>
+        <div class="demo-wrapper fg-demo-grid-2">
+            <div class="fg-demo"></div>
+            <div class="fg-demo"></div>
+            <div class="fg-demo"></div>
+            <div class="fg-demo"></div>
+            <div class="fg-demo"></div>
+            <div class="fg-demo"></div>
         </div>
+<pre>
+.demo-wrapper {
+    @include fg-col(3, $css-grid: true, $no-gutter: true, $break: 1024px) {
+        margin-top: 20px;
+    }
+}
+</pre>
 
     </section>
 

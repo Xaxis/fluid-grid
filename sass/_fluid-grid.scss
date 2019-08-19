@@ -174,14 +174,20 @@
 
   // CSS Grid
   @if $css-grid == true {
-    &:nth-child(#{$cols}n) + * {
+    & {
+      float: none;
       margin-left: 0 !important;
-      border: 2px solid blue !important;
+      width: auto !important;
+      display: grid !important;
+      grid-template-columns: repeat(#{$cols}, 1fr);
     }
-    &:nth-child(n+#{$cols + 1}) {
-      @if $no-gutter == false {
-        margin-top: $fixed-gutter;
-      }
+    &:before,
+    &:after {
+      display: none;
+    }
+    @if $no-gutter == false {
+      grid-column-gap: $fixed-gutter;
+      grid-row-gap: $fixed-gutter;
     }
   }
 
@@ -192,7 +198,14 @@
       @media only all and (max-width: $break) {
         margin-left: 0;
         width: 100%;
-        @content;
+        display: block !important;
+        @if $css-grid {
+          & > * {
+            @content;
+          }
+        } @else {
+          @content;
+        }
       }
     }
   }
@@ -207,6 +220,7 @@
 $fg-class-prefix: "fg-";
 $fg-fixed-gutter: 20px;
 $fg-fluid-gutter: 2.0;
+$fg-break-default: 1740px;
 @mixin fg-col-class($col-count, $col-grid) {
   &:not(#{"."}#{$fg-class-prefix}no-gutter) {
     @include fg-col($cols:$col-count, $mod:$col-grid, $no-gutter: false);
@@ -266,6 +280,16 @@ $fg-fluid-gutter: 2.0;
     }
     #{$col-selector}12 {
       @include fg-col-class($i, 12);
+    }
+  }
+
+  // Breakpoint classes (based on default break width)
+  #{"."}#{$fg-class-prefix}break-#{$i} {
+    $bw: ($i / 12) * $fg-break-default;
+    @media only all and (max-width: $bw) {
+      margin-left: 0 !important;
+      width: 100% !important;
+      display: block !important;
     }
   }
 }

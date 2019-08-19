@@ -317,5 +317,10 @@ section:nth-child(15) {
   @include fg-col(3, $css-grid: true);
 }
 .fg-demo-grid-2 {
-  @include fg-col(4, $css-grid: true);
+  @include fg-col(4, $css-grid: true, $no-gutter: true, $break: 1024px) {
+    &:first-child {
+      margin-top: 0;
+    }
+    margin-top: 20px;
+  };
 }

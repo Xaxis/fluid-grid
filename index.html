@@ -337,13 +337,22 @@
         <h3>Responsive Columns</h3>
         <p>Setting breakpoints for columns is made easy by passing a screen width through the <code>$break</code>
         parameter. By default columns will expand to 100% width of their containers when the screen reaches a width less
-        than or equal to the width set by <code>$break</code>.</p>
+        than or equal to the width set by <code>$break</code>. Furthermore breakpoints can be set via generated classes.</p>
 
         <div class="demo-wrapper">
             <div class="fg-demo fg-demo-2"></div>
             <div class="fg-demo fg-demo-2"></div>
             <pre>@include fg-col(2, $no-gutter: true, $break: 1024px);</pre>
         </div>
+
+        <div class="demo-wrapper">
+            <div class="fg-demo fg-col fg-break-8"></div>
+            <div class="fg-demo fg-col fg-break-8"></div>
+        </div>
+<pre>
+&lt;div class="fg-col fg-break-8"&gt;&lt;/div&gt;
+&lt;div class="fg-col fg-break-8"&gt;&lt;/div&gt;
+</pre>
     </section>
 
     <section>
@@ -379,6 +388,20 @@
     @include fg-col(3, $css-grid: true, $no-gutter: true, $break: 1024px) {
         margin-top: 20px;
     }
+}
+</pre>
+
+        <div class="demo-wrapper fg-demo-grid-3">
+            <div class="fg-demo"></div>
+            <div class="fg-demo"></div>
+            <div class="fg-demo"></div>
+            <div class="fg-demo"></div>
+            <div class="fg-demo"></div>
+            <div class="fg-demo"></div>
+        </div>
+<pre>
+.demo-wrapper {
+    @include fg-col(4, $css-grid: true, $grid-list: (1: (1,6), 3: (2,6), 6: (3,6)));
 }
 </pre>
 

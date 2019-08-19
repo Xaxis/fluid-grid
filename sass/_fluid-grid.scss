@@ -10,6 +10,7 @@
 // @gutter-type       Type of gutter to use (`fixed` or `fluid`) default
 // @no-gutter         Boolean value that specifies whether a gutter is used
 // @css-grid          Boolean value that enables the use of CSS Grid
+// @grid-items        A list specifying grid items start/end grid line modifiers
 @mixin fg-col(
   $cols: 1,
   $mod: 0,
@@ -18,7 +19,8 @@
   $fluid-gutter: 2.0,
   $gutter-type: 'fluid',
   $no-gutter: false,
-  $css-grid: false
+  $css-grid: false,
+  $grid-list: false
 ) {
 
 
@@ -188,6 +190,16 @@
     @if $no-gutter == false {
       grid-column-gap: $fixed-gutter;
       grid-row-gap: $fixed-gutter;
+    }
+    @if type-of($grid-list) == 'map' {
+      @each $elm-number, $item in $grid-list {
+        $start: nth($item, 1);
+        $end: nth($item, 2);
+        & > :nth-child(#{$elm-number}) {
+          grid-column-start: $start;
+          grid-column-end: $end;
+        }
+      }
     }
   }
 

@@ -167,10 +167,8 @@ section:nth-child(15) {
   padding: 10px;
   min-height: 60px;
   transition: all 250ms ease;
-  color: gainsboro;
-  .fg-demo {
-    border: 2px solid deeppink;
-  }
+  color: white;
+  font-weight: bolder;
 }
 
 //--------
@@ -323,4 +321,7 @@ section:nth-child(15) {
     }
     margin-top: 20px;
   };
+}
+.fg-demo-grid-3 {
+  @include fg-col(4, $css-grid: true, $grid-list: (1: (1,6), 3: (2,6), 6: (3,6)), $break: 1024px);
 }

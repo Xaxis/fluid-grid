@@ -180,7 +180,7 @@
       float: none;
       margin-left: 0 !important;
       width: auto !important;
-      display: grid !important;
+      display: grid;
       grid-template-columns: repeat(#{$cols}, 1fr);
     }
     &:before,
@@ -302,6 +302,32 @@ $fg-break-default: 1740px;
       margin-left: 0 !important;
       width: 100% !important;
       display: block !important;
+    }
+  }
+
+  // Grid classes
+  #{"."}#{$fg-class-prefix}grid-#{$i} {
+    &:not(#{"."}#{$fg-class-prefix}no-gutter) {
+      @include fg-col($cols:$i, $css-grid: true);
+    }
+    &#{"."}#{$fg-class-prefix}no-gutter {
+      @include fg-col($cols:$i, $css-grid: true, $no-gutter: true);
+    }
+  }
+  @for $n from 1 through 12 {
+    #{"."}#{$fg-class-prefix}item-#{$n}-#{$i} {
+      grid-column-start: $n;
+      grid-column-end: $i;
+    }
+  }
+  #{"."}#{$fg-class-prefix}break-#{$i} {
+    & {
+      $bw: ($i / 12) * $fg-break-default;
+      @media only all and (max-width: $bw) {
+        margin-left: 0;
+        width: 100%;
+        display: block;
+      }
     }
   }
 }

@@ -199,6 +199,15 @@ section:nth-child(15) {
 .fg-demo-9 {
   @include fg-col(9);
 }
+.fg-demo-10 {
+  @include fg-col(10, $no-gutter: true);
+}
+.fg-demo-11 {
+  @include fg-col(11);
+}
+.fg-demo-12 {
+  @include fg-col(12, $no-gutter: true);
+}
 
 //--------
 // Variable width column examples

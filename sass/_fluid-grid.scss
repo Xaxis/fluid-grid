@@ -233,14 +233,6 @@ $fg-class-prefix: "fg-";
 $fg-fixed-gutter: 20px;
 $fg-fluid-gutter: 2.0;
 $fg-break-default: 1740px;
-@mixin fg-col-class($col-count, $col-grid) {
-  &:not(#{"."}#{$fg-class-prefix}no-gutter) {
-    @include fg-col($cols:$col-count, $mod:$col-grid, $no-gutter: false);
-  }
-  &#{"."}#{$fg-class-prefix}no-gutter {
-    @include fg-col($cols:$col-count, $mod:$col-grid, $no-gutter: true);
-  }
-}
 @for $i from 1 through 12 {
 
   // Generate column classes
@@ -256,42 +248,16 @@ $fg-break-default: 1740px;
     }
 
     // Grid column sizes
-    $col-selector: "&" + "." + $fg-class-prefix + "col-";
-    #{$col-selector}1 {
-      @include fg-col-class($i, 1);
-    }
-    #{$col-selector}2 {
-      @include fg-col-class($i, 2);
-    }
-    #{$col-selector}3 {
-      @include fg-col-class($i, 3);
-    }
-    #{$col-selector}4 {
-      @include fg-col-class($i, 4);
-    }
-    #{$col-selector}5 {
-      @include fg-col-class($i, 5);
-    }
-    #{$col-selector}6 {
-      @include fg-col-class($i, 6);
-    }
-    #{$col-selector}7 {
-      @include fg-col-class($i, 7);
-    }
-    #{$col-selector}8 {
-      @include fg-col-class($i, 8);
-    }
-    #{$col-selector}9 {
-      @include fg-col-class($i, 9);
-    }
-    #{$col-selector}10 {
-      @include fg-col-class($i, 10);
-    }
-    #{$col-selector}11 {
-      @include fg-col-class($i, 11);
-    }
-    #{$col-selector}12 {
-      @include fg-col-class($i, 12);
+    @for $n from 1 through 12 {
+      $col-selector: "&" + "." + $fg-class-prefix + "col-" + $n;
+      #{$col-selector} {
+        &:not(#{"."}#{$fg-class-prefix}no-gutter) {
+          @include fg-col($cols:$i, $mod:$n, $no-gutter: false);
+        }
+        &#{"."}#{$fg-class-prefix}no-gutter {
+          @include fg-col($cols:$i, $mod:$n, $no-gutter: true);
+        }
+      }
     }
   }
 

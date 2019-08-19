@@ -313,3 +313,9 @@ section:nth-child(15) {
 .fg-demo-3-12-12 {
   @include fg-col(3, $mod: 12);
 }
+.fg-demo-grid-1 {
+  @include fg-col(3, $css-grid: true);
+}
+.fg-demo-grid-2 {
+  @include fg-col(4, $css-grid: true);
+}

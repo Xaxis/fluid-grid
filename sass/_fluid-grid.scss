@@ -9,14 +9,16 @@
 // @fluid-gutter      Fluid gutter percentage width default
 // @gutter-type       Type of gutter to use (`fixed` or `fluid`) default
 // @no-gutter         Boolean value that specifies whether a gutter is used
+// @css-grid          Boolean value that enables the use of CSS Grid
 @mixin fg-col(
   $cols: 1,
   $mod: 0,
   $break: 0,
   $fixed-gutter: 20px,
   $fluid-gutter: 2.0,
-  $gutter-type: 'fixed',
-  $no-gutter: false
+  $gutter-type: 'fluid',
+  $no-gutter: false,
+  $css-grid: false
 ) {
 
 
@@ -166,6 +168,20 @@
         $cw: ($ucw * 100) - $fluid-gutter + ($fluid-gutter / $cols);
       }
       width: #{$cw + '%'};
+    }
+  }
+
+
+  // CSS Grid
+  @if $css-grid == true {
+    &:nth-child(#{$cols}n) + * {
+      margin-left: 0 !important;
+      border: 2px solid blue !important;
+    }
+    &:nth-child(n+#{$cols + 1}) {
+      @if $no-gutter == false {
+        margin-top: $fixed-gutter;
+      }
     }
   }
 

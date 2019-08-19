@@ -103,4 +103,4 @@ elements please read: [MDN CSS clear](https://developer.mozilla.org/en-US/docs/W
 ## Requirements/Browsers
 
 Works in all browsers that support CSS `calc()` and is backwards compatible with browsers that don't only when 
-`$gutter-type` is set to true.
+`$gutter-type` is set to `fluid`.

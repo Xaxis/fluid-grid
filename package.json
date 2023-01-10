@@ -21,7 +21,7 @@
   "homepage": "https://github.com/Xaxis/fluid-grid#readme",
   "devDependencies": {
     "grunt": "^0.4.5",
-    "grunt-contrib-watch": "^0.6.1",
+    "grunt-contrib-watch": "^1.1.0",
     "grunt-sass": "^1.0.0",
     "jquery.devgrid": "git+https://github.com/Xaxis/jquery.devgrid.git",
     "matchdep": "^0.3.0",
